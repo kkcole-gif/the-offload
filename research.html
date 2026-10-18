@@ -6,179 +6,152 @@
 <title>The research</title>
 <meta name="description" content="Eleven peer reviewed studies behind the design rules of the Offload kits, each linked by DOI, with what the kits do with each finding.">
 <link rel="canonical" href="https://the-offload.com/research.html">
-<meta property="og:title" content="The research">
-<meta property="og:description" content="Eleven peer reviewed studies behind the design rules of the Offload kits, each linked by DOI, with what the kits do with each finding.">
-<meta property="og:url" content="https://the-offload.com/research.html">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Libre+Franklin:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<meta property="og:title" content="The research"><meta property="og:description" content="Eleven peer reviewed studies behind the design rules of the Offload kits, each linked by DOI, with what the kits do with each finding."><meta property="og:url" content="https://the-offload.com/research.html">
+<link rel="icon" type="image/png" href="assets/possum-face.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Libre+Franklin:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* Layout: a fixed contents rail on the left, one reading column on the right, everything left-aligned. The day strip in the hero is the single bold element. */
+/* One typeface with a temperament (Fraunces, soft and a little wonky) for everything that is read as a headline, Libre Franklin for running text. Night band hero with the day as a sideways strip and the animals at the end of it. No rail, no capitals, no mono. The dashed magnet circle from the fridge sheets is the one recurring mark. */
 :root {
-  --paper: #F5F1E9; --paper-2: #EDE8DC; --ink: #1C1A16; --ink-2: #3A3730; --stone: #8A7F70;
-  --rule: #D6CEBC; --navy: #304E72; --navy-2: #1E3350; --gold: #B89A3E; --pale: #E2E6EE;
-  --teal: #1F5F68; --plum: #3D2B4A; --forest: #2F4A3E;
-  --display: 'Cormorant Garamond', Georgia, serif; --body: 'Libre Franklin', system-ui, sans-serif; --mono: 'IBM Plex Mono', ui-monospace, monospace;
-  --fs: 17px; --lh: 1.65; --measure: 64ch;
+  --paper: #F3EEE6; --paper-2: #E9E2D6; --ink: #221C24; --ink-2: #4A4150; --mute: #857A8C; --rule: #D4CBD2;
+  --night: #231A2B; --night-2: #2E2338; --cream: #F3EDE4; --dust: #8F8396;
+  --plum: #3D2B4A; --teal: #1F5F68; --forest: #2F4A3E; --blush: #DDB6AF; --sage: #A9BBA9; --blush-deep: #A8605A;
+  --display: 'Fraunces', 'Iowan Old Style', Georgia, serif; --body: 'Libre Franklin', system-ui, sans-serif;
+  --fs: 17px; --lh: 1.6; --measure: 62ch;
 }
-:root[data-size="large"] { --fs: 20px; --measure: 58ch; }
-:root[data-size="larger"] { --fs: 23px; --measure: 52ch; }
+:root[data-size="large"] { --fs: 20px; --measure: 56ch; }
+:root[data-size="larger"] { --fs: 23px; --measure: 50ch; }
 :root[data-space="open"] { --lh: 1.95; }
-:root[data-images="off"] .art, :root[data-images="off"] .animals { display: none; }
+:root[data-images="off"] .pic, :root[data-images="off"] .animals { display: none; }
 *, *::before, *::after { box-sizing: border-box; }
 html { background: var(--paper); scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body { margin: 0; background: var(--paper); color: var(--ink-2); font-family: var(--body); font-size: var(--fs); line-height: var(--lh); -webkit-font-smoothing: antialiased; }
-a { color: var(--navy); text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 1px; }
-a:hover { color: var(--navy-2); }
-a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+a { color: var(--ink); text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: 1px; text-decoration-color: var(--mute); }
+a:hover { text-decoration-color: var(--ink); }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--blush-deep); outline-offset: 3px; }
 button { font: inherit; cursor: pointer; }
 p { max-width: var(--measure); margin: 0 0 1em; }
-h1, h2, h3 { font-family: var(--display); font-weight: 400; color: var(--ink); line-height: 1.12; margin: 0; text-wrap: balance; }
-h2 { font-size: calc(var(--fs) * 2.1); margin-bottom: .6em; }
-h3 { font-size: calc(var(--fs) * 1.45); margin-bottom: .35em; }
+p b { font-weight: 500; color: var(--ink); }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; color: var(--ink); line-height: 1.08; margin: 0; text-wrap: balance; font-variation-settings: "SOFT" 60, "WONK" 1, "opsz" 72; }
+h2 { font-size: calc(var(--fs) * 2.4); margin-bottom: .5em; display: flex; align-items: center; gap: 14px; }
+h2::before { content: ""; width: 14px; height: 14px; border-radius: 50%; border: 2px dashed var(--mute); flex-shrink: 0; }
+h3 { font-size: calc(var(--fs) * 1.55); margin-bottom: .3em; }
+.btn { display: inline-block; background: var(--ink); color: var(--paper); text-decoration: none; font-weight: 500; font-size: 15px; padding: 12px 18px; border-radius: 999px; border: 0; }
+.btn:hover { background: #000; }
+.btn.light { background: var(--cream); color: var(--night); }
 
-/* Masthead */
-.mast { border-bottom: 1px solid var(--rule); }
-.mast-in { max-width: 1240px; margin: 0 auto; padding: 18px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-.wm { font-family: var(--display); font-size: 28px; font-weight: 500; color: var(--ink); text-decoration: none; }
-.wm:hover { color: var(--ink); }
-.mast-line { font-size: 14px; color: var(--stone); }
-.reading { display: flex; gap: 8px; flex-wrap: wrap; }
-.reading button { background: transparent; border: 1px solid var(--rule); border-radius: 4px; padding: 6px 11px; font-size: 13px; color: var(--ink-2); }
-.reading button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+/* progress line */
+.progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: transparent; z-index: 20; }
+.progress i { display: block; height: 100%; width: 0; background: var(--blush-deep); }
+.where { position: fixed; top: 10px; right: max(16px, env(safe-area-inset-right, 0px)); font-size: 12px; color: var(--mute); background: var(--paper); padding: 4px 8px; border-radius: 999px; z-index: 20; }
 
-/* Frame */
-.frame { max-width: 1240px; margin: 0 auto; padding: 0 28px 80px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 56px; }
-.rail { position: sticky; top: 24px; align-self: start; padding-top: 40px; }
-.rail .label { font-size: 13px; color: var(--stone); margin-bottom: 10px; }
-.rail ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
-.rail li a { display: block; padding: 7px 0 7px 12px; border-left: 2px solid var(--rule); color: var(--ink-2); text-decoration: none; font-size: 15px; }
-.rail li a:hover { border-left-color: var(--ink); color: var(--ink); }
-.rail li a.here { border-left-color: var(--navy); color: var(--navy); }
-.rail .also { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--stone); }
-.rail .also a { display: block; margin-top: 6px; }
-main { min-width: 0; padding-top: 40px; }
-section { padding: 0 0 64px; margin: 0 0 64px; border-bottom: 1px solid var(--rule); }
-section:last-of-type { border-bottom: 0; margin-bottom: 0; }
+/* masthead */
+.mast { max-width: 1180px; margin: 0 auto; padding: 22px 24px 14px; display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.wm { font-family: var(--display); font-size: 30px; color: var(--ink); text-decoration: none; font-variation-settings: "SOFT" 80, "WONK" 1, "opsz" 48; }
+.mast nav { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.mast nav a { font-size: 15px; text-decoration: none; color: var(--ink-2); }
+.mast nav a:hover { color: var(--ink); text-decoration: underline; }
+.rbtn { background: transparent; border: 1px solid var(--rule); border-radius: 999px; padding: 7px 12px; font-size: 14px; color: var(--ink-2); }
+.rbtn[aria-expanded="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.rpanel[hidden] { display: none; }
+.rpanel { max-width: 1180px; margin: 0 auto; padding: 0 24px 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+.rpanel button { background: transparent; border: 1px solid var(--rule); border-radius: 999px; padding: 7px 12px; font-size: 14px; color: var(--ink-2); }
+.rpanel button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
-/* Night band: the hero sits on midnight, full width, the two animals in it; the page turns to daylight after it. */
-.night { background: #231A2B; color: #F3EDE4; }
-.night-in { max-width: 1240px; margin: 0 auto; padding: 56px 28px 0; display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: 40px; align-items: end; }
-.night h1 { font-size: clamp(36px, 4.8vw, 60px); max-width: 15ch; margin-bottom: 22px; color: #F3EDE4; }
-.night .lede { font-size: calc(var(--fs) * 1.1); max-width: 52ch; color: #CFC3C9; margin-bottom: 44px; }
-.night .mono-line { font-family: var(--mono); font-size: 13px; color: #8F8396; margin-bottom: 18px; }
-.animals { display: flex; align-items: flex-end; justify-content: flex-end; gap: 0; min-width: 0; margin: 0; }
-.animals img { display: block; height: 340px; width: auto; max-width: 100%; }
-.animals img.possum { height: 380px; margin-left: -36px; }
-.animals figcaption { display: none; }
-.hero h1 { font-size: clamp(34px, 4.6vw, 56px); max-width: 16ch; margin-bottom: 22px; }
-.hero .lede { font-size: calc(var(--fs) * 1.12); max-width: 58ch; margin-bottom: 36px; }
-.day { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); margin-top: 8px; }
-.hour { padding: 16px 14px 18px 0; border-right: 1px solid var(--rule); display: flex; flex-direction: column; gap: 8px; min-width: 0; }
-.hour:last-child { border-right: 0; }
-.hour .t { font-family: var(--mono); font-size: 13px; color: var(--stone); font-variant-numeric: tabular-nums; }
-.hour .s { font-family: var(--display); font-size: calc(var(--fs) * 1.3); line-height: 1.2; color: var(--ink); }
-.hour .k { font-size: 14px; margin-top: auto; }
-.hour .k a { text-decoration-color: var(--rule); }
-.hour.live .k a { color: var(--teal); }
-.hour.soon .k { color: var(--stone); }
-.day-note { font-size: 14px; color: var(--stone); margin-top: 12px; }
+/* night */
+.night { background: var(--night); color: var(--cream); }
+.night-in { max-width: 1180px; margin: 0 auto; padding: 40px 24px 0; display: grid; grid-template-columns: minmax(0, 7fr) minmax(280px, 5fr); gap: 36px; align-items: start; }
+.night h1 { color: var(--cream); font-size: clamp(38px, 5.4vw, 66px); max-width: 13ch; margin-bottom: 18px; }
+.night .lede { color: #CFC3C9; font-size: calc(var(--fs) * 1.05); max-width: 46ch; }
+.night .lede b { color: var(--cream); }
+.router { background: var(--night-2); border-radius: 18px; padding: 20px 20px 18px; display: flex; flex-direction: column; gap: 12px; }
+.router .qt { font-family: var(--display); font-size: 20px; color: var(--cream); }
+.router .opts { display: flex; gap: 8px; flex-wrap: wrap; }
+.router button { background: transparent; color: var(--cream); border: 1px solid rgba(243,237,228,.25); border-radius: 999px; padding: 9px 14px; font-size: 15px; }
+.router button[aria-pressed="true"] { background: var(--cream); color: var(--night); border-color: var(--cream); }
+.answer { border-top: 1px solid rgba(243,237,228,.14); padding-top: 12px; font-size: calc(var(--fs) * 1.02); color: var(--cream); min-height: 2.4em; }
+.answer a { color: var(--blush); text-decoration-color: var(--blush); }
+.answer b { color: var(--cream); font-weight: 500; }
 
-/* Kits ledger */
-.kit { display: grid; grid-template-columns: 150px 1fr 150px; gap: 28px; padding: 28px 0; border-top: 1px solid var(--rule); align-items: start; }
-.kit:last-of-type { border-bottom: 1px solid var(--rule); }
-.art { width: 150px; aspect-ratio: 4 / 5; border-radius: 3px; display: flex; align-items: center; justify-content: center; overflow: hidden; max-width: 100%; }
-.art img { width: 100%; height: 100%; object-fit: contain; display: block; padding: 8px; }
-.art.teal { background: var(--teal); } .art.plum { background: var(--plum); } .art.forest { background: var(--forest); }
-.art span { color: rgba(255,255,255,.7); font-family: var(--display); font-size: 20px; text-align: center; padding: 14px; line-height: 1.2; }
-.art img + span { display: none; }
-.kit .for { font-size: 15px; color: var(--stone); margin-bottom: 10px; }
-.kit p { margin-bottom: 10px; }
-.facts { font-size: 14px; display: flex; flex-direction: column; gap: 6px; padding-top: 4px; }
-.facts div { display: flex; flex-direction: column; border-top: 1px solid var(--rule); padding-top: 6px; }
-.facts b { font-weight: 500; color: var(--ink); }
-.facts .live b { color: var(--gold); }
+/* the day strip */
+.strip-wrap { max-width: 1180px; margin: 0 auto; padding: 20px 0 0 24px; }
+.strip-lab { color: var(--dust); font-size: 14px; margin: 0 0 6px; }
+.strip { display: flex; align-items: flex-end; gap: 0; overflow-x: auto; scroll-snap-type: x proximity; padding-bottom: 0; }
+.strip::-webkit-scrollbar { height: 6px; } .strip::-webkit-scrollbar-thumb { background: rgba(243,237,228,.2); border-radius: 3px; }
+.hour { flex: 0 0 220px; scroll-snap-align: start; border-left: 1px solid rgba(243,237,228,.16); padding: 10px 18px 26px 16px; display: flex; flex-direction: column; gap: 8px; min-height: 230px; text-decoration: none; color: var(--cream); }
+.hour:hover .s { color: #FFFFFF; }
+.hour .t { font-family: var(--display); font-size: 58px; line-height: 1; color: var(--cream); font-variation-settings: "SOFT" 90, "WONK" 1, "opsz" 96; letter-spacing: -.01em; }
+.hour .t small { font-size: 22px; margin-left: 4px; color: var(--dust); }
+.hour .s { font-size: 15px; color: #CFC3C9; line-height: 1.4; }
+.hour .k { margin-top: auto; font-size: 14px; color: var(--blush); }
+.hour.live .k { color: var(--sage); font-weight: 500; }
+.animals { flex: 0 0 auto; align-self: flex-end; display: flex; align-items: flex-end; padding: 0 24px 0 28px; }
+.animals img { display: block; height: 250px; width: auto; }
+.animals img + img { height: 280px; margin-left: -32px; }
 
-/* Router */
-.router { background: var(--paper-2); border-radius: 4px; padding: 26px 28px; max-width: 760px; }
-.router p { margin-bottom: 14px; }
-.q { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
-.q .qt { font-weight: 500; color: var(--ink); }
-.q .opts { display: flex; gap: 8px; flex-wrap: wrap; }
-.q button { background: #fff; border: 1px solid var(--rule); border-radius: 4px; padding: 9px 14px; font-size: 15px; color: var(--ink-2); }
-.q button[aria-pressed="true"] { background: var(--navy); color: #fff; border-color: var(--navy); }
-.answer { border-top: 1px solid var(--rule); padding-top: 16px; font-size: calc(var(--fs) * 1.05); color: var(--ink); min-height: 2.5em; }
-
-/* How */
-.parts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px 36px; max-width: 900px; }
-.part { border-top: 1px solid var(--rule); padding-top: 12px; }
-.part .n { font-family: var(--mono); font-size: 13px; color: var(--stone); }
-.part h3 { margin: 4px 0 6px; }
-.part p { font-size: 15px; margin: 0; }
-
-/* Storeroom */
-.store-group { margin-bottom: 36px; }
-.store-group h3 { margin-bottom: 4px; }
-.store-group .why { font-size: 15px; color: var(--stone); margin-bottom: 14px; }
-.items { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
-.item { display: flex; flex-direction: column; gap: 6px; background: #fff; border: 1px solid var(--rule); border-radius: 4px; padding: 14px 16px; text-decoration: none; color: var(--ink-2); min-width: 0; }
-.item:hover { border-color: var(--navy); color: var(--ink-2); }
-.item b { font-weight: 500; color: var(--ink); font-size: calc(var(--fs) * .95); }
-.item span { font-size: 14px; line-height: 1.5; }
-.item .meta { font-size: 13px; color: var(--stone); }
-.disclosure { font-size: 14px; color: var(--stone); max-width: 64ch; }
-
-/* Who, list */
-.who { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 40px; align-items: start; }
-.list { background: var(--paper-2); border-radius: 4px; padding: 22px 24px; }
-.list p { font-size: 15px; margin-bottom: 14px; }
+/* body */
+.frame { max-width: 1180px; margin: 0 auto; padding: 0 24px 80px; }
+section { padding: 72px 0 0; }
+.kit { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; align-items: start; padding: 28px 0 36px; border-top: 1px solid var(--rule); }
+.kit:first-of-type { border-top: 0; }
+.pic { width: 200px; max-width: 100%; overflow: hidden; }
+.pic img { display: block; width: 100%; height: auto; transform: translateY(104%); transition: transform .9s cubic-bezier(.2,.9,.25,1.15); }
+.pic.in img { transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { .pic img { transform: none; transition: none; } }
+.pic.up { margin-top: -22px; }
+.spec { font-size: 14px; color: var(--mute); margin: 0 0 12px; }
+.kit .for { font-family: var(--display); font-size: calc(var(--fs) * 1.2); color: var(--ink); margin-bottom: 10px; font-variation-settings: "SOFT" 60, "WONK" 1, "opsz" 24; }
+.parts { list-style: none; margin: 0; padding: 0; max-width: 720px; }
+.parts li { display: grid; grid-template-columns: 26px 1fr; gap: 12px; padding: 12px 0; border-top: 1px solid var(--rule); }
+.parts li::before { content: ""; width: 14px; height: 14px; border-radius: 50%; border: 2px dashed var(--mute); margin-top: 6px; }
+.parts b { font-weight: 500; color: var(--ink); }
+.parts span { display: block; font-size: 15px; }
+.two { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 36px; align-items: start; }
+.list { background: var(--paper-2); border-radius: 18px; padding: 22px 22px 20px; }
+.list h3 { margin-bottom: 8px; }
 .erow { display: flex; }
-.erow input { flex: 1; min-width: 0; border: 1px solid var(--rule); border-right: 0; border-radius: 4px 0 0 4px; background: #fff; padding: 10px 12px; font: inherit; font-size: 15px; color: var(--ink); }
-.erow button { background: var(--navy); color: #fff; border: 0; border-radius: 0 4px 4px 0; padding: 10px 16px; font-size: 15px; }
-.erow button:hover { background: var(--navy-2); }
-footer { border-top: 1px solid var(--rule); }
-.foot-in { max-width: 1240px; margin: 0 auto; padding: 24px 28px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 14px; color: var(--stone); }
+.erow input { flex: 1; min-width: 0; border: 1px solid var(--rule); border-right: 0; border-radius: 999px 0 0 999px; background: #fff; padding: 11px 14px; font: inherit; font-size: 15px; color: var(--ink); }
+.erow button { background: var(--ink); color: var(--paper); border: 0; border-radius: 0 999px 999px 0; padding: 11px 16px; font-size: 15px; }
 
-@media (max-width: 900px) {
-  .night-in { grid-template-columns: 1fr; padding-top: 40px; }
-  .animals { justify-content: flex-start; }
-  .animals img { height: 200px; }
-  .animals img.possum { height: 220px; margin-left: -24px; }
-  .frame { grid-template-columns: 1fr; gap: 0; }
-  .rail { position: static; padding-top: 28px; }
-  .rail ol { flex-direction: row; flex-wrap: wrap; gap: 6px 14px; }
-  .rail li a { border-left: 0; padding: 4px 0; text-decoration: underline; }
-  .rail .also { display: none; }
-  main { padding-top: 24px; }
+/* storeroom and research */
+.store-group { margin-bottom: 36px; } .store-group h3 { margin-bottom: 4px; } .store-group .why { font-size: 15px; color: var(--mute); margin-bottom: 14px; }
+.items { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.item { display: flex; flex-direction: column; gap: 6px; background: #fff; border: 1px solid var(--rule); border-radius: 14px; padding: 14px 16px; text-decoration: none; color: var(--ink-2); min-width: 0; }
+.item:hover { border-color: var(--ink); }
+.item b { font-weight: 500; color: var(--ink); font-size: calc(var(--fs) * .95); } .item span { font-size: 14px; line-height: 1.5; } .item .meta { font-size: 13px; color: var(--mute); }
+.disclosure { font-size: 14px; color: var(--mute); max-width: 64ch; }
+.part { border-top: 1px solid var(--rule); padding-top: 12px; margin-bottom: 18px; max-width: 760px; } .part .n { display: none; } .part h3 { margin: 4px 0 6px; } .part p { font-size: 15px; margin: 0; }
+
+footer { border-top: 1px solid var(--rule); }
+.foot-in { max-width: 1180px; margin: 0 auto; padding: 22px 24px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 14px; color: var(--mute); }
+
+@media (max-width: 860px) {
+  .night-in { grid-template-columns: 1fr; }
   .kit { grid-template-columns: 1fr; gap: 14px; }
-  .art { width: 120px; }
-  .who { grid-template-columns: 1fr; }
-  .hour { border-right: 0; border-bottom: 1px solid var(--rule); padding: 14px 0; }
-  .hour:last-child { border-bottom: 0; }
+  .pic { width: 150px; } .pic.up { margin-top: 0; }
+  .two { grid-template-columns: 1fr; }
+  .hour { flex-basis: 190px; } .hour .t { font-size: 48px; }
+  .animals img { height: 190px; } .animals img + img { height: 215px; }
 }
-@media (max-width: 560px) { .mast-in, .frame, .foot-in { padding-left: 18px; padding-right: 18px; } .hero h1 { font-size: 34px; } }
 </style>
 </head>
 <body>
-<header class="mast"><div class="mast-in">
-  <div><a class="wm" href="index.html">Offload</a><div class="mast-line">A studio in Raleigh. Kits for the hours executive function does not cover.</div></div>
-  <div class="reading" aria-label="Reading options">
-    <button type="button" data-pref="size:large">Larger text</button>
-    <button type="button" data-pref="size:larger">Largest text</button>
-    <button type="button" data-pref="space:open">More space between lines</button>
-    <button type="button" data-pref="images:off">Hide images</button>
-  </div>
-</div></header>
+<div class="progress" aria-hidden="true"><i></i></div><div class="where" id="where" aria-live="polite"></div>
+<header class="mast">
+  <a class="wm" href="index.html">Offload</a>
+  <nav><a href="index.html#kits">Kits</a> <a href="storeroom.html">Storeroom</a> <a href="research.html" style="text-decoration:underline">Research</a> <a href="index.html#list">The list</a><button type="button" class="rbtn" id="rbtn" aria-expanded="false" aria-controls="rpanel">Reading</button></nav>
+</header>
+<div class="rpanel" id="rpanel" hidden>
+  <button type="button" data-pref="size:large">Larger text</button><button type="button" data-pref="size:larger">Largest text</button><button type="button" data-pref="space:open">More space between lines</button><button type="button" data-pref="images:off">Hide images</button>
+</div>
 
-<div class="frame">
-  <nav class="rail" aria-label="Contents"><div class="label">On this page</div><ol><li><a href="#rules">The rules</a></li><li><a href="#deciding">Removing the deciding</a></li><li><a href="#stopping">Timing and the evening</a></li><li><a href="#motivation">Motivation and the lapse</a></li></ol><div class="also">Also<br><a href="index.html">Home</a><a href="storeroom.html">The storeroom</a></div></nav>
-  <main>
+<main class="frame">
 
-<section id="rules">
+<section id="rules" data-name="The rules">
   <h2>The research behind the kits</h2>
   <p class="disclosure">Every design rule the studio follows comes from a finding. This page lists the finding, links the study by DOI, and says what the kits do with it. Eleven sources, all peer reviewed. Where the evidence is contested, the page says so. Nothing here is a claim the studio has tested on its own; the pilots are where that begins.</p>
 </section>
-<section id="deciding">
+<section id="deciding" data-name="Removing the deciding">
   <h2>Removing the deciding</h2>
   <div class="part"><h3>A card is an if-then plan</h3><p>Gollwitzer and Sheeran (2006), <em>Implementation Intentions and Goal Achievement: A Meta-analysis of Effects and Processes</em>, Advances in Experimental Social Psychology 38. <a href="https://doi.org/10.1016/S0065-2601(06)38002-1">doi:10.1016/S0065-2601(06)38002-1</a>. Across 94 studies, plans of the form "when situation X arises, I will do Y" raised goal attainment by a medium to large effect, by handing the start of the action to the situation rather than to willpower. Every Hard Day Kit card is written in that form: the hour is the cue, the card is the response.</p></div>
   <div class="part"><h3>Choices cost more when they are many</h3><p>Pignatiello, Martin and Hickman (2020), <em>Decision fatigue: A conceptual analysis</em>, Journal of Health Psychology 25(1). <a href="https://doi.org/10.1177/1359105318763510">doi:10.1177/1359105318763510</a>. The authors define decision fatigue as impaired decision quality after a sequence of decisions, and note that the laboratory evidence for a depletable resource is contested. The kits do not depend on the mechanism. They depend on the observation the authors hold stable: at the end of a day of deciding, one more decision is where the plan fails, so the card makes it.</p></div>
@@ -186,13 +159,13 @@ footer { border-top: 1px solid var(--rule); }
   <div class="part"><h3>Checklists lower the load on experts too</h3><p>Haynes and colleagues (2009), <em>A Surgical Safety Checklist to Reduce Morbidity and Mortality in a Global Population</em>, New England Journal of Medicine 360. <a href="https://doi.org/10.1056/NEJMsa0810119">doi:10.1056/NEJMsa0810119</a>. A nineteen-item checklist cut deaths and complications in eight hospitals among people who already knew every item on it. The kits' rules pages and working pages are checklists for people who already know what to do and cannot, at that hour, hold it.</p></div>
   <div class="part"><h3>One thing at a time, because working memory is small</h3><p>Sweller (1988), <em>Cognitive Load During Problem Solving: Effects on Learning</em>, Cognitive Science 12(2). <a href="https://doi.org/10.1207/s15516709cog1202_4">doi:10.1207/s15516709cog1202_4</a>. Sweller's account of working memory as the bottleneck in problem solving is why every kit page holds one task, why the cards show three steps at most, and why the phone page shows one card at a time.</p></div>
 </section>
-<section id="stopping">
+<section id="stopping" data-name="Timing and the evening">
   <h2>Timing, stopping, and the evening</h2>
   <div class="part"><h3>Time is harder to feel with ADHD</h3><p>Barkley, Murphy and Bush (2001), <em>Time perception and reproduction in young adults with attention deficit hyperactivity disorder</em>, Neuropsychology 15(3). <a href="https://doi.org/10.1037/0894-4105.15.3.351">doi:10.1037/0894-4105.15.3.351</a>. Adults with ADHD reproduced time intervals less accurately than controls, with the gap widening at longer durations. The kits put time outside the body: a sand timer the child turns, a visible timer at bedtime, a card that names the minutes out loud.</p></div>
   <div class="part"><h3>The late hour is a known pattern</h3><p>Kroese, De Ridder, Evers and Adriaanse (2014), <em>Bedtime procrastination: introducing a new area of procrastination</em>, Frontiers in Psychology 5. <a href="https://doi.org/10.3389/fpsyg.2014.00611">doi:10.3389/fpsyg.2014.00611</a>. The authors name and measure going to bed later than intended with no external reason, and find it tied to self-regulation and to daytime fatigue. The 11 pm card treats the pattern as expected and gives the one action, the phone in another room, that the authors' account points to.</p></div>
   <div class="part"><h3>Light is a lever</h3><p>Cajochen (2007), <em>Alerting effects of light</em>, Sleep Medicine Reviews 11(6). <a href="https://doi.org/10.1016/j.smrv.2007.07.009">doi:10.1016/j.smrv.2007.07.009</a>. Light, and short-wavelength light in particular, raises alertness and suppresses melatonin on a scale of minutes. The 7:15 card's instruction to turn off the overhead light and the amber night light in the storeroom follow from it.</p></div>
 </section>
-<section id="motivation">
+<section id="motivation" data-name="Motivation and the lapse">
   <h2>Motivation, rewards, and the lapse</h2>
   <div class="part"><h3>Choice sustains effort</h3><p>Patall, Cooper and Robinson (2008), <em>The effects of choice on intrinsic motivation and related outcomes: A meta-analysis of research findings</em>, Psychological Bulletin 134(2). <a href="https://doi.org/10.1037/0033-2909.134.2.270">doi:10.1037/0033-2909.134.2.270</a>. Across 41 studies, giving people choices raised intrinsic motivation, effort, and performance. The child chooses the book and draws the card. The mother draws the card. Nobody is assigned one.</p></div>
   <div class="part"><h3>Rewards undermine the thing rewarded</h3><p>Deci, Koestner and Ryan (1999), <em>A meta-analytic review of experiments examining the effects of extrinsic rewards on intrinsic motivation</em>, Psychological Bulletin 125(6). <a href="https://doi.org/10.1037/0033-2909.125.6.627">doi:10.1037/0033-2909.125.6.627</a>. Tangible rewards given for doing an activity reduced later free-choice engagement with it across 128 studies. No kit has a prize, a streak, or a sticker chart. Rank counts sessions and is never taken away.</p></div>
@@ -201,9 +174,8 @@ footer { border-top: 1px solid var(--rule); }
   <p class="disclosure" style="margin-top: 28px">Studies were verified by DOI against Crossref in October 2026. Where an abstract summarizes a study, the summary is the studio's and the study's authors did not review it.</p>
 </section>
 
-  </main>
-</div>
-<footer><div class="foot-in"><span>Offload, Raleigh, North Carolina. hi@the-offload.com</span><span><a href="https://thebookdetectiveagency.com">The Book Detective Agency</a></span></div></footer>
+</main>
+<footer><div class="foot-in"><span>Offload, a studio in Raleigh, North Carolina. hi@the-offload.com</span><span><a href="https://thebookdetectiveagency.com">The Book Detective Agency</a></span></div></footer>
 <script>
 (function () {
   var root = document.documentElement;
@@ -212,10 +184,7 @@ footer { border-top: 1px solid var(--rule); }
   var prefs = { size: get('ol-size') || 'base', space: get('ol-space') || 'base', images: get('ol-images') || 'on' };
   function apply() {
     root.setAttribute('data-size', prefs.size); root.setAttribute('data-space', prefs.space); root.setAttribute('data-images', prefs.images);
-    document.querySelectorAll('[data-pref]').forEach(function (b) {
-      var p = b.getAttribute('data-pref').split(':');
-      b.setAttribute('aria-pressed', prefs[p[0]] === p[1] ? 'true' : 'false');
-    });
+    document.querySelectorAll('[data-pref]').forEach(function (b) { var p = b.getAttribute('data-pref').split(':'); b.setAttribute('aria-pressed', prefs[p[0]] === p[1] ? 'true' : 'false'); });
   }
   document.querySelectorAll('[data-pref]').forEach(function (b) {
     b.addEventListener('click', function () {
@@ -227,34 +196,34 @@ footer { border-top: 1px solid var(--rule); }
     });
   });
   apply();
-  var links = document.querySelectorAll('.rail a[href^="#"]'), secs = [];
-  links.forEach(function (a) { var s = document.querySelector(a.getAttribute('href')); if (s) secs.push([s, a]); });
+  var rb = document.getElementById('rbtn'), rp = document.getElementById('rpanel');
+  if (rb && rp) { rb.addEventListener('click', function () { var open = rb.getAttribute('aria-expanded') === 'true'; rb.setAttribute('aria-expanded', open ? 'false' : 'true'); rp.hidden = open; }); }
+  var secs = Array.prototype.slice.call(document.querySelectorAll('section[data-name]')), bar = document.querySelector('.progress i'), where = document.getElementById('where');
   function mark() {
-    var y = window.scrollY + 120, cur = null;
-    secs.forEach(function (p) { if (p[0].offsetTop <= y) cur = p[1]; });
-    links.forEach(function (a) { a.classList.toggle('here', a === cur); });
+    var h = document.documentElement, sc = h.scrollTop, max = h.scrollHeight - h.clientHeight;
+    if (bar) bar.style.width = (max > 0 ? Math.min(100, sc / max * 100) : 0) + '%';
+    if (where && secs.length) { var cur = 0; secs.forEach(function (s, i) { if (s.offsetTop - 140 <= sc) cur = i; }); where.textContent = secs[cur].getAttribute('data-name') + ', ' + (cur + 1) + ' of ' + secs.length; }
   }
-  if (secs.length) { window.addEventListener('scroll', mark, { passive: true }); mark(); }
+  window.addEventListener('scroll', mark, { passive: true }); mark();
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.35 });
+    document.querySelectorAll('.pic').forEach(function (p) { io.observe(p); });
+  } else { document.querySelectorAll('.pic').forEach(function (p) { p.classList.add('in'); }); }
   var form = document.querySelector('form.erow');
   if (form) form.addEventListener('submit', function (e) { if (form.getAttribute('action').indexOf('BEEHIIV') === 0) { e.preventDefault(); form.querySelector('button').textContent = 'List opens soon'; } });
+  document.querySelectorAll('a.hour[data-hour]').forEach(function (a) { a.addEventListener('click', function () { var inp = document.getElementById('email'); if (inp) inp.placeholder = 'your@email.com, for the ' + a.getAttribute('data-hour') + ' card'; }); });
   var q = { who: null, when: null }, ans = document.getElementById('answer');
   function route() {
     if (!ans) return;
-    if (!q.who || !q.when) { ans.textContent = 'Answer both and the kit appears here.'; return; }
+    if (!q.who || !q.when) { ans.textContent = 'Tap one from each row.'; return; }
     var out;
-    if (q.who === 'child') out = 'The Book Detective Agency. Ten minutes a day, a card, a timer, a binder. For any child who reads on their own and resists writing. <a href="https://thebookdetectiveagency.com">Open the Agency site.</a>';
-    else if (q.who === 'me' && q.when === 'evening') out = 'The Hard Day Kit, November. For the evening when the plan has already failed. <a href="#list">Get the date by email.</a>';
-    else if (q.who === 'me' && q.when === 'school') out = 'The Seminar Kit, 2027. For the reading week, the paper, and the disclosure conversation. <a href="#list">Get the date by email.</a>';
-    else out = 'The Hard Day Kit is the closest fit and ships in November. <a href="#list">Get the date by email.</a>';
+    if (q.who === 'child') out = '<b>The Book Detective Agency.</b> Ten minutes a day, a card, a timer, a binder. <a href="https://thebookdetectiveagency.com">Open the Agency site</a> or <a href="#kit-agency">read about it below</a>.';
+    else if (q.who === 'me' && q.when === 'evening') out = '<b>The Hard Day Kit, November.</b> For the evening the plan already failed. <a href="#kit-hardday">Read about it</a> or <a href="#list">get the date by email</a>.';
+    else if (q.who === 'student' || q.when === 'school') out = '<b>The Seminar Kit, 2027.</b> The reading week, the paper, the disclosure conversation. <a href="#list">Get the date by email</a>.';
+    else out = '<b>The Hard Day Kit</b> is the closest fit, November. <a href="#kit-hardday">Read about it</a>.';
     ans.innerHTML = out;
   }
-  document.querySelectorAll('[data-q]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var p = b.getAttribute('data-q').split(':'); q[p[0]] = p[1];
-      document.querySelectorAll('[data-q^="' + p[0] + ':"]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-      route();
-    });
-  });
+  document.querySelectorAll('[data-q]').forEach(function (b) { b.addEventListener('click', function () { var p = b.getAttribute('data-q').split(':'); q[p[0]] = p[1]; document.querySelectorAll('[data-q^="' + p[0] + ':"]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); route(); }); });
   route();
 })();
 </script>
