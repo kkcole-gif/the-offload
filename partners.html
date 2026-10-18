@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partners</title>
+<meta name="description" content="The Offload affiliate program: forty percent on every sale, the kits, the assets, and two rules.">
+<link rel="canonical" href="https://the-offload.com/partners.html">
+<meta property="og:title" content="Partners"><meta property="og:description" content="The Offload affiliate program: forty percent on every sale, the kits, the assets, and two rules."><meta property="og:url" content="https://the-offload.com/partners.html">
+<link rel="icon" type="image/png" href="assets/possum-face.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Libre+Franklin:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* One typeface with a temperament (Fraunces, soft and a little wonky) for everything that is read as a headline, Libre Franklin for running text. Night band hero with the day as a sideways strip and the animals at the end of it. No rail, no capitals, no mono. The dashed magnet circle from the fridge sheets is the one recurring mark. */
+:root {
+  --paper: #F3EEE6; --paper-2: #E9E2D6; --ink: #221C24; --ink-2: #4A4150; --mute: #857A8C; --rule: #D4CBD2;
+  --night: #231A2B; --night-2: #2E2338; --cream: #F3EDE4; --dust: #8F8396;
+  --plum: #3D2B4A; --teal: #1F5F68; --forest: #2F4A3E; --blush: #DDB6AF; --sage: #A9BBA9; --blush-deep: #A8605A;
+  --display: 'Fraunces', 'Iowan Old Style', Georgia, serif; --body: 'Libre Franklin', system-ui, sans-serif;
+  --fs: 17px; --lh: 1.6; --measure: 62ch;
+}
+:root[data-size="large"] { --fs: 20px; --measure: 56ch; }
+:root[data-size="larger"] { --fs: 23px; --measure: 50ch; }
+:root[data-space="open"] { --lh: 1.95; }
+:root[data-images="off"] .pic, :root[data-images="off"] .animals { display: none; }
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--paper); scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--paper); color: var(--ink-2); font-family: var(--body); font-size: var(--fs); line-height: var(--lh); -webkit-font-smoothing: antialiased; }
+a { color: var(--ink); text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: 1px; text-decoration-color: var(--mute); }
+a:hover { text-decoration-color: var(--ink); }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--blush-deep); outline-offset: 3px; }
+button { font: inherit; cursor: pointer; }
+p { max-width: var(--measure); margin: 0 0 1em; }
+p b { font-weight: 500; color: var(--ink); }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; color: var(--ink); line-height: 1.08; margin: 0; text-wrap: balance; font-variation-settings: "SOFT" 60, "WONK" 1, "opsz" 72; }
+h2 { font-size: calc(var(--fs) * 2.4); margin-bottom: .5em; display: flex; align-items: center; gap: 14px; }
+h3 { font-size: calc(var(--fs) * 1.55); margin-bottom: .3em; }
+.btn { display: inline-block; background: var(--ink); color: var(--paper); text-decoration: none; font-weight: 500; font-size: 15px; padding: 12px 18px; border-radius: 999px; border: 0; }
+.btn:hover { background: #000; }
+.btn.light { background: var(--cream); color: var(--night); }
+
+/* progress line */
+.progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: transparent; z-index: 20; }
+.progress i { display: block; height: 100%; width: 0; background: var(--blush-deep); }
+.where { position: fixed; top: 10px; right: max(16px, env(safe-area-inset-right, 0px)); font-size: 12px; color: var(--mute); background: var(--paper); padding: 4px 8px; border-radius: 999px; z-index: 20; }
+
+/* masthead */
+.mast { max-width: 1180px; margin: 0 auto; padding: 22px 24px 14px; display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.wm { font-family: var(--display); font-size: 30px; color: var(--ink); text-decoration: none; font-variation-settings: "SOFT" 80, "WONK" 1, "opsz" 48; }
+.mast nav { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.mast nav a { font-size: 15px; text-decoration: none; color: var(--ink-2); }
+.mast nav a:hover { color: var(--ink); text-decoration: underline; }
+.rbtn { background: transparent; border: 1px solid var(--rule); border-radius: 999px; padding: 7px 12px; font-size: 14px; color: var(--ink-2); }
+.rbtn[aria-expanded="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.rpanel[hidden] { display: none; }
+.rpanel { max-width: 1180px; margin: 0 auto; padding: 0 24px 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+.rpanel button { background: transparent; border: 1px solid var(--rule); border-radius: 999px; padding: 7px 12px; font-size: 14px; color: var(--ink-2); }
+.rpanel button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* night */
+.night { background: var(--night); color: var(--cream); }
+.night-in { max-width: 1180px; margin: 0 auto; padding: 40px 24px 0; display: grid; grid-template-columns: minmax(0, 7fr) minmax(280px, 5fr); gap: 36px; align-items: start; }
+.night h1 { color: var(--cream); font-size: clamp(38px, 5.4vw, 66px); max-width: 13ch; margin-bottom: 18px; }
+.night .lede { color: #CFC3C9; font-size: calc(var(--fs) * 1.05); max-width: 46ch; }
+.night .lede b { color: var(--cream); }
+.router { background: var(--night-2); border-radius: 18px; padding: 20px 20px 18px; display: flex; flex-direction: column; gap: 12px; }
+.router .qt { font-family: var(--display); font-size: 20px; color: var(--cream); }
+.router .opts { display: flex; gap: 8px; flex-wrap: wrap; }
+.router button { background: transparent; color: var(--cream); border: 1px solid rgba(243,237,228,.25); border-radius: 999px; padding: 9px 14px; font-size: 15px; }
+.router button[aria-pressed="true"] { background: var(--cream); color: var(--night); border-color: var(--cream); }
+.answer { padding-top: 6px; font-size: calc(var(--fs) * 1.02); color: var(--cream); min-height: 2.4em; }
+.answer a { color: var(--blush); text-decoration-color: var(--blush); }
+.answer b { color: var(--cream); font-weight: 500; }
+
+/* the day strip */
+.strip-wrap { max-width: 1180px; margin: 0 auto; padding: 20px 0 0 24px; }
+.strip-lab { color: var(--dust); font-size: 14px; margin: 0 0 6px; }
+.strip { display: flex; align-items: flex-end; gap: 0; overflow-x: auto; scroll-snap-type: x proximity; padding-bottom: 0; }
+.strip::-webkit-scrollbar { height: 6px; } .strip::-webkit-scrollbar-thumb { background: rgba(243,237,228,.2); border-radius: 3px; }
+.hour { flex: 0 0 220px; scroll-snap-align: start; padding: 10px 18px 26px 0; margin-right: 18px; display: flex; flex-direction: column; gap: 8px; min-height: 230px; text-decoration: none; color: var(--cream); }
+.hour:hover .s { color: #FFFFFF; }
+.hour .t { font-family: var(--display); font-size: 58px; line-height: 1; color: var(--cream); font-variation-settings: "SOFT" 90, "WONK" 1, "opsz" 96; letter-spacing: -.01em; }
+.hour .t small { font-size: 22px; margin-left: 4px; color: var(--dust); }
+.hour .s { font-size: 15px; color: #CFC3C9; line-height: 1.4; }
+.hour .k { margin-top: auto; font-size: 14px; color: var(--blush); }
+.hour.live .k { color: var(--sage); font-weight: 500; }
+.animals { flex: 0 0 auto; align-self: flex-end; display: flex; align-items: flex-end; padding: 0 24px 0 28px; }
+.animals img { display: block; height: 250px; width: auto; }
+.animals img + img { height: 280px; margin-left: -32px; }
+
+/* body */
+.frame { max-width: 1180px; margin: 0 auto; padding: 0 24px 80px; }
+section { padding: 72px 0 0; }
+.kit { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 36px; align-items: center; padding: 34px 36px 34px 28px; background: var(--paper-2); border-radius: 26px; margin: 44px 0 16px; position: relative; }
+.kit.field { color: #E9E1D8; }
+.kit.field h3, .kit.field .for, .kit.field p b { color: #FFFFFF; }
+.kit.field p { color: #E9E1D8; } .kit.field .spec { color: rgba(255,255,255,.62); }
+.kit.field a:not(.btn) { color: #FFFFFF; text-decoration-color: rgba(255,255,255,.5); }
+.kit.field .btn { background: #FFFFFF; color: var(--ink); }
+.kit.teal { background: var(--teal); } .kit.plum { background: var(--plum); } .kit.forest { background: var(--forest); } .kit.plum2 { background: #2E2338; }
+.kit .pic.big { width: 240px; margin-top: -70px; margin-bottom: -10px; overflow: visible; }
+.kit .pic.big img { filter: drop-shadow(0 18px 24px rgba(0,0,0,.25)); }
+.pic { width: 200px; max-width: 100%; overflow: hidden; }
+.pic.big { overflow: visible; }
+.pic img { display: block; width: 100%; height: auto; transform: translateY(104%); transition: transform .9s cubic-bezier(.2,.9,.25,1.15); }
+.pic.in img { transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { .pic img { transform: none; transition: none; } }
+.pic.up { margin-top: -22px; }
+.spec { font-size: 14px; color: var(--mute); margin: 0 0 12px; }
+.kit .for { font-family: var(--display); font-size: calc(var(--fs) * 1.2); color: var(--ink); margin-bottom: 10px; font-variation-settings: "SOFT" 60, "WONK" 1, "opsz" 24; }
+.parts { list-style: none; margin: 0; padding: 0; max-width: 980px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.parts li { background: var(--paper-2); border-radius: 16px; padding: 18px 18px 16px; }
+.parts b { font-weight: 500; color: var(--ink); }
+.parts span { display: block; font-size: 15px; }
+.two { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 36px; align-items: start; }
+.list { background: var(--paper-2); border-radius: 18px; padding: 22px 22px 20px; }
+.list h3 { margin-bottom: 8px; }
+.erow { display: flex; }
+.erow input { flex: 1; min-width: 0; border: 1px solid var(--rule); border-right: 0; border-radius: 999px 0 0 999px; background: #fff; padding: 11px 14px; font: inherit; font-size: 15px; color: var(--ink); }
+.erow button { background: var(--ink); color: var(--paper); border: 0; border-radius: 0 999px 999px 0; padding: 11px 16px; font-size: 15px; }
+
+/* storeroom and research */
+.store-group { margin-bottom: 36px; } .store-group h3 { margin-bottom: 4px; } .store-group .why { font-size: 15px; color: var(--mute); margin-bottom: 14px; }
+.items { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.item { display: flex; flex-direction: column; gap: 6px; background: #fff; border: 1px solid var(--rule); border-radius: 14px; padding: 14px 16px; text-decoration: none; color: var(--ink-2); min-width: 0; }
+.item:hover { border-color: var(--ink); }
+.item b { font-weight: 500; color: var(--ink); font-size: calc(var(--fs) * .95); } .item span { font-size: 14px; line-height: 1.5; } .item .meta { font-size: 13px; color: var(--mute); }
+.disclosure { font-size: 14px; color: var(--mute); max-width: 64ch; }
+.part { background: var(--paper-2); border-radius: 16px; padding: 18px 20px; margin-bottom: 14px; max-width: 760px; } .part .n { display: none; } .part h3 { margin: 4px 0 6px; } .part p { font-size: 15px; margin: 0; }
+
+footer { margin-top: 24px; }
+.foot-in { max-width: 1180px; margin: 0 auto; padding: 22px 24px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 14px; color: var(--mute); }
+
+@media (max-width: 860px) {
+  .night-in { grid-template-columns: 1fr; }
+  .kit { grid-template-columns: 1fr !important; gap: 14px; padding: 24px 22px; margin-top: 60px; }
+  .pic { width: 150px; } .pic.up { margin-top: 0; } .kit .pic.big { width: 170px; margin-top: -70px; }
+  .two { grid-template-columns: 1fr; }
+  .hour { flex-basis: 190px; } .hour .t { font-size: 48px; }
+  .animals img { height: 190px; } .animals img + img { height: 215px; }
+}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><i></i></div><div class="where" id="where" aria-live="polite"></div>
+<header class="mast">
+  <a class="wm" href="index.html">Offload</a>
+  <nav><a href="index.html#kits">Kits</a> <a href="storeroom.html">Storeroom</a> <a href="research.html">Research</a> <a href="partners.html" style="text-decoration:underline">Partners</a> <a href="index.html#list">The list</a><button type="button" class="rbtn" id="rbtn" aria-expanded="false" aria-controls="rpanel">Reading</button></nav>
+</header>
+<div class="rpanel" id="rpanel" hidden>
+  <button type="button" data-pref="size:large">Larger text</button><button type="button" data-pref="size:larger">Largest text</button><button type="button" data-pref="space:open">More space between lines</button><button type="button" data-pref="images:off">Hide images</button>
+</div>
+
+<main class="frame">
+
+<section id="terms" data-name="The terms">
+  <h2>Partners</h2>
+  <p><b>We make printable kits that remove a specific executive function cost from a specific hour of the day, and we pay forty percent on every sale you send.</b> This page is the whole deck. There is no PDF to download, no call to book, and nothing to apply for beyond a link.</p>
+  <p>Forty percent of every sale, paid monthly through Lemon Squeezy, with a ninety-day cookie, so a reader who finds the Agency through you in October and buys in December is still yours. No minimum. The kits are twelve to twenty seven dollars, which means a single post that sends ten buyers earns you fifty to a hundred dollars, and a post that keeps sending them earns it every month.</p>
+  <a class="btn" href="LEMON-SQUEEZY-AFFILIATE-LINK">Get your link</a>
+  <p class="disclosure" style="margin-top: 16px">The affiliate program runs through Lemon Squeezy, which handles the tracking and the payment. You will see every sale in your own dashboard.</p>
+</section>
+
+<section id="who-for" data-name="Who this is for">
+  <h2>Who this is for</h2>
+  <p><b>People who already talk to the readers the kits are for, in their own voice, on their own channel.</b> A parent who writes about ADHD, a teacher with a classroom account, a homeschool blog, a newsletter for neurodivergent women, a podcast about motherhood that does not pretend it is easy.</p>
+  <p>Five thousand to seventy five thousand followers is the range where this works for both of us. Smaller and the math does not pay you. Larger and your readers expect something other than a twelve dollar printable.</p>
+</section>
+
+<section id="kits-p" data-name="The kits">
+  <h2>What you would be sending people to</h2>
+  <div class="kit"><div class="pic up"><img src="assets/agent-standing.png" alt=""></div><div><h3>The Book Detective Agency</h3><div class="for">Live. $12. For children 5 to 10 who read on their own and resist writing.</div><p>Every book is a case, every case gets a file. A sand timer, a card, a binder nobody corrects. The site has a research page with twelve linked studies, a page for teachers, and a storeroom, so a reader who wants to check it can.</p><a class="btn" href="https://thebookdetectiveagency.com">See the Agency</a></div></div>
+  <div class="kit"><div class="pic"><img src="assets/possum-standing.png" alt=""></div><div><h3>The Hard Day Kit</h3><div class="for">November. $12 to $19. For neurodivergent mothers, on the evening the plan already failed.</div><p>Cards by the hour on a phone, two sheets for the fridge, and a fairness clause the user writes. The Household Library, the AI layer, follows at $27 and is sold to kit owners first, which is where your forty percent on the second sale comes from.</p></div></div>
+</section>
+
+<section id="assets" data-name="The assets">
+  <h2>What you get to use</h2>
+  <p><b>The animals, the pins, and the sentences, all of them yours to post as they are.</b></p>
+  <ul class="parts">
+    <li><div><b>Five finished pins at 1000 by 1500</b><span>Three for the Agency, two for the Hard Day Kit, with descriptions and tags written. Add your link and post.</span></div></li>
+    <li><div><b>The animals on transparent backgrounds</b><span>The Agent in four poses and the possum in three, for your own layouts.</span></div></li>
+    <li><div><b>Six sentences that have already worked</b><span>"A writing game for kids who would rather read." "Every book is a case. Every case gets a file." "Reading and writing run on different clocks." "It is 5:40 and there is no plan." "Playing dead is a rule, not a failure." "Kits for the hours executive function does not cover."</span></div></li>
+    <li><div><b>A review copy of any kit</b><span>Write to hi@the-offload.com with your channel and we send the PDF, no conditions attached.</span></div></li>
+  </ul>
+  <p class="disclosure" style="margin-top: 18px">The asset folder link goes here once the store is active: [ASSET FOLDER LINK].</p>
+</section>
+
+<section id="rules-p" data-name="Two rules">
+  <h2>Two rules</h2>
+  <p><b>Say it is an affiliate link, every time, in the post itself.</b> The law requires it and the readers these kits are for notice when it is missing.</p>
+  <p><b>Do not promise outcomes.</b> The kits do not raise test scores, cure anything, or transform a household, and the studio will not say they do. "My kid filed four cases this week" is the kind of sentence that sells them, and it is true.</p>
+</section>
+
+</main>
+<footer><div class="foot-in"><span>Offload, a studio in Raleigh, North Carolina. hi@the-offload.com</span><span><a href="https://thebookdetectiveagency.com">The Book Detective Agency</a></span></div></footer>
+<script>
+(function () {
+  var root = document.documentElement;
+  function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  var prefs = { size: get('ol-size') || 'base', space: get('ol-space') || 'base', images: get('ol-images') || 'on' };
+  function apply() {
+    root.setAttribute('data-size', prefs.size); root.setAttribute('data-space', prefs.space); root.setAttribute('data-images', prefs.images);
+    document.querySelectorAll('[data-pref]').forEach(function (b) { var p = b.getAttribute('data-pref').split(':'); b.setAttribute('aria-pressed', prefs[p[0]] === p[1] ? 'true' : 'false'); });
+  }
+  document.querySelectorAll('[data-pref]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var p = b.getAttribute('data-pref').split(':');
+      if (p[0] === 'size') prefs.size = prefs.size === p[1] ? 'base' : p[1];
+      if (p[0] === 'space') prefs.space = prefs.space === 'open' ? 'base' : 'open';
+      if (p[0] === 'images') prefs.images = prefs.images === 'off' ? 'on' : 'off';
+      set('ol-size', prefs.size); set('ol-space', prefs.space); set('ol-images', prefs.images); apply();
+    });
+  });
+  apply();
+  var rb = document.getElementById('rbtn'), rp = document.getElementById('rpanel');
+  if (rb && rp) { rb.addEventListener('click', function () { var open = rb.getAttribute('aria-expanded') === 'true'; rb.setAttribute('aria-expanded', open ? 'false' : 'true'); rp.hidden = open; }); }
+  var secs = Array.prototype.slice.call(document.querySelectorAll('section[data-name]')), bar = document.querySelector('.progress i'), where = document.getElementById('where');
+  function mark() {
+    var h = document.documentElement, sc = h.scrollTop, max = h.scrollHeight - h.clientHeight;
+    if (bar) bar.style.width = (max > 0 ? Math.min(100, sc / max * 100) : 0) + '%';
+    if (where && secs.length) { var cur = 0; secs.forEach(function (s, i) { if (s.offsetTop - 140 <= sc) cur = i; }); where.textContent = secs[cur].getAttribute('data-name') + ', ' + (cur + 1) + ' of ' + secs.length; }
+  }
+  window.addEventListener('scroll', mark, { passive: true }); mark();
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.35 });
+    document.querySelectorAll('.pic').forEach(function (p) { io.observe(p); });
+  } else { document.querySelectorAll('.pic').forEach(function (p) { p.classList.add('in'); }); }
+  var form = document.querySelector('form.erow');
+  if (form) form.addEventListener('submit', function (e) { if (form.getAttribute('action').indexOf('BEEHIIV') === 0) { e.preventDefault(); form.querySelector('button').textContent = 'List opens soon'; } });
+  document.querySelectorAll('a.hour[data-hour]').forEach(function (a) { a.addEventListener('click', function () { var inp = document.getElementById('email'); if (inp) inp.placeholder = 'your@email.com, for the ' + a.getAttribute('data-hour') + ' card'; }); });
+  var q = { who: null, when: null }, ans = document.getElementById('answer');
+  function route() {
+    if (!ans) return;
+    if (!q.who || !q.when) { ans.textContent = 'Tap one from each row.'; return; }
+    var out;
+    if (q.who === 'child') out = '<b>The Book Detective Agency.</b> Ten minutes a day, a card, a timer, a binder. <a href="https://thebookdetectiveagency.com">Open the Agency site</a> or <a href="#kit-agency">read about it below</a>.';
+    else if (q.who === 'me' && q.when === 'evening') out = '<b>The Hard Day Kit, November.</b> For the evening the plan already failed. <a href="#kit-hardday">Read about it</a> or <a href="#list">get the date by email</a>.';
+    else if (q.who === 'student' || q.when === 'school') out = '<b>The Seminar Kit, 2027.</b> The reading week, the paper, the disclosure conversation. <a href="#list">Get the date by email</a>.';
+    else out = '<b>The Hard Day Kit</b> is the closest fit, November. <a href="#kit-hardday">Read about it</a>.';
+    ans.innerHTML = out;
+  }
+  document.querySelectorAll('[data-q]').forEach(function (b) { b.addEventListener('click', function () { var p = b.getAttribute('data-q').split(':'); q[p[0]] = p[1]; document.querySelectorAll('[data-q^="' + p[0] + ':"]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); route(); }); });
+  route();
+})();
+</script>
+</body>
+</html>
