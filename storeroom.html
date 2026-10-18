@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The storeroom</title>
+<meta name="description" content="Everything the Offload kits use that does not come in the PDF, with links, grouped by kit, plus the books behind the studio.">
+<link rel="canonical" href="https://the-offload.com/storeroom.html">
+<meta property="og:title" content="The storeroom">
+<meta property="og:description" content="Everything the Offload kits use that does not come in the PDF, with links, grouped by kit, plus the books behind the studio.">
+<meta property="og:url" content="https://the-offload.com/storeroom.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Libre+Franklin:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+/* Layout: a fixed contents rail on the left, one reading column on the right, everything left-aligned. The day strip in the hero is the single bold element. */
+:root {
+  --paper: #F5F1E9; --paper-2: #EDE8DC; --ink: #1C1A16; --ink-2: #3A3730; --stone: #8A7F70;
+  --rule: #D6CEBC; --navy: #304E72; --navy-2: #1E3350; --gold: #B89A3E; --pale: #E2E6EE;
+  --teal: #1F5F68; --plum: #3D2B4A; --forest: #2F4A3E;
+  --display: 'Cormorant Garamond', Georgia, serif; --body: 'Libre Franklin', system-ui, sans-serif; --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --fs: 17px; --lh: 1.65; --measure: 64ch;
+}
+:root[data-size="large"] { --fs: 20px; --measure: 58ch; }
+:root[data-size="larger"] { --fs: 23px; --measure: 52ch; }
+:root[data-space="open"] { --lh: 1.95; }
+:root[data-images="off"] .art, :root[data-images="off"] .animals { display: none; }
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--paper); scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--paper); color: var(--ink-2); font-family: var(--body); font-size: var(--fs); line-height: var(--lh); -webkit-font-smoothing: antialiased; }
+a { color: var(--navy); text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 1px; }
+a:hover { color: var(--navy-2); }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+button { font: inherit; cursor: pointer; }
+p { max-width: var(--measure); margin: 0 0 1em; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; color: var(--ink); line-height: 1.12; margin: 0; text-wrap: balance; }
+h2 { font-size: calc(var(--fs) * 2.1); margin-bottom: .6em; }
+h3 { font-size: calc(var(--fs) * 1.45); margin-bottom: .35em; }
+
+/* Masthead */
+.mast { border-bottom: 1px solid var(--rule); }
+.mast-in { max-width: 1240px; margin: 0 auto; padding: 18px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.wm { font-family: var(--display); font-size: 28px; font-weight: 500; color: var(--ink); text-decoration: none; }
+.wm:hover { color: var(--ink); }
+.mast-line { font-size: 14px; color: var(--stone); }
+.reading { display: flex; gap: 8px; flex-wrap: wrap; }
+.reading button { background: transparent; border: 1px solid var(--rule); border-radius: 4px; padding: 6px 11px; font-size: 13px; color: var(--ink-2); }
+.reading button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* Frame */
+.frame { max-width: 1240px; margin: 0 auto; padding: 0 28px 80px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 56px; }
+.rail { position: sticky; top: 24px; align-self: start; padding-top: 40px; }
+.rail .label { font-size: 13px; color: var(--stone); margin-bottom: 10px; }
+.rail ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.rail li a { display: block; padding: 7px 0 7px 12px; border-left: 2px solid var(--rule); color: var(--ink-2); text-decoration: none; font-size: 15px; }
+.rail li a:hover { border-left-color: var(--ink); color: var(--ink); }
+.rail li a.here { border-left-color: var(--navy); color: var(--navy); }
+.rail .also { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--stone); }
+.rail .also a { display: block; margin-top: 6px; }
+main { min-width: 0; padding-top: 40px; }
+section { padding: 0 0 64px; margin: 0 0 64px; border-bottom: 1px solid var(--rule); }
+section:last-of-type { border-bottom: 0; margin-bottom: 0; }
+
+/* Night band: the hero sits on midnight, full width, the two animals in it; the page turns to daylight after it. */
+.night { background: #231A2B; color: #F3EDE4; }
+.night-in { max-width: 1240px; margin: 0 auto; padding: 56px 28px 0; display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: 40px; align-items: end; }
+.night h1 { font-size: clamp(36px, 4.8vw, 60px); max-width: 15ch; margin-bottom: 22px; color: #F3EDE4; }
+.night .lede { font-size: calc(var(--fs) * 1.1); max-width: 52ch; color: #CFC3C9; margin-bottom: 44px; }
+.night .mono-line { font-family: var(--mono); font-size: 13px; color: #8F8396; margin-bottom: 18px; }
+.animals { display: flex; align-items: flex-end; justify-content: flex-end; gap: 0; min-width: 0; margin: 0; }
+.animals img { display: block; height: 340px; width: auto; max-width: 100%; }
+.animals img.possum { height: 380px; margin-left: -36px; }
+.animals figcaption { display: none; }
+.hero h1 { font-size: clamp(34px, 4.6vw, 56px); max-width: 16ch; margin-bottom: 22px; }
+.hero .lede { font-size: calc(var(--fs) * 1.12); max-width: 58ch; margin-bottom: 36px; }
+.day { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); margin-top: 8px; }
+.hour { padding: 16px 14px 18px 0; border-right: 1px solid var(--rule); display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.hour:last-child { border-right: 0; }
+.hour .t { font-family: var(--mono); font-size: 13px; color: var(--stone); font-variant-numeric: tabular-nums; }
+.hour .s { font-family: var(--display); font-size: calc(var(--fs) * 1.3); line-height: 1.2; color: var(--ink); }
+.hour .k { font-size: 14px; margin-top: auto; }
+.hour .k a { text-decoration-color: var(--rule); }
+.hour.live .k a { color: var(--teal); }
+.hour.soon .k { color: var(--stone); }
+.day-note { font-size: 14px; color: var(--stone); margin-top: 12px; }
+
+/* Kits ledger */
+.kit { display: grid; grid-template-columns: 150px 1fr 150px; gap: 28px; padding: 28px 0; border-top: 1px solid var(--rule); align-items: start; }
+.kit:last-of-type { border-bottom: 1px solid var(--rule); }
+.art { width: 150px; aspect-ratio: 4 / 5; border-radius: 3px; display: flex; align-items: center; justify-content: center; overflow: hidden; max-width: 100%; }
+.art img { width: 100%; height: 100%; object-fit: contain; display: block; padding: 8px; }
+.art.teal { background: var(--teal); } .art.plum { background: var(--plum); } .art.forest { background: var(--forest); }
+.art span { color: rgba(255,255,255,.7); font-family: var(--display); font-size: 20px; text-align: center; padding: 14px; line-height: 1.2; }
+.art img + span { display: none; }
+.kit .for { font-size: 15px; color: var(--stone); margin-bottom: 10px; }
+.kit p { margin-bottom: 10px; }
+.facts { font-size: 14px; display: flex; flex-direction: column; gap: 6px; padding-top: 4px; }
+.facts div { display: flex; flex-direction: column; border-top: 1px solid var(--rule); padding-top: 6px; }
+.facts b { font-weight: 500; color: var(--ink); }
+.facts .live b { color: var(--gold); }
+
+/* Router */
+.router { background: var(--paper-2); border-radius: 4px; padding: 26px 28px; max-width: 760px; }
+.router p { margin-bottom: 14px; }
+.q { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+.q .qt { font-weight: 500; color: var(--ink); }
+.q .opts { display: flex; gap: 8px; flex-wrap: wrap; }
+.q button { background: #fff; border: 1px solid var(--rule); border-radius: 4px; padding: 9px 14px; font-size: 15px; color: var(--ink-2); }
+.q button[aria-pressed="true"] { background: var(--navy); color: #fff; border-color: var(--navy); }
+.answer { border-top: 1px solid var(--rule); padding-top: 16px; font-size: calc(var(--fs) * 1.05); color: var(--ink); min-height: 2.5em; }
+
+/* How */
+.parts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px 36px; max-width: 900px; }
+.part { border-top: 1px solid var(--rule); padding-top: 12px; }
+.part .n { font-family: var(--mono); font-size: 13px; color: var(--stone); }
+.part h3 { margin: 4px 0 6px; }
+.part p { font-size: 15px; margin: 0; }
+
+/* Storeroom */
+.store-group { margin-bottom: 36px; }
+.store-group h3 { margin-bottom: 4px; }
+.store-group .why { font-size: 15px; color: var(--stone); margin-bottom: 14px; }
+.items { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.item { display: flex; flex-direction: column; gap: 6px; background: #fff; border: 1px solid var(--rule); border-radius: 4px; padding: 14px 16px; text-decoration: none; color: var(--ink-2); min-width: 0; }
+.item:hover { border-color: var(--navy); color: var(--ink-2); }
+.item b { font-weight: 500; color: var(--ink); font-size: calc(var(--fs) * .95); }
+.item span { font-size: 14px; line-height: 1.5; }
+.item .meta { font-size: 13px; color: var(--stone); }
+.disclosure { font-size: 14px; color: var(--stone); max-width: 64ch; }
+
+/* Who, list */
+.who { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 40px; align-items: start; }
+.list { background: var(--paper-2); border-radius: 4px; padding: 22px 24px; }
+.list p { font-size: 15px; margin-bottom: 14px; }
+.erow { display: flex; }
+.erow input { flex: 1; min-width: 0; border: 1px solid var(--rule); border-right: 0; border-radius: 4px 0 0 4px; background: #fff; padding: 10px 12px; font: inherit; font-size: 15px; color: var(--ink); }
+.erow button { background: var(--navy); color: #fff; border: 0; border-radius: 0 4px 4px 0; padding: 10px 16px; font-size: 15px; }
+.erow button:hover { background: var(--navy-2); }
+footer { border-top: 1px solid var(--rule); }
+.foot-in { max-width: 1240px; margin: 0 auto; padding: 24px 28px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 14px; color: var(--stone); }
+
+@media (max-width: 900px) {
+  .night-in { grid-template-columns: 1fr; padding-top: 40px; }
+  .animals { justify-content: flex-start; }
+  .animals img { height: 200px; }
+  .animals img.possum { height: 220px; margin-left: -24px; }
+  .frame { grid-template-columns: 1fr; gap: 0; }
+  .rail { position: static; padding-top: 28px; }
+  .rail ol { flex-direction: row; flex-wrap: wrap; gap: 6px 14px; }
+  .rail li a { border-left: 0; padding: 4px 0; text-decoration: underline; }
+  .rail .also { display: none; }
+  main { padding-top: 24px; }
+  .kit { grid-template-columns: 1fr; gap: 14px; }
+  .art { width: 120px; }
+  .who { grid-template-columns: 1fr; }
+  .hour { border-right: 0; border-bottom: 1px solid var(--rule); padding: 14px 0; }
+  .hour:last-child { border-bottom: 0; }
+}
+@media (max-width: 560px) { .mast-in, .frame, .foot-in { padding-left: 18px; padding-right: 18px; } .hero h1 { font-size: 34px; } }
+</style>
+</head>
+<body>
+<header class="mast"><div class="mast-in">
+  <div><a class="wm" href="index.html">Offload</a><div class="mast-line">A studio in Raleigh. Kits for the hours executive function does not cover.</div></div>
+  <div class="reading" aria-label="Reading options">
+    <button type="button" data-pref="size:large">Larger text</button>
+    <button type="button" data-pref="size:larger">Largest text</button>
+    <button type="button" data-pref="space:open">More space between lines</button>
+    <button type="button" data-pref="images:off">Hide images</button>
+  </div>
+</div></header>
+
+<div class="frame">
+  <nav class="rail" aria-label="Contents"><div class="label">On this page</div><ol><li><a href="#agency">The Agency</a></li><li><a href="#hardday">The Hard Day Kit</a></li><li><a href="#books">The books</a></li></ol><div class="also">Also<br><a href="index.html">Home</a><a href="research.html">The research</a><a href="https://thebookdetectiveagency.com">The Book Detective Agency</a></div></nav>
+  <main>
+
+<section id="agency">
+  <h2>The storeroom</h2>
+  <p class="disclosure">These are Amazon affiliate links. If you buy through them the studio earns a small commission at no cost to you. Every item was chosen for a rating of 4.6 or higher with a large number of reviews, checked in October 2026. Anything equivalent from your own shelves works the same.</p>
+  <div class="store-group" style="margin-top: 28px">
+    <h3>For The Book Detective Agency</h3>
+    <div class="why">The four things the kit asks you to supply, then the printing, then the desk. The books by the eight authors on the letters page are on <a href="https://thebookdetectiveagency.com/supplies.html">the Agency's own storeroom</a>.</div>
+    <div class="items">
+<a class="item" href="https://www.amazon.com/dp/B00V5ZITES?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>Sand timer, 10 minute</b><span>The whole game runs on it. Glass, no buttons, no beeping.</span></a><a class="item" href="https://www.amazon.com/dp/B00C31AG9Y?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>1 inch binder</b><span>With a clear front pocket for the badge stack. One per detective.</span></a><a class="item" href="https://www.amazon.com/dp/B01GIJLSGG?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>Three hole punch</b><span>The detective punches their own files.</span></a><a class="item" href="https://www.amazon.com/dp/B088KBP4TQ?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>Letter paper and envelopes</b><span>For the author letters.</span></a><a class="item" href="https://www.amazon.com/dp/B003A2I5T8?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>White cardstock, 65 lb</b><span>For the prompt cards.</span></a><a class="item" href="https://www.amazon.com/dp/B00006IC8F?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>Sheet protectors, heavyweight</b><span>For the badge page and the rules page.</span></a><a class="item" href="https://www.amazon.com/dp/B000QE2H6A?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>Ticonderoga pencils</b><span>Soft lead, erases clean.</span></a><a class="item" href="https://www.amazon.com/dp/B000YJKP70?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>Fine line washable markers</b><span>For the evidence drawing on every case file.</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="hardday">
+  <div class="store-group">
+    <h3>For The Hard Day Kit</h3>
+    <div class="why">The kit is a phone page and two sheets for the fridge. These are the things the cards assume are in the house.</div>
+    <div class="items">
+<a class="item" href="https://www.amazon.com/dp/B0D62SNVLV?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>Magnetic weekly whiteboard for the fridge</b><span>Where the Household Sheet and the week live. The house reads it so you do not have to hold it.</span></a><a class="item" href="https://www.amazon.com/dp/B0CCNX29CG?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>Magnetic clips, 12</b><span>For the rules page and the bedtime card on the fridge door.</span></a><a class="item" href="https://www.amazon.com/dp/B000J0B2YY?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>Dry erase markers, fine</b><span>For the whiteboard. Fine tip, so the week fits.</span></a><a class="item" href="https://www.amazon.com/dp/B0049C2S32?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>Half sheet pan</b><span>The one-pan dinner the 5:40 card assumes.</span></a><a class="item" href="https://www.amazon.com/dp/B07HRRV96C?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>Glass containers with lids, 10</b><span>For the batch that happens on a good day and feeds a hard one.</span></a><a class="item" href="https://www.amazon.com/dp/B0C29B22V3?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>Amber night light, 2</b><span>The 7:15 card says lower the lights. This is the light to lower to.</span></a><a class="item" href="https://www.amazon.com/dp/B00006IC8F?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>Sheet protectors, heavyweight</b><span>For the Household Sheet, so it survives the fridge.</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="books">
+  <div class="store-group">
+    <h3>The books behind the studio</h3>
+    <div class="why">Four books the kits owe something to, and one on how reading works. The library has every one.</div>
+    <div class="items">
+<a class="item" href="https://www.amazon.com/dp/1668053164?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>The ADHD Field Guide for Adults</b><span>Cate Osborn and Erik Gude, 2026. Organized by situation, candid, and the model for the Hard Day Kit’s cards.</span></a><a class="item" href="https://www.amazon.com/dp/B09Q9WXPGV?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>How to Keep House While Drowning</b><span>KC Davis. Care tasks are morally neutral. The reset sheet comes from here.</span></a><a class="item" href="https://www.amazon.com/dp/0399178740?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>ADHD 2.0</b><span>Hallowell and Ratey. The mechanism paragraphs on the cards lean on it.</span></a><a class="item" href="https://www.amazon.com/dp/B0C7LH7H2J?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>Dirty Laundry</b><span>Richard Pink and Roxanne Emery. On the shame, which the kits are built to leave out.</span></a><a class="item" href="https://www.amazon.com/dp/1119301378?tag=[YOUR-TAG]" rel="sponsored noopener" target="_blank"><b>The Reading Mind</b><span>Daniel Willingham. How reading works in the head, for the grown-up who wants to know why the Agency’s cards do what they do.</span></a>
+    </div>
+  </div>
+  <p class="disclosure">Prices and availability change. If a link breaks, the item name is enough to find an equivalent.</p>
+</section>
+
+  </main>
+</div>
+<footer><div class="foot-in"><span>Offload, Raleigh, North Carolina. hi@the-offload.com</span><span><a href="https://thebookdetectiveagency.com">The Book Detective Agency</a></span></div></footer>
+<script>
+(function () {
+  var root = document.documentElement;
+  function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  var prefs = { size: get('ol-size') || 'base', space: get('ol-space') || 'base', images: get('ol-images') || 'on' };
+  function apply() {
+    root.setAttribute('data-size', prefs.size); root.setAttribute('data-space', prefs.space); root.setAttribute('data-images', prefs.images);
+    document.querySelectorAll('[data-pref]').forEach(function (b) {
+      var p = b.getAttribute('data-pref').split(':');
+      b.setAttribute('aria-pressed', prefs[p[0]] === p[1] ? 'true' : 'false');
+    });
+  }
+  document.querySelectorAll('[data-pref]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var p = b.getAttribute('data-pref').split(':');
+      if (p[0] === 'size') prefs.size = prefs.size === p[1] ? 'base' : p[1];
+      if (p[0] === 'space') prefs.space = prefs.space === 'open' ? 'base' : 'open';
+      if (p[0] === 'images') prefs.images = prefs.images === 'off' ? 'on' : 'off';
+      set('ol-size', prefs.size); set('ol-space', prefs.space); set('ol-images', prefs.images); apply();
+    });
+  });
+  apply();
+  var links = document.querySelectorAll('.rail a[href^="#"]'), secs = [];
+  links.forEach(function (a) { var s = document.querySelector(a.getAttribute('href')); if (s) secs.push([s, a]); });
+  function mark() {
+    var y = window.scrollY + 120, cur = null;
+    secs.forEach(function (p) { if (p[0].offsetTop <= y) cur = p[1]; });
+    links.forEach(function (a) { a.classList.toggle('here', a === cur); });
+  }
+  if (secs.length) { window.addEventListener('scroll', mark, { passive: true }); mark(); }
+  var form = document.querySelector('form.erow');
+  if (form) form.addEventListener('submit', function (e) { if (form.getAttribute('action').indexOf('BEEHIIV') === 0) { e.preventDefault(); form.querySelector('button').textContent = 'List opens soon'; } });
+  var q = { who: null, when: null }, ans = document.getElementById('answer');
+  function route() {
+    if (!ans) return;
+    if (!q.who || !q.when) { ans.textContent = 'Answer both and the kit appears here.'; return; }
+    var out;
+    if (q.who === 'child') out = 'The Book Detective Agency. Ten minutes a day, a card, a timer, a binder. For any child who reads on their own and resists writing. <a href="https://thebookdetectiveagency.com">Open the Agency site.</a>';
+    else if (q.who === 'me' && q.when === 'evening') out = 'The Hard Day Kit, November. For the evening when the plan has already failed. <a href="#list">Get the date by email.</a>';
+    else if (q.who === 'me' && q.when === 'school') out = 'The Seminar Kit, 2027. For the reading week, the paper, and the disclosure conversation. <a href="#list">Get the date by email.</a>';
+    else out = 'The Hard Day Kit is the closest fit and ships in November. <a href="#list">Get the date by email.</a>';
+    ans.innerHTML = out;
+  }
+  document.querySelectorAll('[data-q]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var p = b.getAttribute('data-q').split(':'); q[p[0]] = p[1];
+      document.querySelectorAll('[data-q^="' + p[0] + ':"]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      route();
+    });
+  });
+  route();
+})();
+</script>
+</body>
+</html>

@@ -3,163 +3,347 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Offload, a studio making kits for the parts of the day executive function does not cover</title>
-<meta name="description" content="Offload is a small studio in Raleigh making printable kits for neurodivergent households, children, and students. Every kit has a rule you write, a rule we follow, and a research page.">
+<title>Offload</title>
+<meta name="description" content="Offload is a studio in Raleigh making printable kits for the hours executive function does not cover: for neurodivergent households, children who read ahead, and students.">
 <link rel="canonical" href="https://the-offload.com/">
 <meta property="og:title" content="Offload">
-<meta property="og:description" content="Kits for the parts of the day that executive function does not cover.">
+<meta property="og:description" content="Offload is a studio in Raleigh making printable kits for the hours executive function does not cover: for neurodivergent households, children who read ahead, and students.">
 <meta property="og:url" content="https://the-offload.com/">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Libre+Franklin:wght@300;400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Libre+Franklin:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
-:root { --cream:#F5F1E9; --ink:#1C1A16; --graph:#3A3730; --stone:#9A8E7E; --vellum:#EDE8DC; --pale:#E2E6EE; --navy:#304E72; --dnavy:#1E3350; --gold:#B89A3E; --br:#C2CAD8; }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { background: var(--cream); scroll-behavior: smooth; }
-body { background: var(--cream); font-family: 'Libre Franklin', sans-serif; font-size: 15px; line-height: 1.65; color: var(--graph); -webkit-font-smoothing: antialiased; }
-.w { max-width: 760px; margin: 0 auto; padding: 0 32px; }
-a { color: var(--navy); }
-a:hover { color: var(--dnavy); }
-.mono { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--stone); }
-header { padding: 40px 0 0; }
-.hrow { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap; }
-.wm { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: var(--ink); text-decoration: none; }
-nav { display: flex; gap: 22px; }
-nav a { font-size: 13px; text-decoration: none; color: var(--graph); }
-nav a:hover { color: var(--ink); }
-.hero { padding: 96px 0 72px; border-bottom: 1px solid var(--br); }
-.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 5.2vw, 54px); font-weight: 400; line-height: 1.12; color: var(--ink); letter-spacing: -.01em; margin-bottom: 26px; max-width: 640px; text-wrap: balance; }
-.hero p { font-size: 17px; font-weight: 300; max-width: 560px; margin-bottom: 0; text-wrap: pretty; }
-section { padding: 64px 0; border-bottom: 1px solid var(--br); }
-section:last-of-type { border-bottom: none; }
-h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 400; color: var(--ink); margin: 10px 0 28px; line-height: 1.15; }
-.kit { display: grid; grid-template-columns: 120px 1fr; gap: 28px; padding: 28px 0; border-top: 1px solid var(--br); align-items: start; }
-.kit:last-child { border-bottom: 1px solid var(--br); }
-.kit-art { width: 120px; height: 150px; border-radius: 3px; background: var(--vellum); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.kit-art img { width: 100%; height: 100%; object-fit: contain; display: block; padding: 8px; }
-.kit-art img + span { display: none; }
-.kit-art.teal { background: #1F5F68; }
-.kit-art.plum { background: #3D2B4A; }
-.kit-art.forest { background: #2F4A3E; }
-.kit-art span { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5); text-align: center; padding: 10px; }
-.kit h3 { font-family: 'Cormorant Garamond', serif; font-size: 25px; font-weight: 500; color: var(--ink); line-height: 1.15; margin-bottom: 4px; }
-.kit .for { font-size: 13px; color: var(--stone); margin-bottom: 10px; }
-.kit p { font-size: 14.5px; font-weight: 300; margin-bottom: 12px; max-width: 520px; }
-.status { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; padding: 4px 9px; border-radius: 2px; margin-right: 10px; }
-.status.live { background: var(--gold); color: var(--cream); }
-.status.soon { background: var(--pale); color: var(--navy); }
-.kit a.go { font-size: 13.5px; font-weight: 500; text-decoration: none; }
-.how p { max-width: 600px; font-weight: 300; margin-bottom: 16px; }
-.how b { font-weight: 500; color: var(--ink); }
-.rules { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 36px; margin-top: 8px; }
-.rule { padding-top: 14px; border-top: 1px solid var(--br); }
-.rule .n { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--navy); margin-bottom: 6px; }
-.rule .t { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
-.rule .d { font-size: 13.5px; font-weight: 300; }
-.who { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; }
-.who p { font-weight: 300; font-size: 14.5px; margin-bottom: 12px; }
-.sub { background: var(--vellum); border-radius: 3px; padding: 26px 28px; }
-.sub .mono { color: var(--navy); margin-bottom: 10px; display: block; }
-.sub p { font-size: 13.5px; font-weight: 300; margin-bottom: 16px; }
+/* Layout: a fixed contents rail on the left, one reading column on the right, everything left-aligned. The day strip in the hero is the single bold element. */
+:root {
+  --paper: #F5F1E9; --paper-2: #EDE8DC; --ink: #1C1A16; --ink-2: #3A3730; --stone: #8A7F70;
+  --rule: #D6CEBC; --navy: #304E72; --navy-2: #1E3350; --gold: #B89A3E; --pale: #E2E6EE;
+  --teal: #1F5F68; --plum: #3D2B4A; --forest: #2F4A3E;
+  --display: 'Cormorant Garamond', Georgia, serif; --body: 'Libre Franklin', system-ui, sans-serif; --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --fs: 17px; --lh: 1.65; --measure: 64ch;
+}
+:root[data-size="large"] { --fs: 20px; --measure: 58ch; }
+:root[data-size="larger"] { --fs: 23px; --measure: 52ch; }
+:root[data-space="open"] { --lh: 1.95; }
+:root[data-images="off"] .art, :root[data-images="off"] .animals { display: none; }
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--paper); scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--paper); color: var(--ink-2); font-family: var(--body); font-size: var(--fs); line-height: var(--lh); -webkit-font-smoothing: antialiased; }
+a { color: var(--navy); text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 1px; }
+a:hover { color: var(--navy-2); }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+button { font: inherit; cursor: pointer; }
+p { max-width: var(--measure); margin: 0 0 1em; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; color: var(--ink); line-height: 1.12; margin: 0; text-wrap: balance; }
+h2 { font-size: calc(var(--fs) * 2.1); margin-bottom: .6em; }
+h3 { font-size: calc(var(--fs) * 1.45); margin-bottom: .35em; }
+
+/* Masthead */
+.mast { border-bottom: 1px solid var(--rule); }
+.mast-in { max-width: 1240px; margin: 0 auto; padding: 18px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.wm { font-family: var(--display); font-size: 28px; font-weight: 500; color: var(--ink); text-decoration: none; }
+.wm:hover { color: var(--ink); }
+.mast-line { font-size: 14px; color: var(--stone); }
+.reading { display: flex; gap: 8px; flex-wrap: wrap; }
+.reading button { background: transparent; border: 1px solid var(--rule); border-radius: 4px; padding: 6px 11px; font-size: 13px; color: var(--ink-2); }
+.reading button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* Frame */
+.frame { max-width: 1240px; margin: 0 auto; padding: 0 28px 80px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 56px; }
+.rail { position: sticky; top: 24px; align-self: start; padding-top: 40px; }
+.rail .label { font-size: 13px; color: var(--stone); margin-bottom: 10px; }
+.rail ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.rail li a { display: block; padding: 7px 0 7px 12px; border-left: 2px solid var(--rule); color: var(--ink-2); text-decoration: none; font-size: 15px; }
+.rail li a:hover { border-left-color: var(--ink); color: var(--ink); }
+.rail li a.here { border-left-color: var(--navy); color: var(--navy); }
+.rail .also { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--stone); }
+.rail .also a { display: block; margin-top: 6px; }
+main { min-width: 0; padding-top: 40px; }
+section { padding: 0 0 64px; margin: 0 0 64px; border-bottom: 1px solid var(--rule); }
+section:last-of-type { border-bottom: 0; margin-bottom: 0; }
+
+/* Night band: the hero sits on midnight, full width, the two animals in it; the page turns to daylight after it. */
+.night { background: #231A2B; color: #F3EDE4; }
+.night-in { max-width: 1240px; margin: 0 auto; padding: 56px 28px 0; display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: 40px; align-items: end; }
+.night h1 { font-size: clamp(36px, 4.8vw, 60px); max-width: 15ch; margin-bottom: 22px; color: #F3EDE4; }
+.night .lede { font-size: calc(var(--fs) * 1.1); max-width: 52ch; color: #CFC3C9; margin-bottom: 44px; }
+.night .mono-line { font-family: var(--mono); font-size: 13px; color: #8F8396; margin-bottom: 18px; }
+.animals { display: flex; align-items: flex-end; justify-content: flex-end; gap: 0; min-width: 0; margin: 0; }
+.animals img { display: block; height: 340px; width: auto; max-width: 100%; }
+.animals img.possum { height: 380px; margin-left: -36px; }
+.animals figcaption { display: none; }
+.hero h1 { font-size: clamp(34px, 4.6vw, 56px); max-width: 16ch; margin-bottom: 22px; }
+.hero .lede { font-size: calc(var(--fs) * 1.12); max-width: 58ch; margin-bottom: 36px; }
+.day { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); margin-top: 8px; }
+.hour { padding: 16px 14px 18px 0; border-right: 1px solid var(--rule); display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.hour:last-child { border-right: 0; }
+.hour .t { font-family: var(--mono); font-size: 13px; color: var(--stone); font-variant-numeric: tabular-nums; }
+.hour .s { font-family: var(--display); font-size: calc(var(--fs) * 1.3); line-height: 1.2; color: var(--ink); }
+.hour .k { font-size: 14px; margin-top: auto; }
+.hour .k a { text-decoration-color: var(--rule); }
+.hour.live .k a { color: var(--teal); }
+.hour.soon .k { color: var(--stone); }
+.day-note { font-size: 14px; color: var(--stone); margin-top: 12px; }
+
+/* Kits ledger */
+.kit { display: grid; grid-template-columns: 150px 1fr 150px; gap: 28px; padding: 28px 0; border-top: 1px solid var(--rule); align-items: start; }
+.kit:last-of-type { border-bottom: 1px solid var(--rule); }
+.art { width: 150px; aspect-ratio: 4 / 5; border-radius: 3px; display: flex; align-items: center; justify-content: center; overflow: hidden; max-width: 100%; }
+.art img { width: 100%; height: 100%; object-fit: contain; display: block; padding: 8px; }
+.art.teal { background: var(--teal); } .art.plum { background: var(--plum); } .art.forest { background: var(--forest); }
+.art span { color: rgba(255,255,255,.7); font-family: var(--display); font-size: 20px; text-align: center; padding: 14px; line-height: 1.2; }
+.art img + span { display: none; }
+.kit .for { font-size: 15px; color: var(--stone); margin-bottom: 10px; }
+.kit p { margin-bottom: 10px; }
+.facts { font-size: 14px; display: flex; flex-direction: column; gap: 6px; padding-top: 4px; }
+.facts div { display: flex; flex-direction: column; border-top: 1px solid var(--rule); padding-top: 6px; }
+.facts b { font-weight: 500; color: var(--ink); }
+.facts .live b { color: var(--gold); }
+
+/* Router */
+.router { background: var(--paper-2); border-radius: 4px; padding: 26px 28px; max-width: 760px; }
+.router p { margin-bottom: 14px; }
+.q { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+.q .qt { font-weight: 500; color: var(--ink); }
+.q .opts { display: flex; gap: 8px; flex-wrap: wrap; }
+.q button { background: #fff; border: 1px solid var(--rule); border-radius: 4px; padding: 9px 14px; font-size: 15px; color: var(--ink-2); }
+.q button[aria-pressed="true"] { background: var(--navy); color: #fff; border-color: var(--navy); }
+.answer { border-top: 1px solid var(--rule); padding-top: 16px; font-size: calc(var(--fs) * 1.05); color: var(--ink); min-height: 2.5em; }
+
+/* How */
+.parts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px 36px; max-width: 900px; }
+.part { border-top: 1px solid var(--rule); padding-top: 12px; }
+.part .n { font-family: var(--mono); font-size: 13px; color: var(--stone); }
+.part h3 { margin: 4px 0 6px; }
+.part p { font-size: 15px; margin: 0; }
+
+/* Storeroom */
+.store-group { margin-bottom: 36px; }
+.store-group h3 { margin-bottom: 4px; }
+.store-group .why { font-size: 15px; color: var(--stone); margin-bottom: 14px; }
+.items { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.item { display: flex; flex-direction: column; gap: 6px; background: #fff; border: 1px solid var(--rule); border-radius: 4px; padding: 14px 16px; text-decoration: none; color: var(--ink-2); min-width: 0; }
+.item:hover { border-color: var(--navy); color: var(--ink-2); }
+.item b { font-weight: 500; color: var(--ink); font-size: calc(var(--fs) * .95); }
+.item span { font-size: 14px; line-height: 1.5; }
+.item .meta { font-size: 13px; color: var(--stone); }
+.disclosure { font-size: 14px; color: var(--stone); max-width: 64ch; }
+
+/* Who, list */
+.who { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 40px; align-items: start; }
+.list { background: var(--paper-2); border-radius: 4px; padding: 22px 24px; }
+.list p { font-size: 15px; margin-bottom: 14px; }
 .erow { display: flex; }
-.erow input { flex: 1; border: 1px solid var(--br); border-right: none; border-radius: 2px 0 0 2px; background: #fff; padding: 10px 12px; font: inherit; font-size: 13px; color: var(--ink); }
-.erow button { background: var(--navy); color: var(--cream); border: none; border-radius: 0 2px 2px 0; padding: 10px 16px; font: inherit; font-size: 12.5px; font-weight: 500; cursor: pointer; }
-.erow button:hover { background: var(--dnavy); }
-footer { padding: 36px 0 48px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-footer, footer a { font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--stone); text-decoration: none; }
-@media (max-width: 640px) { .w { padding: 0 20px; } .hero { padding: 64px 0 48px; } .kit { grid-template-columns: 1fr; gap: 14px; } .kit-art { width: 96px; height: 120px; } .rules, .who { grid-template-columns: 1fr; } }
+.erow input { flex: 1; min-width: 0; border: 1px solid var(--rule); border-right: 0; border-radius: 4px 0 0 4px; background: #fff; padding: 10px 12px; font: inherit; font-size: 15px; color: var(--ink); }
+.erow button { background: var(--navy); color: #fff; border: 0; border-radius: 0 4px 4px 0; padding: 10px 16px; font-size: 15px; }
+.erow button:hover { background: var(--navy-2); }
+footer { border-top: 1px solid var(--rule); }
+.foot-in { max-width: 1240px; margin: 0 auto; padding: 24px 28px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 14px; color: var(--stone); }
+
+@media (max-width: 900px) {
+  .night-in { grid-template-columns: 1fr; padding-top: 40px; }
+  .animals { justify-content: flex-start; }
+  .animals img { height: 200px; }
+  .animals img.possum { height: 220px; margin-left: -24px; }
+  .frame { grid-template-columns: 1fr; gap: 0; }
+  .rail { position: static; padding-top: 28px; }
+  .rail ol { flex-direction: row; flex-wrap: wrap; gap: 6px 14px; }
+  .rail li a { border-left: 0; padding: 4px 0; text-decoration: underline; }
+  .rail .also { display: none; }
+  main { padding-top: 24px; }
+  .kit { grid-template-columns: 1fr; gap: 14px; }
+  .art { width: 120px; }
+  .who { grid-template-columns: 1fr; }
+  .hour { border-right: 0; border-bottom: 1px solid var(--rule); padding: 14px 0; }
+  .hour:last-child { border-bottom: 0; }
+}
+@media (max-width: 560px) { .mast-in, .frame, .foot-in { padding-left: 18px; padding-right: 18px; } .hero h1 { font-size: 34px; } }
 </style>
 </head>
 <body>
-
-<header><div class="w hrow">
-  <a class="wm" href="#">Offload</a>
-  <nav><a href="#kits">Kits</a><a href="#how">How we make them</a><a href="#who">Who</a><a href="#list">List</a></nav>
+<header class="mast"><div class="mast-in">
+  <div><a class="wm" href="index.html">Offload</a><div class="mast-line">A studio in Raleigh. Kits for the hours executive function does not cover.</div></div>
+  <div class="reading" aria-label="Reading options">
+    <button type="button" data-pref="size:large">Larger text</button>
+    <button type="button" data-pref="size:larger">Largest text</button>
+    <button type="button" data-pref="space:open">More space between lines</button>
+    <button type="button" data-pref="images:off">Hide images</button>
+  </div>
 </div></header>
-
-<section class="hero"><div class="w">
-  <div class="mono">A studio in Raleigh, North Carolina</div>
-  <h1 style="margin-top: 16px">Kits for the parts of the day that executive function does not cover.</h1>
-  <p>Printable, twelve to twenty pages, twelve to nineteen dollars. Each one takes a single hour of difficulty, the writing session, the hard evening, the seminar week, and removes the deciding, the starting, and the stopping from it. Nothing depends on an app, a subscription, or a device.</p>
+<section class="night" id="hours"><div class="night-in">
+  <div>
+    <div class="mono-line">Raleigh, North Carolina. After dark.</div>
+    <h1>Kits for the hours executive function does not cover.</h1>
+    <p class="lede">Each kit takes one hour of the day that goes wrong and removes the deciding, the starting, and the stopping from it. Twelve to twenty printed pages, a few things from the junk drawer, and an animal that also works nights. Nothing depends on an app, a subscription, or a device.</p>
+  </div>
+  <figure class="animals"><img src="assets/agent-standing.png" alt="The Agent, a raccoon detective in a deerstalker holding a magnifying lens"><img class="possum" src="assets/possum-standing.png" alt="A possum standing upright, four babies on her back, reading a sheet of paper"><figcaption>The Agent and the possum</figcaption></figure>
 </div></section>
+<div class="frame">
+  <nav class="rail" aria-label="Contents"><div class="label">On this page</div><ol><li><a href="#when">The hours</a></li><li><a href="#kits">The kits</a></li><li><a href="#which">Which kit</a></li><li><a href="#animals">The animals</a></li><li><a href="#how">How a kit is made</a></li><li><a href="#storeroom">The storeroom</a></li><li><a href="#who">Who</a></li><li><a href="#list">The list</a></li></ol><div class="also">Also<br><a href="storeroom.html">The storeroom</a><a href="research.html">The research</a><a href="https://thebookdetectiveagency.com">The Book Detective Agency</a></div></nav>
+  <main>
 
-<section id="kits"><div class="w">
-  <div class="mono">What the studio makes</div>
+<section class="hero" id="when">
+  <h2>The hours</h2>
+  <p>Each hour below is one the studio has built a kit for, or is building one for. The hour is whichever one is yours.</p>
+  <div class="day">
+    <div class="hour live"><div class="t">7:40 pm</div><div class="s">A child who reads anything and will not write a word.</div><div class="k"><a href="https://thebookdetectiveagency.com">The Book Detective Agency</a></div></div>
+    <div class="hour soon"><div class="t">5:40 pm</div><div class="s">No plan for dinner, no capacity to make one.</div><div class="k">The Hard Day Kit, November</div></div>
+    <div class="hour soon"><div class="t">7:15 pm</div><div class="s">Everyone is yelling, including you.</div><div class="k">The Hard Day Kit, November</div></div>
+    <div class="hour soon"><div class="t">11:10 pm</div><div class="s">The first hour with nobody in it, spent.</div><div class="k">The Hard Day Kit, November</div></div>
+    <div class="hour soon"><div class="t">Wednesday</div><div class="s">Three readings due, one started, the seminar at two.</div><div class="k">The Seminar Kit, 2027</div></div>
+  </div>
+  <div class="day-note">Times are examples.</div>
+</section>
+
+<section id="kits">
   <h2>The kits</h2>
-
+  <p>In order of release. One is live. Two are in design, and the dates are the ones the studio is holding itself to.</p>
   <div class="kit">
-    <div class="kit-art teal"><img src="assets/bda-cover.png" alt="" onerror="this.remove()"><span>The Agent</span></div>
+    <div class="art teal"><img src="assets/agent-standing.png" alt=""><span>The Agent</span></div>
     <div>
       <h3>The Book Detective Agency</h3>
-      <div class="for">For children ages 5 to 10 who read on their own and resist writing, at home or in a classroom</div>
-      <p>Every book is a case. Every case gets a file. A ten minute sand timer the child turns, thirty six cards in four skill colors, a binder nobody corrects, and rank by number of files. Sixteen pages, with a parent's guide, a rules page the child signs, author letters, and a research page behind every rule.</p>
-      <span class="status live">Live · $12</span><a class="go" href="https://thebookdetectiveagency.com">thebookdetectiveagency.com</a>
+      <div class="for">For children ages 5 to 10 who read on their own and resist writing, at home or in a classroom.</div>
+      <p>Every book is a case. Every case gets a file. A ten minute sand timer the child turns, thirty six cards in four skill colors, a binder nobody corrects, and rank by number of files. The parent's guide, the rules page the child signs, author letters, and a research page behind every rule.</p>
+      <p><a href="https://thebookdetectiveagency.com">thebookdetectiveagency.com</a></p>
     </div>
+    <div class="facts"><div class="live"><span>Status</span><b>Live</b></div><div><span>Price</span><b>$12</b></div><div><span>Pages</span><b>16, letter</b></div><div><span>You supply</span><b>Timer, binder, hole punch, stamps</b></div></div>
   </div>
-
   <div class="kit">
-    <div class="kit-art plum"><span>Midnight Mom's Collective</span></div>
+    <div class="art plum"><img src="assets/possum-standing.png" alt=""><span>Midnight Mom's Collective</span></div>
     <div>
       <h3>The Hard Day Kit</h3>
-      <div class="for">For neurodivergent mothers, for the evening when the plan has already failed</div>
-      <p>A one-page household sheet filled in by hand once and kept on the fridge. A deck of cards for the hour that goes wrong, each one a decision already made. A reset sheet for the end of the day. On the back of each card, for those who want it, the prompt to hand the rest to an AI.</p>
-      <span class="status soon">November 2026</span><a class="go" href="#list">Get the date by email</a>
+      <div class="for">For neurodivergent mothers, for the evening when the plan has already failed.</div>
+      <p>Cards organized by the hour that goes wrong, each one a decision already made, with the one-step version for a night with no capacity and the words to say to a child, a partner, or a school. A household sheet filled in by hand once and kept on the fridge. Phone first, paper second. For anyone who wants it, the prompt to hand the rest to an AI sits on the back of the card.</p>
+      <p><a href="#list">Get the date by email.</a></p>
     </div>
+    <div class="facts"><div><span>Status</span><b>November 2026</b></div><div><span>Price</span><b>$12 to $19</b></div><div><span>Form</span><b>A phone page and two fridge sheets</b></div><div><span>Sub-brand</span><b>Midnight Mom's Collective</b></div></div>
   </div>
-
   <div class="kit">
-    <div class="kit-art plum"><span>Midnight Mom's Collective</span></div>
+    <div class="art plum"><img src="assets/possum-face.png" alt=""><span>Midnight Mom's Collective</span></div>
     <div>
       <h3>The Household Library</h3>
-      <div class="for">For Hard Day Kit owners who want the AI layer</div>
-      <p>The household sheet becomes a context block. Twenty five prompts for meals, school nights, weekend resets, and partner handoffs, each one already loaded with your household. Works with any AI tool you have.</p>
-      <span class="status soon">After the kit</span>
+      <div class="for">For Hard Day Kit owners who want the AI layer.</div>
+      <p>The Household Sheet becomes a context block. Twenty five prompts for meals, school nights, weekend resets, and partner handoffs, each one already loaded with your house. Works with any AI tool you have. Sold to kit owners first, by email.</p>
     </div>
+    <div class="facts"><div><span>Status</span><b>After the kit</b></div><div><span>Price</span><b>$27</b></div><div><span>Sub-brand</span><b>Midnight Mom's Collective</b></div></div>
   </div>
-
   <div class="kit">
-    <div class="kit-art forest"><span>For students</span></div>
+    <div class="art forest"><span>For students</span></div>
     <div>
       <h3>The Seminar Kit</h3>
-      <div class="for">For ADHD and autistic undergraduates and graduate students</div>
-      <p>The reading week, the seminar paper, and the disclosure conversation, each with the deciding removed. In development.</p>
-      <span class="status soon">2027</span>
+      <div class="for">For ADHD and autistic undergraduates and graduate students.</div>
+      <p>The reading week, the seminar paper, and the conversation about disclosure, each with the deciding removed. The kit is in design and follows the same seven-part format as the others.</p>
     </div>
+    <div class="facts"><div><span>Status</span><b>2027</b></div><div><span>Sub-brand</span><b>Name pending</b></div></div>
   </div>
-</div></section>
+</section>
 
-<section id="how" class="how"><div class="w">
-  <div class="mono">How we make them</div>
-  <h2>Every kit follows the same rules.</h2>
-  <p>The studio is run by someone with ADHD, and the kits are built the way accommodation works when it works: the structure does the executive function so the person does not have to. The card removes the decision. The timer removes the stopping problem. The rule removes correction. The count removes the question of whether today was good enough.</p>
-  <div class="rules">
-    <div class="rule"><div class="n">01</div><div class="t">One page a session</div><div class="d">The working page is one sheet, one sitting, with a place to mark it done.</div></div>
-    <div class="rule"><div class="n">02</div><div class="t">Progress by count</div><div class="d">Rank advances on the number of sessions, never on quality, and is never taken away.</div></div>
-    <div class="rule"><div class="n">03</div><div class="t">A rule you write</div><div class="d">Every kit has a fairness clause for hard days, written by the person who will have them.</div></div>
-    <div class="rule"><div class="n">04</div><div class="t">A rule we follow</div><div class="d">Whoever supports the user of a kit plays too, by the same rules, where the user can see it.</div></div>
-    <div class="rule"><div class="n">05</div><div class="t">A research page</div><div class="d">Every claim about how people learn or cope links to a study by DOI, or is marked as our own untested belief.</div></div>
-    <div class="rule"><div class="n">06</div><div class="t">Nothing to install</div><div class="d">Paper, a timer, a binder. AI, where it appears, is optional and on the back of the card.</div></div>
+<section id="which">
+  <h2>Which kit</h2>
+  <div class="router">
+    <p>Two questions. The answer is a decision made for you, which is the point of the studio.</p>
+    <div class="q"><div class="qt">Who is the kit for?</div><div class="opts"><button type="button" data-q="who:child">A child, 5 to 10</button><button type="button" data-q="who:me">Me</button><button type="button" data-q="who:student">A student</button></div></div>
+    <div class="q"><div class="qt">When does the day go wrong?</div><div class="opts"><button type="button" data-q="when:writing">At the writing</button><button type="button" data-q="when:evening">In the evening</button><button type="button" data-q="when:school">Around coursework</button></div></div>
+    <div class="answer" id="answer" aria-live="polite"></div>
   </div>
-</div></section>
+</section>
 
-<section id="who"><div class="w">
-  <div class="mono">Who</div>
-  <h2>One person, a kitchen table, and a university writing program.</h2>
+<section id="animals">
+  <h2>The animals</h2>
+  <p>Every kit has one. The Agency has a raccoon in a deerstalker, because a raccoon gets into everything and files it. The Hard Day Kit has a possum, because a possum is nocturnal, carries every child on her back at once, plays dead when it is too much, and gets up afterward. The studio's animals are the ones that work at night and are not thanked for it. The third is not yet chosen.</p>
+  <div class="kit" style="border-top: 0; padding-top: 4px"><div class="art plum"><img src="assets/possum-resting.png" alt="The possum lying on her back with one baby asleep on her stomach"><span>Resting</span></div><div><h3>Playing dead is a rule, not a failure</h3><p>In the Hard Day Kit, the one-dot card and the Fairness Clause are the possum on her back. The kit says so on the page, so the household knows what it is looking at.</p></div><div class="facts"><div><span>Appears on</span><b>The Tally, the one-dot cards</b></div></div></div>
+</section>
+
+<section id="how">
+  <h2>How a kit is made</h2>
+  <p>The studio is run by someone with ADHD, and the kits are built the way accommodation works when it works: the structure does the executive function so the person does not have to. Every kit has the same seven parts, so the second kit you own works like the first.</p>
+  <div class="parts">
+    <div class="part"><div class="n">Form 00</div><h3>Directions, and the supporter's guide</h3><p>The front is for the person using the kit. The back is for whoever helps them, with the research in one paragraph.</p></div>
+    <div class="part"><div class="n">Form 01</div><h3>The working page</h3><p>One sheet, one sitting, a place to mark it done. Printed in quantity.</p></div>
+    <div class="part"><div class="n">Form 02</div><h3>The rules and the fairness clause</h3><p>Six rules, four blanks, and a clause for hard days written by the user and signed by everyone in the house, the maker included.</p></div>
+    <div class="part"><div class="n">Form 03</div><h3>Progress by count</h3><p>Advances on the number of sessions, never on quality, and is never taken away.</p></div>
+    <div class="part"><div class="n">Form 04</div><h3>The outside world</h3><p>A page that sends something out of the house, with addresses, scripts, and a log.</p></div>
+    <div class="part"><div class="n">The cards</div><h3>Decisions already made</h3><p>Four colors for four kinds of task, dots for how much capacity the card assumes, blanks for the user's own.</p></div>
+    <div class="part"><div class="n">The research page</div><h3>Every claim, linked</h3><p>Each rule links to a study by DOI, or is marked as the studio's own untested belief. <a href="research.html">The studio's research page.</a></p></div>
+  </div>
+</section>
+
+<section id="storeroom">
+  <h2>The storeroom</h2>
+  <p>Everything the kits use that does not come in the PDF: timers, binders, pans, fridge sheets, and the books behind the studio. Each item is chosen for a rating of 4.6 or higher with a large number of reviews. The full list, grouped by kit, is on its own page.</p>
+  <p><a href="storeroom.html">Open the storeroom.</a></p>
+</section>
+
+<section id="who">
+  <h2>Who</h2>
   <div class="who">
     <div>
-      <p>Offload is run by Kirsti Cole, Professor of English at North Carolina State University and Co-Director of its Campus Writing and Speaking Program. Her research is on how people learn to write, how writing is taught and assessed, and how writers work alongside AI. She has ADHD, a six year old who reads anything and writes one word, and a household in which Wednesday is harder than Tuesday.</p>
-      <p>The studio is an independent project and is not a product of, endorsed by, or affiliated with the university. More of her work is at <a href="https://kirstikcole.com">kirstikcole.com</a>.</p>
+      <p>Offload is one person: a writing professor in Raleigh with ADHD, who teaches how people learn to write and has a six year old who reads anything and writes one word. The kits are built the way she needs them to be built, and then tested on the household where Wednesday is harder than Tuesday.</p>
+      <p>Every rule in a kit links to a study on the <a href="research.html">research page</a>. The studio is independent of any institution.</p>
     </div>
-    <div class="sub" id="list">
-      <span class="mono">The list</span>
+    <div class="list" id="list">
+      <h3>The list</h3>
       <p>One email when a kit ships, one when a free expansion is ready. No schedule, no sequence, no welcome series.</p>
-      <form class="erow" action="BEEHIIV-EMBED-URL" method="post"><input type="email" name="email" placeholder="your@email.com" required><button type="submit">Add me</button></form>
+      <form class="erow" action="BEEHIIV-EMBED-URL" method="post"><label for="email" style="position:absolute;left:-9999px">Email</label><input type="email" id="email" name="email" placeholder="your@email.com" required><button type="submit">Add me</button></form>
     </div>
   </div>
-</div></section>
+</section>
 
-<footer><div class="w" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
-  <span>Offload · Raleigh · hi@the-offload.com</span>
-  <span><a href="https://thebookdetectiveagency.com">The Book Detective Agency</a> &nbsp;·&nbsp; <a href="#">Privacy</a></span>
-</div></footer>
-
+  </main>
+</div>
+<footer><div class="foot-in"><span>Offload, Raleigh, North Carolina. hi@the-offload.com</span><span><a href="https://thebookdetectiveagency.com">The Book Detective Agency</a></span></div></footer>
+<script>
+(function () {
+  var root = document.documentElement;
+  function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  var prefs = { size: get('ol-size') || 'base', space: get('ol-space') || 'base', images: get('ol-images') || 'on' };
+  function apply() {
+    root.setAttribute('data-size', prefs.size); root.setAttribute('data-space', prefs.space); root.setAttribute('data-images', prefs.images);
+    document.querySelectorAll('[data-pref]').forEach(function (b) {
+      var p = b.getAttribute('data-pref').split(':');
+      b.setAttribute('aria-pressed', prefs[p[0]] === p[1] ? 'true' : 'false');
+    });
+  }
+  document.querySelectorAll('[data-pref]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var p = b.getAttribute('data-pref').split(':');
+      if (p[0] === 'size') prefs.size = prefs.size === p[1] ? 'base' : p[1];
+      if (p[0] === 'space') prefs.space = prefs.space === 'open' ? 'base' : 'open';
+      if (p[0] === 'images') prefs.images = prefs.images === 'off' ? 'on' : 'off';
+      set('ol-size', prefs.size); set('ol-space', prefs.space); set('ol-images', prefs.images); apply();
+    });
+  });
+  apply();
+  var links = document.querySelectorAll('.rail a[href^="#"]'), secs = [];
+  links.forEach(function (a) { var s = document.querySelector(a.getAttribute('href')); if (s) secs.push([s, a]); });
+  function mark() {
+    var y = window.scrollY + 120, cur = null;
+    secs.forEach(function (p) { if (p[0].offsetTop <= y) cur = p[1]; });
+    links.forEach(function (a) { a.classList.toggle('here', a === cur); });
+  }
+  if (secs.length) { window.addEventListener('scroll', mark, { passive: true }); mark(); }
+  var form = document.querySelector('form.erow');
+  if (form) form.addEventListener('submit', function (e) { if (form.getAttribute('action').indexOf('BEEHIIV') === 0) { e.preventDefault(); form.querySelector('button').textContent = 'List opens soon'; } });
+  var q = { who: null, when: null }, ans = document.getElementById('answer');
+  function route() {
+    if (!ans) return;
+    if (!q.who || !q.when) { ans.textContent = 'Answer both and the kit appears here.'; return; }
+    var out;
+    if (q.who === 'child') out = 'The Book Detective Agency. Ten minutes a day, a card, a timer, a binder. For any child who reads on their own and resists writing. <a href="https://thebookdetectiveagency.com">Open the Agency site.</a>';
+    else if (q.who === 'me' && q.when === 'evening') out = 'The Hard Day Kit, November. For the evening when the plan has already failed. <a href="#list">Get the date by email.</a>';
+    else if (q.who === 'me' && q.when === 'school') out = 'The Seminar Kit, 2027. For the reading week, the paper, and the disclosure conversation. <a href="#list">Get the date by email.</a>';
+    else out = 'The Hard Day Kit is the closest fit and ships in November. <a href="#list">Get the date by email.</a>';
+    ans.innerHTML = out;
+  }
+  document.querySelectorAll('[data-q]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var p = b.getAttribute('data-q').split(':'); q[p[0]] = p[1];
+      document.querySelectorAll('[data-q^="' + p[0] + ':"]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      route();
+    });
+  });
+  route();
+})();
+</script>
 </body>
 </html>
