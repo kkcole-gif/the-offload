@@ -98,7 +98,7 @@ section { padding: 72px 0 0; }
 .kit.field p { color: #E9E1D8; } .kit.field .spec { color: rgba(255,255,255,.62); }
 .kit.field a:not(.btn) { color: #FFFFFF; text-decoration-color: rgba(255,255,255,.5); }
 .kit.field .btn { background: #FFFFFF; color: var(--ink); }
-.kit.teal { background: var(--teal); } .kit.plum { background: var(--plum); } .kit.forest { background: var(--forest); } .kit.plum2 { background: #2E2338; } .kit.rose { background: #94524C; } .kit.rose p { color: #F6EFEA; }
+.kit.teal { background: var(--teal); } .kit.plum { background: var(--plum); } .kit.forest { background: var(--forest); } .kit.plum2 { background: #2E2338; } .kit.rose { background: #94524C; } .kit.animal { grid-template-columns: 280px minmax(0, 1fr); margin-top: 16px; } .kit.animal { align-items: center; } .kit.animal .pic.big { width: 280px; margin: 0; display: flex; justify-content: center; align-items: center; } .kit.animal .pic.big img { max-height: 240px; max-width: 100%; width: auto; height: auto; } .kit.animal img.tile { border-radius: 22px; max-height: 220px; } @media (max-width: 720px) { .kit.animal { grid-template-columns: 1fr; } .kit.animal .pic.big { width: 100%; } .kit.animal .pic.big img { max-height: 200px; } } .kit.rose p { color: #F6EFEA; }
 .kit .pic.big { width: 240px; margin-top: -70px; margin-bottom: -10px; overflow: visible; }
 .kit .pic.big img { filter: drop-shadow(0 18px 24px rgba(0,0,0,.25)); }
 .pic { width: 200px; max-width: 100%; overflow: hidden; }
@@ -242,10 +242,22 @@ footer { margin-top: 24px; }
 
 <section id="animals" data-name="The animals">
   <h2>The animals</h2>
-  <p><b>Every kit has one, and they are the animals that work at night and are not thanked for it.</b> The Agency has a raccoon in a deerstalker, because a raccoon gets into everything and files it. The Hard Day Kit has a possum. The Seminar Kit has a fox, alert and a little too fast, who sleeps on the reading when the week is over. The Archive Kit has the Archivist, a southern flying squirrel, native to North Carolina and out only at night, who caches what she finds and glides back for it when the draft needs it. She also carries the mail.</p>
-  <div class="kit field plum" style="grid-template-columns: 320px minmax(0, 1fr); margin-top: 16px">
-    <div class="pic big" style="width: 320px; margin-top: -30px"><img src="assets/possum-resting.png" alt="The possum lying on her back with one baby asleep on her stomach"></div>
+  <p><b>Every kit has one, and they are the animals that work at night and are not thanked for it.</b> Each one stands for a rule the kit keeps.</p>
+  <div class="kit field teal animal">
+    <div class="pic big"><img src="assets/agent-standing.png" alt="The Agent, a raccoon detective in a deerstalker with a magnifying lens and a red case file"></div>
+    <div><h3>The Agent gets into everything and files it.</h3><p>A raccoon works at night, goes through whatever has been left out, and keeps what it finds. In the Book Detective Agency every case goes into a binder nobody corrects, and rank counts only the files in it, so a rank is never taken away.</p></div>
+  </div>
+  <div class="kit field plum animal">
+    <div class="pic big"><img src="assets/possum-resting.png" alt="The possum lying on her back with one baby asleep on her stomach"></div>
     <div><h3>When the possum plays dead, that is a rule, not a failure.</h3><p>She is nocturnal, she carries every child at once, and when it is too much she lies down and gets up afterward. In the Hard Day Kit the one-dot card and the Fairness Clause are her on her back, and the kit says so on the page, so the household knows what it is looking at.</p></div>
+  </div>
+  <div class="kit field forest animal">
+    <div class="pic big"><img src="assets/fox-resting.png" alt="The fox asleep on a stack of library books, an index card under one paw"></div>
+    <div><h3>The fox reads everything at once, then sleeps on it.</h3><p>She is alert and a little too fast, three readings open and the seminar at two. When the week is over she sleeps on the stack. The Seminar Kit is built for both halves of that week, the sprint and the rest after it.</p></div>
+  </div>
+  <div class="kit field rose animal">
+    <div class="pic big"><img class="tile" src="assets/squirrel-resting.png" alt="The flying squirrel asleep in a plum knit pocket, a folded letter under one paw"></div>
+    <div><h3>The Archivist caches what she finds and glides back for it.</h3><p>A southern flying squirrel, native to North Carolina and out only at night. She tucks away every good source, a quote here, a page number there, and returns when the draft needs one. In the Archive Kit the two counts, sessions and sources cached, never go down, and one sentence counts on a hard day. She also carries the mail.</p></div>
   </div>
 </section>
 
