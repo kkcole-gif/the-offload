@@ -87,6 +87,7 @@ h3 { font-size: calc(var(--fs) * 1.55); margin-bottom: .3em; }
 .animals { flex: 0 0 auto; align-self: flex-end; display: flex; align-items: flex-end; padding: 0 24px 0 28px; }
 .animals img { display: block; height: 250px; width: auto; }
 .animals img + img { height: 280px; margin-left: -32px; }
+.animals img.sq { height: 150px; align-self: flex-start; margin: 0 0 0 6px; }
 
 /* body */
 .frame { max-width: 1180px; margin: 0 auto; padding: 0 24px 80px; }
@@ -97,7 +98,7 @@ section { padding: 72px 0 0; }
 .kit.field p { color: #E9E1D8; } .kit.field .spec { color: rgba(255,255,255,.62); }
 .kit.field a:not(.btn) { color: #FFFFFF; text-decoration-color: rgba(255,255,255,.5); }
 .kit.field .btn { background: #FFFFFF; color: var(--ink); }
-.kit.teal { background: var(--teal); } .kit.plum { background: var(--plum); } .kit.forest { background: var(--forest); } .kit.plum2 { background: #2E2338; }
+.kit.teal { background: var(--teal); } .kit.plum { background: var(--plum); } .kit.forest { background: var(--forest); } .kit.plum2 { background: #2E2338; } .kit.rose { background: #94524C; } .kit.rose p { color: #F6EFEA; }
 .kit .pic.big { width: 240px; margin-top: -70px; margin-bottom: -10px; overflow: visible; }
 .kit .pic.big img { filter: drop-shadow(0 18px 24px rgba(0,0,0,.25)); }
 .pic { width: 200px; max-width: 100%; overflow: hidden; }
@@ -137,7 +138,7 @@ footer { margin-top: 24px; }
   .pic { width: 150px; } .pic.up { margin-top: 0; } .kit .pic.big { width: 170px; margin-top: -70px; }
   .two { grid-template-columns: 1fr; }
   .hour { flex-basis: 190px; } .hour .t { font-size: 48px; }
-  .animals img { height: 190px; } .animals img + img { height: 215px; }
+  .animals img { height: 190px; } .animals img + img { height: 215px; } .animals img.sq { height: 110px; }
 }
 </style>
 </head>
@@ -236,6 +237,7 @@ footer { margin-top: 24px; }
     var out;
     if (q.who === 'child') out = '<b>The Book Detective Agency.</b> Ten minutes a day, a card, a timer, a binder. <a href="https://thebookdetectiveagency.com">Open the Agency site</a> or <a href="#kit-agency">read about it below</a>.';
     else if (q.who === 'me' && q.when === 'evening') out = '<b>The Hard Day Kit, November.</b> For the evening the plan already failed. <a href="#kit-hardday">Read about it</a> or <a href="#list">get the date by email</a>.';
+    else if (q.who === 'academic') out = '<b>The Archive Kit.</b> From notes to submitted draft, with sources cached where you can find them again. <a href="#kit-archive">Read about it</a> or <a href="#list">get the date by email</a>.';
     else if (q.who === 'student' || q.when === 'school') out = '<b>The Seminar Kit, 2027.</b> The reading week, the paper, the disclosure conversation. <a href="#list">Get the date by email</a>.';
     else out = '<b>The Hard Day Kit</b> is the closest fit, November. <a href="#kit-hardday">Read about it</a>.';
     ans.innerHTML = out;
