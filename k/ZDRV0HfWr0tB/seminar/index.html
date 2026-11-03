@@ -1,0 +1,463 @@
+<!doctype html><html><head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>The Seminar Kit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono&display=swap">
+<style>
+/* Layout: one phone column, dark-first in deep forest with archival cream text; the card is the thumb zone. Same five lines as the Hard Day Kit, student register. */
+:root {
+  --bg: #1F3029; --bg2: #2A3D34; --fg: #F2ECDD; --fg2: #CFC8B6; --mute: #8FA094;
+  --ox: #D08A7A; --slate: #A9B6C2; --vellum: #E2D5B3; --forest: #9FC2AE; --gold: #D9B86A; --line: rgba(242,236,221,.14);
+  --display: 'Crimson Pro', Georgia, serif; --body: 'IBM Plex Sans', system-ui, sans-serif; --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg: #F4EFE3; --bg2: #FFFFFF; --fg: #1F3029; --fg2: #3E4A44; --mute: #7D8780; --ox: #7A2E2E; --slate: #4E6272; --vellum: #8A7442; --forest: #2F5A46; --gold: #8A6A1E; --line: rgba(31,48,41,.14); color-scheme: light } }
+:root[data-theme="light"] { --bg: #F4EFE3; --bg2: #FFFFFF; --fg: #1F3029; --fg2: #3E4A44; --mute: #7D8780; --ox: #7A2E2E; --slate: #4E6272; --vellum: #8A7442; --forest: #2F5A46; --gold: #8A6A1E; --line: rgba(31,48,41,.14); color-scheme: light }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 600px; margin: 0 auto; padding-block: 18px 40px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 16px; }
+header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.brand { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mute); }
+h1 { font-family: var(--display); font-weight: 400; font-size: 34px; margin: 0; line-height: 1.05; }
+h2 { font-family: var(--display); font-weight: 400; font-size: 26px; margin: 0; line-height: 1.1; }
+.pilot { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ox); }
+button { font: inherit; cursor: pointer; border: 0; border-radius: 12px; }
+button:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid var(--ox); outline-offset: 3px; }
+.tabs { display: flex; gap: 8px; }
+.tabs { flex-wrap: wrap; } .tabs button { flex: 1 1 22%; min-width: 0; padding-inline: 6px !important; font-size: 14px !important; background: transparent; color: var(--fg2); border: 1px solid var(--line); padding: 11px; font-size: 15px; }
+.tabs button[aria-selected="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.draw { background: var(--fg); color: var(--bg); font-weight: 600; font-size: 19px; padding: 20px; width: 100%; border-radius: 16px; }
+.ghost { background: transparent; color: var(--fg2); border: 1px solid var(--line); padding: 12px 16px; font-size: 15px; }
+.row { display: flex; gap: 10px; flex-wrap: wrap; } .row > * { flex: 1 1 140px; }
+.list { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+.list button { text-align: left; background: transparent; color: var(--fg); border-radius: 0; border-bottom: 1px solid var(--line); padding: 13px 4px; font-size: 16px; line-height: 1.35; display: flex; gap: 12px; align-items: baseline; }
+.list .tag { flex-shrink: 0; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); min-width: 68px; }
+.card { background: var(--bg2); border-radius: 18px; padding: 22px 20px 18px; display: flex; flex-direction: column; gap: 16px; }
+.card .tag { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+.card h2 { font-size: 28px; }
+.sec { display: flex; flex-direction: column; gap: 5px; }
+.sec .lab { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mute); }
+.sec p { margin: 0; }
+.sec ol { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px; }
+.cant { border: 1.5px solid var(--ox); border-radius: 14px; padding: 13px 15px; } .cant .lab { color: var(--ox); } .cant p { font-size: 19px; font-weight: 500; }
+.say p { font-family: var(--display); font-size: 21px; line-height: 1.3; }
+.later details { border-top: 1px solid var(--line); padding-top: 10px; } .later summary { cursor: pointer; font-size: 14px; color: var(--fg2); }
+.later pre { white-space: pre-wrap; font: 14px/1.5 var(--body); background: var(--bg); padding: 12px 14px; border-radius: 10px; margin: 10px 0 0; }
+.why { font-size: 13px; color: var(--mute); } .why a { color: var(--forest); }
+.c-ai .tag { color: var(--gold); }
+.c-reading .tag { color: var(--forest); } .c-writing .tag { color: var(--ox); } .c-words .tag { color: var(--slate); } .c-week .tag { color: var(--vellum); }
+.dots { letter-spacing: 2px; color: var(--mute); font-size: 12px; }
+.mark { display: flex; gap: 10px; border-top: 1px solid var(--line); padding-top: 14px; } .mark button { flex: 1; background: transparent; border: 1px solid var(--line); color: var(--fg2); padding: 11px; font-size: 14px; } .mark button.on { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.level { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; font-size: 13px; color: var(--mute); }
+.level button { background: transparent; color: var(--fg2); border: 1px solid var(--line); border-radius: 999px; padding: 6px 11px; font-size: 13px; }
+.level button[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.phil { background: var(--bg2); border-radius: 18px; padding: 20px 18px; display: flex; flex-direction: column; gap: 12px; }
+.phil .q { display: flex; flex-direction: column; gap: 6px; }
+.phil .q label { font-size: 14px; font-weight: 500; } .phil .q .hint { font-size: 13px; color: var(--mute); }
+.phil textarea { width: 100%; box-sizing: border-box; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font: inherit; font-size: 15px; min-height: 64px; resize: vertical; }
+.phil pre { white-space: pre-wrap; font: 15px/1.5 var(--body); background: var(--bg); border-radius: 12px; padding: 14px; margin: 0; color: var(--fg2); }
+.primary { background: var(--fg); color: var(--bg); font-weight: 600; font-size: 16px; padding: 13px; }
+.research { display: flex; flex-direction: column; gap: 14px; }
+.study { border-top: 1px solid var(--line); padding-top: 12px; display: flex; flex-direction: column; gap: 4px; }
+.study h3 { font-family: var(--display); font-weight: 400; font-size: 21px; margin: 0; line-height: 1.15; }
+.study .cite { font-size: 13px; color: var(--fg2); } .study .cite a { color: var(--forest); word-break: break-word; }
+.study p { margin: 0; font-size: 15px; }
+.note { font-size: 13px; color: var(--mute); line-height: 1.5; }
+.toast { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--fg); color: var(--bg); padding: 10px 16px; border-radius: 999px; font-size: 14px; }
+.steps { list-style: none; padding-left: 0 !important; }
+.steps li { display: flex; gap: 10px; align-items: flex-start; }
+.steps input { width: 20px; height: 20px; margin-top: 2px; flex-shrink: 0; accent-color: var(--forest); }
+.steps li.done span { color: var(--mute); text-decoration: line-through; }
+.donewhen { font-size: 14px; color: var(--fg2); border-left: 3px solid var(--forest); padding: 4px 0 4px 10px; }
+.toobig { align-self: flex-start; background: transparent; color: var(--ox); border: 1.5px solid var(--ox); padding: 8px 14px; font-size: 14px; border-radius: 999px; }
+.tell { display: flex; flex-direction: column; gap: 14px; }
+.who { display: flex; gap: 6px; flex-wrap: wrap; }
+.who button { background: transparent; color: var(--fg2); border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; font-size: 14px; }
+.who button[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.script { background: var(--bg2); border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+.script h3 { font-family: var(--display); font-weight: 400; font-size: 22px; margin: 0; line-height: 1.15; }
+.script input[type=text] { width: 100%; box-sizing: border-box; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 10px; padding: 9px 11px; font: inherit; font-size: 15px; }
+.script label { font-size: 13px; color: var(--mute); }
+.script pre { white-space: pre-wrap; font: 15px/1.5 var(--body); background: var(--bg); border-radius: 12px; padding: 14px; margin: 0; color: var(--fg); }
+.toldlog { font-size: 14px; color: var(--fg2); border-top: 1px solid var(--line); padding-top: 10px; display: flex; flex-direction: column; gap: 4px; }
+</style>
+
+<div class="wrap">
+  <header><div><div class="brand">Offload, for students</div><h1>The Seminar Kit</h1></div><div class="pilot">First edition</div></header>
+  <div class="tabs" role="tablist"><button type="button" role="tab" id="t-cards" aria-selected="true">Cards</button><button type="button" role="tab" id="t-phil" aria-selected="false">My philosophy</button><button type="button" role="tab" id="t-tell" aria-selected="false">Tell someone</button><button type="button" role="tab" id="t-research" aria-selected="false">Research</button></div>
+  <div class="level" id="level"><span>I am</span><button type="button" data-level="fy" aria-pressed="true">in my first year</button><button type="button" data-level="up">upper level</button><button type="button" data-level="grad">a graduate student</button></div>
+
+  <div id="home">
+    <p class="note" style="margin: 0 0 14px">Thirty situations from a term, grouped by the kind of hour they are, six of them about AI. The dots are how much capacity a card assumes. Each card is five lines in the same order, so you never have to read the whole thing. Nothing here is stored anywhere but on this phone. Nothing connects to Canvas or to any other account, and nothing needs to. If a card is too big tonight, the button on it makes it one step.</p>
+    <button class="draw" id="drawBtn">Draw a card</button>
+    <p class="note" style="margin: 12px 0 14px">Or find the situation you are in.</p>
+    <div class="list" id="list"></div>
+  </div>
+
+  <div id="cardView" hidden></div>
+
+  <div id="philView" hidden class="phil">
+    <h2>My philosophy of use</h2>
+    <p class="note">Three questions, one for each level of AI literacy. The answers become a paragraph you own: paste it into any disclosure, any syllabus conversation, any application. Rewrite it each term. It is yours, not the tool’s and not the university’s.</p>
+    <div class="q"><label for="p1">What is the tool, as far as I understand it?</label><div class="hint">Conceptual. Name it, and say what it does and does not do, in your own words. One or two sentences.</div><textarea id="p1" placeholder="It predicts likely text from what it was trained on. It does not know whether what it says is true, and it does not know my course."></textarea></div>
+    <div class="q"><label for="p2">Whose writing does it misread, and does that include mine?</label><div class="hint">Structural. Detectors flag multilingual and neurodivergent prose. Summaries flatten arguments. Say what that means for you.</div><textarea id="p2" placeholder="I write in a second language, so detectors are likelier to flag me, and I keep my drafts as evidence. Summaries lose the part of a reading I would argue with."></textarea></div>
+    <div class="q"><label for="p3">What will I use it for, what will I refuse, and how will I say so?</label><div class="hint">Operative. The judgment is yours, and refusal is a legitimate answer. Name the stages where it may help and where it may not.</div><textarea id="p3" placeholder="I will use it to ask questions of a reading and to check my outline for gaps. I will not use it to draft sentences I submit. I say what I used in a note at the end of every paper."></textarea></div>
+    <div class="row"><button type="button" class="primary" id="philGen">Make the paragraph</button><button type="button" class="ghost" id="philCopy">Copy it</button></div>
+    <pre id="philOut">Answer what you can, then make the paragraph.</pre>
+    <p class="note">This is the AI Practice Adventure in miniature: literacy and policy decided together, ending in a philosophy of use rather than in tool skill or in refusal by default. From the maker’s own framework, cited on the research tab.</p>
+    <details style="border-top: 1px solid var(--line); padding-top: 12px"><summary style="cursor: pointer; font-size: 14px; color: var(--fg2)">The maker’s, for comparison</summary>
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px; font-size: 15px">
+        <p><b style="font-weight: 500; color: var(--fg)">What the tool is, as I understand it.</b> A generative model predicts likely text from what it was trained on. It does not know whether what it produces is true, it does not know my course or my field, and it has no stake in the argument. Naming it precisely is the first literacy, and most of what gets called AI literacy stops there.</p>
+        <p><b style="font-weight: 500; color: var(--fg)">Whose writing it misreads, and what that means for me.</b> The norms encoded in training data are not neutral, and the tools built on them, including the detectors sold to universities, classify the careful prose of multilingual and neurodivergent writers as machine output at rates that make their use in a classroom an act of institutional harm. I have ADHD, I direct a writing program, and I read for a living, so I know that governance failures of this kind fall on the students least able to contest them. Structural literacy is knowing that before deciding anything.</p>
+        <p><b style="font-weight: 500; color: var(--fg)">What I will use it for, what I will refuse, and how I will say so.</b> I write with AI and never for it: my judgment stays in every stage, and the moment the output decides what I think, I have handed it my rhetorical agency. I use it as an interlocutor at the planning stage, with the argument fixed first, and as a reader of a complete draft. I do not use it to produce prose that carries my name, and I refuse any use of a detector as a disciplinary trigger in a course I run. I say what I used, at which stage, and what is mine, in a line at the end of the work, and I ask my students for the same line. Refusal, where the structural conditions warrant it, is the most advanced use I know, and I teach it as such.</p>
+        <p class="note">Written by the professor who made this kit, October 2026. Yours does not have to agree with it.</p>
+      </div>
+    </details>
+    <div class="row"><button class="ghost" id="backFromP">Back to the cards</button></div>
+  </div>
+
+  <div id="tellView" hidden class="tell">
+    <h2>Tell someone</h2>
+    <p class="note">Disclosure is part of the work of a term, so it gets its own scripts. Pick who you are telling. Fill the blanks you know and leave the rest. Telling anyone is your choice, and not telling is a legitimate answer. The log below keeps who was told what, on this phone only, so you never have to remember whether you sent it.</p>
+    <div class="who" id="whoBtns"></div>
+    <div id="scripts" style="display:flex;flex-direction:column;gap:14px"></div>
+    <div class="toldlog" id="toldLog"></div>
+    <div class="row"><button class="ghost" id="backFromT">Back to the cards</button></div>
+  </div>
+
+  <div id="researchView" hidden class="research">
+    <h2>What the cards are built on</h2>
+    <p class="note">Every instruction on a card comes from one of these, or is marked on the card as the studio's own untested practice. Fifteen sources, verified by DOI against Crossref in October 2026 where a DOI exists, plus the maker’s own framework. The summaries are the studio's.</p>
+    <div class="study"><h3>A plan tied to a cue gets done</h3><div class="cite">Gollwitzer and Sheeran (2006). Implementation Intentions and Goal Achievement: A Meta-analysis of Effects and Processes. Advances in Experimental Social Psychology 38. <a href="https://doi.org/10.1016/S0065-2601(06)38002-1">doi:10.1016/S0065-2601(06)38002-1</a></div><p>Across 94 studies, "when X, I will Y" plans raised goal attainment by a medium to large effect. Every card is one of those plans with the situation as X.</p></div>
+    <div class="study"><h3>Testing yourself beats rereading</h3><div class="cite">Roediger and Karpicke (2006). Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention. Psychological Science 17(3). <a href="https://doi.org/10.1111/j.1467-9280.2006.01693.x">doi:10.1111/j.1467-9280.2006.01693.x</a></div><p>Students who took a test after one reading remembered more a week later than students who reread, even though rereading felt better. The exam card and the reading card both end in a question you answer from memory.</p></div>
+    <div class="study"><h3>Spread it out</h3><div class="cite">Cepeda, Pashler, Vul, Wixted and Rohrer (2006). Distributed practice in verbal recall tasks: A review and quantitative synthesis. Psychological Bulletin 132(3). <a href="https://doi.org/10.1037/0033-2909.132.3.354">doi:10.1037/0033-2909.132.3.354</a></div><p>Across 254 studies, the same study time spread across sessions produced better retention than one block. The nine-day exam card is a spacing schedule.</p></div>
+    <div class="study"><h3>Which techniques hold up</h3><div class="cite">Dunlosky, Rawson, Marsh, Nathan and Willingham (2013). Improving Students' Learning With Effective Learning Techniques. Psychological Science in the Public Interest 14(1). <a href="https://doi.org/10.1177/1529100612453266">doi:10.1177/1529100612453266</a></div><p>Practice testing and distributed practice rated high utility. Highlighting, rereading, and summarizing rated low. The cards never tell you to highlight.</p></div>
+    <div class="study"><h3>Working memory is small</h3><div class="cite">Sweller (1988). Cognitive Load During Problem Solving: Effects on Learning. Cognitive Science 12(2). <a href="https://doi.org/10.1207/s15516709cog1202_4">doi:10.1207/s15516709cog1202_4</a></div><p>Why every card holds one task, three steps at most, and why the writing cards tell you to get the argument out of your head and onto a page before touching the sources.</p></div>
+    <div class="study"><h3>Writing is planning, drafting, and reviewing, in any order</h3><div class="cite">Flower and Hayes (1981). A Cognitive Process Theory of Writing. College Composition and Communication 32(4). <a href="https://doi.org/10.58680/ccc198115885">doi:10.58680/ccc198115885</a></div><p>Writers move between planning, translating, and reviewing, and the hard part is holding all three at once. The blank-document card separates them: say the argument, type it badly, fix it later.</p></div>
+    <div class="study"><h3>Procrastination is about the task, not the character</h3><div class="cite">Steel (2007). The nature of procrastination: A meta-analytic and theoretical review of quintessential self-regulatory failure. Psychological Bulletin 133(1). <a href="https://doi.org/10.1037/0033-2909.133.1.65">doi:10.1037/0033-2909.133.1.65</a></div><p>Across 691 correlations, task aversiveness, delay, and low self-efficacy predicted procrastination far more than anxiety or perfectionism. The cards shrink the task and shorten the delay, which is what the data say to do.</p></div>
+    <div class="study"><h3>Time is harder to feel with ADHD</h3><div class="cite">Barkley, Murphy and Bush (2001). Time perception and reproduction in young adults with attention deficit hyperactivity disorder. Neuropsychology 15(3). <a href="https://doi.org/10.1037/0894-4105.15.3.351">doi:10.1037/0894-4105.15.3.351</a></div><p>Young adults with ADHD reproduced intervals less accurately, and worse at longer durations. The cards put time outside your head: a timer you can see, a deadline written as a clock time, not "Friday."</p></div>
+    <div class="study"><h3>What college is like with ADHD</h3><div class="cite">DuPaul, Weyandt, O'Dell and Varejao (2009). College Students With ADHD: Current Status and Future Directions. Journal of Attention Disorders 13(3). <a href="https://doi.org/10.1177/1087054709340650">doi:10.1177/1087054709340650</a></div><p>Lower grades and higher dropout than peers, with the gap driven by self-regulation of time and work rather than ability. The kit is built for the gap and not for the ability.</p></div>
+    <div class="study"><h3>In their own words</h3><div class="cite">Lefler, Sacchetti and Del Carlo (2016). ADHD in college: A qualitative analysis. ADHD Attention Deficit and Hyperactivity Disorders 8. <a href="https://doi.org/10.1007/s12402-016-0190-9">doi:10.1007/s12402-016-0190-9</a></div><p>Students described the difficulty as starting, sustaining, and organizing rather than understanding, and described accommodation use as uneven and often late. The accommodation-letter card exists because of this.</p></div>
+    <div class="study"><h3>Autistic students and the parts nobody designs for</h3><div class="cite">Gelbar, Smith and Reichow (2014). Systematic Review of Articles Describing Experience and Supports of Individuals with Autism Enrolled in College and University Programs. Journal of Autism and Developmental Disorders 44. <a href="https://doi.org/10.1007/s10803-014-2135-5">doi:10.1007/s10803-014-2135-5</a></div><p>Across twenty studies, the reported difficulties clustered in the social and executive parts of college, office hours, group work, and unstructured time, with academic ability rarely the problem. The Words cards are scripts for exactly those parts.</p></div>
+    <div class="study"><h3>Three kinds of AI literacy, and why one list cannot hold them</h3><div class="cite">Cole (forthcoming). AI Literacy Is Not One Thing: conceptual, structural, and operative literacy as a governance instrument. Under review, International Journal of Educational Technology in Higher Education. The framework also appears in Cole and Anson, "Writing With AI Requires Human Rhetorical Agency," in Bad Ideas About AI and Writing, WAC Clearinghouse, 2026.</div><p>Conceptual literacy names and describes the system. Structural literacy analyzes what is built into it, the norms in its training data and whose writing it misreads. Operative literacy is contextual, accountable judgment about use, including principled refusal. Every AI card in this kit has those three levels in that order, and the philosophy-of-use tab is the operative level made into a paragraph you own.</p></div>
+    <div class="study"><h3>The detectors are biased against non-native writers</h3><div class="cite">Liang, Yuksekgonul, Mao, Wu and Zou (2023). GPT detectors are biased against non-native English writers. Patterns 4(7). <a href="https://doi.org/10.1016/j.patter.2023.100779">doi:10.1016/j.patter.2023.100779</a></div><p>Seven detectors were near-perfect on essays by US students and averaged a 61.3 percent false-positive rate on essays by non-native English speakers, because predictable vocabulary and formulaic transitions read as machine output. Neurodivergent writers share many of those features. The detector card tells you to keep version history and what to say if accused, and the studio’s position is that no course should use a detector as a disciplinary trigger.</p></div>
+    <div class="study"><h3>The competency list the field uses</h3><div class="cite">Long and Magerko (2020). What is AI Literacy? Competencies and Design Considerations. Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems. <a href="https://doi.org/10.1145/3313831.3376727">doi:10.1145/3313831.3376727</a></div><p>The seventeen competencies most institutions cite. Nine are conceptual, six structural, two operative, which is why a student who has done every module can still not answer the question the AI cards ask: what will I use this for, and what will I refuse.</p></div>
+    <div class="study"><h3>Kindness after a lapse brings you back</h3><div class="cite">Breines and Chen (2012). Self-Compassion Increases Self-Improvement Motivation. Personality and Social Psychology Bulletin 38(9). <a href="https://doi.org/10.1177/0146167212445599">doi:10.1177/0146167212445599</a></div><p>A self-compassionate response to failure raised motivation to improve relative to self-criticism. The missed-classes card and the lapse card are written that way on purpose.</p></div>
+    <p class="note">Not in any study, and said so on the cards: body doubling, the two-sentence AI disclosure, the stage rule, and reading the conclusion first. The studio uses them and will not pretend they are proven. Writing with AI and never for it is the maker’s framework: with keeps your judgment at every stage, for hands it to the output and makes your judgment an afterthought.</p>
+    <div class="row"><button class="ghost" id="backFromR">Back to the cards</button></div>
+  </div>
+</div>
+
+<script>
+var CAT = { reading: 'Reading', writing: 'Writing', ai: 'With AI', words: 'Words', week: 'The Week' };
+var LEVEL = 'fy'; try { LEVEL = localStorage.getItem('sk-level') || 'fy'; } catch (e) {}
+function sayFor(e) { return typeof e.say === 'string' ? e.say : (e.say[LEVEL] || e.say.fy); }
+var E = [
+ { id:'sunday', cat:'reading', dots:2, t:'It is Sunday night and three readings are due Tuesday.',
+   h:'Three readings is one decision about which to read, repeated until it is too late to read any. Your brain is not lazy. It is stuck at the choosing.',
+   now:['Open the one that will be discussed first. Not the shortest, not the hardest. First.','Read the abstract or the first paragraph, the first sentence of every section, and the conclusion. Twelve minutes.','Write one question about it in your own words. That question is your ticket into the room.'],
+   cant:'Read only the conclusion of each. Write one sentence per reading saying what it claims. You are now ahead of half the seminar.',
+   say:'In seminar: "I want to push on the conclusion. The author claims X, and I am not sure the middle section earns it."',
+   later:'On a good week, read the first of next week’s readings on Thursday, when it is still a choice and not a crisis. Dunlosky (2013): rereading is low utility, so once is enough if you leave with a question.',
+   why:'Gollwitzer and Sheeran (2006), Dunlosky (2013). Reading the conclusion first is the studio’s own practice, not a study.' },
+ { id:'paragraph', cat:'reading', dots:1, t:'I have read the same paragraph four times.',
+   h:'Attention left and the eyes kept going. Rereading feels like work and produces nothing, which the research on learning says plainly.',
+   now:['Put the reading down. Say out loud what the paragraph before this one said.','If you can, write that in the margin. If you cannot, read the previous paragraph once, then say it.','Read this paragraph once more, aloud if you are alone. Then stop for the day or move to a different reading.'],
+   cant:'Close it. Set a timer for tomorrow morning at a time you will be awake. The paragraph will be the same and you will not.',
+   say:'To yourself: "That was the fourth time. The fifth will not be different."',
+   later:'Read with a pencil and a question. Before each section, write what you expect it to say. After, write whether it did. Roediger and Karpicke (2006): asking yourself is what makes it stay.',
+   why:'Roediger and Karpicke (2006), Dunlosky (2013).' },
+ { id:'blank', cat:'writing', dots:2, t:'The paper is due Friday and the document is blank.',
+   h:'A blank page asks you to plan, write, and judge at the same time, and that is three jobs for a working memory that holds one. The blankness is the overload, not a verdict on you.',
+   now:['Close the document. Open a note on your phone. Say the argument in one sentence as if to a friend who asked what the paper is about. Type it badly.','Under it, three reasons it is true, one line each. Do not look at sources.','Paste that into the document as the first paragraph. The paper now exists. Everything after this is editing, which is easier than writing.'],
+   cant:'Record yourself saying what the paper is about for sixty seconds. Transcribe it tomorrow. That is the draft.',
+   say:'To the professor, if Friday is impossible: "I have an argument and a plan. I need until Monday 9 am to make it a paper. I am asking now, not Friday night."',
+   later:'Start every paper with the one sentence and the three reasons, on the day it is assigned, in five minutes. Flower and Hayes (1981): planning, drafting, and reviewing are different acts, and doing them separately is what experienced writers do.',
+   why:'Flower and Hayes (1981), Sweller (1988), Gollwitzer and Sheeran (2006).' },
+ { id:'wrong', cat:'writing', dots:2, t:'I have 400 words and they are all wrong.',
+   h:'They are not wrong. They are a first draft being read by the editor, who showed up early. Reviewing while drafting is the one habit the writing research says to break.',
+   now:['Stop reading what you wrote. Scroll to the bottom.','Type the sentence that comes after the last good one, even if it is "and then I argue that." Keep typing until the timer ends, fifteen minutes, no scrolling up.','Then, and only then, read from the top once and delete nothing. Mark with an X what bothers you. Fix the Xs tomorrow.'],
+   cant:'Write "the point of this section is" and finish the sentence. Save. Close.',
+   say:'To a friend: "Can you read 400 bad words and tell me which one sentence is the paper? Do not fix anything."',
+   later:'Draft in one file and edit in another. The draft file is never reread until it has an end. Flower and Hayes (1981) again, and the studio’s own rule that the editor is not allowed in before noon.',
+   why:'Flower and Hayes (1981). The two-file rule is the studio’s practice.' },
+ { id:'2am', cat:'writing', dots:1, t:'It is 2 am and the portal closes at 8.',
+   h:'Six hours is enough to submit something and not enough to submit the thing you planned. The decision to make now is which, and it is the only decision left.',
+   now:['Write the submission you can finish in two hours, not the one in your head: argument, three reasons, one paragraph each, a conclusion that restates the argument. Done is the standard.','Set a timer for 4 am. At 4 am you submit what exists, whatever it is.','Sleep after. The email to the professor, if you need one, is tomorrow’s card.'],
+   cant:'Submit the one sentence and the three reasons as a document titled "draft, full version to follow" and send the professor the Say-this line at 8 am.',
+   say:'To the professor at 8 am: "I submitted an incomplete draft before the deadline so that you have something. The full paper will be in by [clock time, within 48 hours]. I am not asking for an extension on the grade, only telling you what happened."',
+   later:'Write the deadline on the fridge as a clock time, "Friday 8:00 am," with the two-hour version of the paper due to yourself two days before. Barkley (2001): a deadline felt as "Friday" is felt as far away until it is not.',
+   why:'Barkley, Murphy and Bush (2001), Steel (2007).' },
+ { id:'sources', cat:'writing', dots:3, t:'I have four tabs of sources and no argument.',
+   h:'Sources are the easiest part of a paper to collect and the hardest to stop collecting, because collecting feels like progress and does not require a position. The tabs are a form of waiting.',
+   now:['Close all four tabs. Yes, close them. They are in your history.','Write one sentence that begins "Against what people usually say about this, I think." Finish it.','Reopen only the one source that disagrees with you. That is the source your paper is about.'],
+   cant:'Write the sentence and send it to yourself as a text. Tomorrow’s card starts from a text message, which is fine.',
+   say:'In office hours: "I have a position and one source against it. Is that enough to start, or do I need the field first?"',
+   later:'Collect sources only after the one sentence exists, and stop at five. Sweller (1988): the open tabs are load, and load is why there is no argument yet.',
+   why:'Sweller (1988). The five-source cap is the studio’s rule.' },
+ { id:'office', cat:'words', dots:2, t:'The professor said office hours and I have never gone.',
+   h:'Office hours are an unstructured conversation with a stranger who grades you, which is the exact situation the research on autistic and ADHD students says the university never designs for. The dread is reasonable. The visit is still worth it.',
+   now:['Write one question on your phone. One. About the assignment, not about yourself.','Go in the first ten minutes of the hour, when nobody else is there yet.','Say the sentence below, ask the question, write down the answer, leave. Four minutes is a complete office hours visit.'],
+   cant:'Email the question instead, with the subject line "One question about [assignment]." Same credit, no doorway.',
+   say:'"I have one question and then I will get out of your way. [The question.]"',
+   later:'Go once in the first three weeks of every course with a question you already half know the answer to. After that the room is known, and the hard visit in week ten is to a person, not a stranger. Gelbar (2014), Lefler (2016).',
+   why:'Gelbar, Smith and Reichow (2014), Lefler, Sacchetti and Del Carlo (2016).' },
+ { id:'letter', cat:'words', dots:1, t:'The accommodation letter is in my inbox and I have not sent it.',
+   h:'Sending it means being a person with a letter, in writing, to someone who will read it before they know you. Students put this off for weeks for exactly that reason, and the weeks are when the accommodations would have mattered.',
+   now:['Forward the letter to the professor with the three sentences below and nothing else. Do not explain your diagnosis.','Send it to every professor in one sitting. Four emails, ten minutes, done for the term.','Screenshot the sent folder. That is the proof you did it, for the day you doubt it.'],
+   cant:'Forward it with no message at all. The letter is the message. The office wrote it so you would not have to.',
+   say:'"Attached is my accommodation letter from [office]. The accommodations are listed in it. Please let me know if you need anything from me to put them in place."',
+   later:'Send the letters the week before term starts, before anyone has an impression of you. Lefler (2016): the students who used accommodations late wished they had used them early. The letter is a right, not a request.',
+   why:'Lefler, Sacchetti and Del Carlo (2016), DuPaul (2009).' },
+ { id:'counts', cat:'ai', dots:2, t:'The assignment says no AI and I do not know what counts.',
+   h:'Conceptual first: "AI" on a syllabus usually means text generation, and almost never means spellcheck, a citation manager, or the library database. Structural: policies are written for the writing the professor imagines, which may not be yours. Operative: the judgment is yours, and asking is a judgment.',
+   now:['Read the policy once and write down what it names. If it names tools, it means those tools. If it names "AI" alone, it means generation.','Decide your own line in one sentence: what you will not use it for in this course, whatever the policy says.','If a tool you rely on for access, speech-to-text, a reader, a grammar checker, is in doubt, ask before the first assignment, in writing, using the line below.'],
+   cant:'Use nothing that generates sentences for this course until you have asked. Everything else, spellcheck included, is yours.',
+   say:{fy:'"The syllabus says no AI. I use speech-to-text and a grammar checker because of how I write. Are those within the policy, or should I note them?"', up:'"Your policy names AI generally. I use [tool] at the planning stage and never for drafting. I want to confirm that is within bounds before the first paper, and I am happy to note it on each submission."', grad:'"Before I start the seminar paper I want to be clear on your expectations for AI at the research stage, since the department guidance and the syllabus read differently. Here is what I intend to do and not do: [two sentences]."'},
+   later:'Write your own one-paragraph philosophy of use on the tab above and keep it. When a policy is unclear, the paragraph is what you send, and it reads as judgment rather than as a request for permission.',
+   why:'Cole (forthcoming), three-level AI literacy. The stage rule is the studio’s practice.' },
+ { id:'start', cat:'ai', dots:2, t:'I want to use AI to start and I do not want it to write the paper.',
+   h:'Writing with AI keeps your judgment at every stage. Writing for it hands the judgment to the output and makes yours an afterthought. The difference is not the tool. It is whether you decided before it did.',
+   now:['Decide first, on paper or in a note: the argument in one sentence and three reasons. No tool yet.','Now ask the tool only questions: "What would someone who disagrees with this say?" "What am I missing in these three reasons?" "What does this term usually mean in [field]?" Never "write."','Everything it says is a claim to check. Take notes in your own words. Close it. Draft from your notes.'],
+   cant:'Skip the tool. The one sentence and three reasons are already the start. The tool was a way of not starting.',
+   say:{fy:'To yourself: "Did I decide before it did?" If the answer is no, that section is not mine yet.', up:'In the note at the end of the paper: "I used [tool] to question an outline I had already written. All argument, prose, and sources are mine."', grad:'To an advisor: "I use [tool] as an interlocutor at the planning stage, with the argument fixed first, and I log each session. I do not use it to produce prose."'},
+   later:'Keep a dated log per course: what you asked, at which stage, what you kept. If anyone asks, the record exists. Flower and Hayes (1981) for the stages, and the maker’s with-not-for framework for the test.',
+   why:'Cole and Anson (2026), writing with, not for. Flower and Hayes (1981).' },
+ { id:'detector', cat:'ai', dots:1, t:'I write in a second language, or my brain does, and I am scared of the detector.',
+   h:'Structural fact: detectors flag predictable vocabulary and formulaic transitions, which is what multilingual and many neurodivergent writers produce when they write carefully. A 2023 study found a sixty one percent false-positive rate on non-native English essays. The fear is rational. The defense is evidence.',
+   now:['Write in a tool that keeps version history, Google Docs or Word online, from the first word. Do not paste a finished draft in from somewhere else.','Keep your notes, your outline, and your one sentence and three reasons in the same folder, dated.','If a professor raises a detector score, say the line below and offer the history. Do not apologize for your prose.'],
+   cant:'Turn on version history now, in whatever you are writing in, and do nothing else tonight. The record starts the moment you turn it on.',
+   say:{fy:'"I wrote this myself. I can show you the version history and my notes. I know detectors flag writers like me, and I would like us to look at the draft history together rather than the score."', up:'"I am aware that detection tools have a high false-positive rate for multilingual and neurodivergent writers. I have the full draft history and my notes, and I would rather we talk about the writing than the score."', grad:'"I want to address this directly. Detection software has a documented false-positive rate above sixty percent for non-native writers (Liang et al., 2023). My draft history is available, and I am happy to talk through any passage. I would ask that the score not be treated as evidence."'},
+   later:'Ask the disability services office whether a note about detection bias belongs in your accommodation letter. Some offices will add it. Liang et al. (2023) is the study to cite, and the maker’s position is that no course should use a detector as a disciplinary trigger.',
+   why:'Liang et al. (2023). Cole (forthcoming), the detector as a structural literacy case.' },
+ { id:'disclose', cat:'ai', dots:2, t:'The professor wants a disclosure statement and I do not know what to write.',
+   h:'A disclosure is three facts: what you used, at which stage, and what is yours. It is not a confession and not an essay about ethics. Written that way, it protects you more than silence does.',
+   now:['List what you used, by name. Include the small tools if the policy is broad.','For each, name the stage: planning, finding sources, checking grammar, reviewing a draft. Never "writing," because if the answer is writing the card to draw is the one about starting.','End with the sentence that says what is yours. Three sentences total. Put it at the end of the paper or in the first footnote.'],
+   cant:'Write: "I used [tool] for [stage]. Everything else is my own work." Two sentences is a disclosure.',
+   say:{fy:'"I used [tool] to check grammar and to ask questions about the reading. I did not use it to write any sentences. The argument, the writing, and the sources are my own."', up:'"I used [tool] at the planning stage to test an outline I had already drafted, and [citation manager] for references. All prose, argument, and source selection are my own work, and my notes are available on request."', grad:'"AI use in this paper: [tool], at the literature-mapping stage, to surface terms and candidate sources, each of which I read and evaluated; and [tool] for copyediting a complete draft. No generated prose appears in the paper. A dated log of each session is available."'},
+   later:'Write your disclosure template once, in your philosophy of use, and adapt it per paper in one minute. The maker asks her own students for exactly this, which is why the lines above are shaped the way they are.',
+   why:'Studio practice, from the maker’s own course policy. Cole (forthcoming) on operative literacy as accountable judgment.' },
+ { id:'summary', cat:'ai', dots:1, t:'I had AI summarize the reading and now I cannot discuss it.',
+   h:'Structural fact: a summary gives you the claim and removes the argument, which is the only part a seminar is about. You know what the text says and not what it does, and the room will find out in four minutes.',
+   now:['Open the actual reading to the conclusion. Read it once. That is where the author says what they think they proved.','Find one sentence in the body that you disagree with or do not believe. Mark it.','Write a question about that sentence. Bring the question, not the summary.'],
+   cant:'Read the first paragraph and the last. Say in seminar: "I only got through the frame of this one, and here is what I want to ask about it." Honest and still a contribution.',
+   say:{fy:'"I want to push on page [n]. The author says X, and I could not tell whether the evidence before it supports that."', up:'"I read the conclusion against the opening and the argument shifts between them. Does anyone else see the move on page [n]?"', grad:'"The summary version of this piece is X, and I think that flattens the real contribution, which is the method move in section [n]. I want to argue the piece is doing something more specific."'},
+   later:'Use the tool the other way around: after you read, ask it to quiz you on the piece and answer from memory. Roediger and Karpicke (2006): testing yourself is what makes it stay, and a summary is the opposite of a test.',
+   why:'Roediger and Karpicke (2006). Cole (forthcoming), structural literacy on what summarization removes.' },
+ { id:'refuse', cat:'ai', dots:3, t:'I do not want to use it, and everyone says I have to.',
+   h:'Refusal is an operative choice, not a failure of literacy. Informed refusal, grounded in knowing what the tool does and whose writing it misreads, is the most advanced thing a student can do with it. The pressure to use is not a policy. It is a mood.',
+   now:['Write the reason in one sentence. Not "I am scared of it," which is a feeling, but "because it does X to my writing," which is a judgment.','Put that sentence in your philosophy of use. It is now a position.','When asked, say the line below and change the subject to the work.'],
+   cant:'Do not use it. That is the whole action. Nobody is checking.',
+   say:{fy:'"I am choosing not to use AI for my writing this term. I know what it does, and I want to find out what I can do first."', up:'"I have decided not to use generative AI for my written work in this course, and I can say why: [one sentence]. I am glad to talk about it, and I am still here for the assignment as set."', grad:'"My position on generative AI in my research is a considered refusal at the drafting and analysis stages, for reasons I have written down and am happy to share. I use it for nothing that touches the argument. I would like that noted rather than treated as a gap."'},
+   later:'Revisit the paragraph each term. A refusal with reasons is a philosophy of use, and it is allowed to change. The maker’s framework treats principled refusal as the operative level, which is the highest one.',
+   why:'Cole (forthcoming), principled refusal as operative literacy. "What Refusal Actually Means," in progress.' },
+ { id:'group', cat:'words', dots:2, t:'The group project chat has 94 messages.',
+   h:'Ninety four messages is ninety four small decisions about whether each one needs you. Reading them in order is the worst way to find out. The chat is a document, and documents get skimmed from the end.',
+   now:['Read the last ten messages only. Find the most recent message with a date or a task in it.','Reply with the sentence below, claiming one piece of the work and a time you will deliver it.','Mute the chat until that time. Your part is the only part you can do.'],
+   cant:'Reply: "I am behind on the thread. Tell me the one thing you need from me and when." Then mute.',
+   say:'"I will take [part]. You will have it by [clock time, day]. Message me directly if that changes."',
+   later:'At the first group meeting, ask for one shared document with names next to tasks and dates, and say it is because you lose threads. Gelbar (2014): group work is where autistic students report the most friction, and a document is the fix that works for everyone.',
+   why:'Gelbar, Smith and Reichow (2014).' },
+ { id:'syllabus', cat:'week', dots:1, t:'The syllabus is a PDF of a PDF and I cannot find the date.',
+   h:'Universities hide the information that matters in documents designed for the people who wrote them. Finding one date in eleven pages is a search task, and search tasks are what executive function is for and what you have the least of right now.',
+   now:['Search the PDF for "due" and for "%" at once. The dates live next to those words.','Put every date you find into your calendar now, as all-day events, with the course name first.','Add a second event two days before each one, named "two-day version of [thing]."'],
+   cant:'Email the professor: "Can you confirm the due date for [assignment]? I want to make sure I have it right." You will have it in writing, which is better than the syllabus.',
+   say:'To the professor, in week one: "I have put every date from the syllabus in my calendar. If anything moves, could you say so in an announcement as well as in class? I will miss it if it is only said aloud."',
+   later:'Do this on the first day of every term, all courses, one sitting, one hour. Barkley (2001): the calendar is where time lives when you cannot feel it.',
+   why:'Barkley, Murphy and Bush (2001).' },
+ { id:'missed', cat:'week', dots:1, t:'I missed two classes and now I cannot walk in.',
+   h:'The third absence is harder than the first two because the room now holds a story about you, and the story is one you wrote. Nobody in the room is keeping the count you are keeping.',
+   now:['Go to the next class. Sit where you usually sit. Say nothing about the absences.','Before it, send the email below so that the professor knows you are back before they see you.','After, ask one classmate what you missed. People like being asked.'],
+   cant:'Send the email and watch the lecture recording, if there is one, with a timer, so it ends. Attendance is next week’s card.',
+   say:'"I missed the last two sessions. I am back on [day]. Is there anything I should have in hand before I come?"',
+   later:'Decide now what the rule is after one missed class: the email goes the same day, before the second one is possible. Breines and Chen (2012): the way back is kindness, not a penalty, and the kit will not add one.',
+   why:'Breines and Chen (2012), Steel (2007).' },
+ { id:'exam', cat:'week', dots:3, t:'The exam is in nine days.',
+   h:'Nine days is enough for the thing that works and too long for the thing that feels like working. Rereading and highlighting feel like studying and are not. Testing yourself on separate days is, and it is less pleasant, which is how you know.',
+   now:['Make thirty questions from the notes, one per page, answers on the back. Tonight. This is the only time you will read the notes.','Days 2, 4, 6, 8: answer every question from memory, out loud or in writing. Reread only the ones you got wrong.','Day 9, morning: the wrong pile once. Then stop. Walk.'],
+   cant:'Ten questions instead of thirty. Same schedule. Ten questions tested four times beat thirty pages read once.',
+   say:'To the professor: "Is the exam closer to recall or to application? I want to practice the right kind."',
+   later:'Make the questions as the term goes, three per week, so that week nine is only the schedule. Roediger and Karpicke (2006), Cepeda (2006), Dunlosky (2013): testing and spacing are the two techniques with the strongest evidence in the whole literature.',
+   why:'Roediger and Karpicke (2006), Cepeda et al. (2006), Dunlosky et al. (2013).' },
+ { id:'sixty', cat:'reading', dots:1, t:'The reading is sixty pages and seminar is in two hours.',
+   h:'Sixty pages in two hours is a reading speed nobody has. The task is not to read it. The task is to be in the room with one thing to say, and that takes twenty minutes.',
+   now:['Read the first two pages and the last two. Write the claim in one line.','Pick one section heading that interests you. Read that section only.','Write one question about it. Walk in with the question.'],
+   cant:'Read the last two pages. Say in seminar: "I came in through the conclusion, and here is what I want to ask about it."',
+   say:'"I only got partway, and the section on [n] raised this for me: [question]."',
+   later:'Sixty pages is a two-session reading. Put the first session on the calendar the day it is assigned, forty minutes, with the conclusion first. Dunlosky (2013): once through with a question beats twice through without one.',
+   why:'Dunlosky et al. (2013). Reading the conclusion first is the studio’s practice.' },
+ { id:'everyone', cat:'reading', dots:2, t:'I do not understand the reading and everyone else seems to.',
+   h:'Everyone else did not understand it either. Seminars run on confidence, which is a different thing from comprehension, and the person who names the hard part is usually the one who read it most carefully.',
+   now:['Find the single paragraph where you lost the thread. Mark it.','Write what you think it is trying to say, even if wrong, in one sentence.','Bring that sentence. "I think this paragraph is saying X, and I am not sure" is a seminar contribution of the first rank.'],
+   cant:'Write the page number of the paragraph on your hand. Ask about it. That is participation.',
+   say:{fy:'"Can I ask about page [n]? I think it is saying [X], and I lost it after that."', up:'"I want to slow down on page [n]. I read it as [X], and I suspect that is too simple."', grad:'"I had trouble with the move on page [n], and I think the trouble is in the text and not in me. Is the author doing [X] there, or something else?"'},
+   later:'Keep a running "lost here" list per reading, page numbers only. Over a term it shows you where this author, or this field, always loses you, which is the start of knowing the field. Lefler (2016): understanding is rarely the ADHD student’s problem; sustaining it is.',
+   why:'Lefler, Sacchetti and Del Carlo (2016).' },
+ { id:'lead', cat:'reading', dots:3, t:'I have to lead discussion on Thursday.',
+   h:'Leading discussion is a structured hour with a role, which is easier than being a participant, if the structure is built in advance. The dread is the open hour. Close it with a plan that has clock times in it.',
+   now:['Write three questions about the reading: one about what it claims, one about what it leaves out, one that connects it to last week.','Plan the hour by the clock: five minutes of summary, fifteen on each question, five to close. Write the times on the page.','Bring a passage to read aloud for each question. Reading aloud buys time and gives the room something to look at.'],
+   cant:'One question, read aloud, then "What do people make of that?" and wait. Silence is allowed. Count to ten.',
+   say:{fy:'"I will start us with the paragraph on page [n]. I read it twice and I still want to argue with it."', up:'"Three questions today, fifteen minutes each. I will stop us at the clock, so push back fast."', grad:'"I want to run this by the clock and keep us on the method question for the middle third, because that is where I think the piece earns or fails to earn its claim."'},
+   later:'Keep the three-question plan as a template. It works for every discussion you ever lead, including the ones you teach. Sweller (1988): the structure holds the load so you can hold the room.',
+   why:'Sweller (1988). The three-question template is the studio’s practice.' },
+ { id:'notes', cat:'reading', dots:1, t:'I took notes and cannot find anything in them.',
+   h:'Notes taken while reading are a record of attention, which wanders, and not a record of the reading. Searching them is harder than searching the book. Stop searching.',
+   now:['Go back to the reading, not the notes. Use the table of contents or the headings to find the section.','Write one new line in your notes with the page number and the point, in your own words.','Delete nothing. Add a date to the new line so you know which notes are the ones that work.'],
+   cant:'Search the PDF for the one word you remember. Write the page number down. Done.',
+   say:'To yourself: "The notes were for reading. The book is for finding."',
+   later:'Take notes as questions and page numbers only, one line each, and never as summary. Roediger and Karpicke (2006): the question is the thing that stays, and the page number is the thing that finds.',
+   why:'Roediger and Karpicke (2006).' },
+ { id:'feedback', cat:'writing', dots:1, t:'The feedback came back and I cannot open it.',
+   h:'Feedback is evaluation, and for a brain that has been evaluated badly before, an unopened file holds every version of what it might say at once. Opened, it holds one. The one is always smaller.',
+   now:['Open it with someone in the room, on speaker, or with a timer set for five minutes so the opening has an end.','Read only the last paragraph, where the summary and the grade usually are.','Close it. The rest is tomorrow’s reading, with the Later line below.'],
+   cant:'Ask a friend to open it and tell you the grade and one sentence. You read the rest when you are ready.',
+   say:{fy:'To the professor, if the feedback is unclear: "Thank you for the comments. Could I come to office hours to go through the two biggest ones? I want to make sure I understood them."', up:'"I have read your comments and want to make sure I take the right thing from them. If you had to name the one change that would most improve the next paper, what would it be?"', grad:'"Thank you for the detailed response. I want to separate the revisions that are required from the ones that are suggestions before I begin, so that I use the time well. Could we confirm that list?"'},
+   later:'Read feedback in two passes on two days: the first for the one big thing, the second for the small ones. Breines and Chen (2012): the way to read evaluation is with the kindness that makes you want to improve, and that is a practice, not a mood.',
+   why:'Breines and Chen (2012).' },
+ { id:'thesis', cat:'writing', dots:2, t:'The thesis statement is the only thing I cannot write.',
+   h:'A thesis is the last thing a writer knows and the first thing a reader needs, which is why it goes at the top and gets written at the end. Writing it first is writing in the wrong order.',
+   now:['Write the whole first paragraph without a thesis. Describe the problem, the text, the question.','Write the body. Yes, without a thesis. Each section is one reason.','Now read the three reasons and write the sentence they add up to. That is the thesis. Move it to the top.'],
+   cant:'Write "This paper argues that" and leave the rest blank. Fill it in last. The blank is a promise, not a failure.',
+   say:'To a friend: "Here are my three reasons. What is the sentence they add up to? Say it badly."',
+   later:'Draft every paper with a placeholder thesis and write the real one last. Flower and Hayes (1981): planning is discovery, and discovery ends after the drafting, not before.',
+   why:'Flower and Hayes (1981).' },
+ { id:'email', cat:'words', dots:1, t:'I need to email a professor and it has taken four days.',
+   h:'The email has become a task about how you will be perceived rather than a request for a thing. Four days of drafting in your head is the cost. The email itself is three sentences and takes two minutes.',
+   now:['Subject line: the course number and the thing. "ENG 101, question about the Friday deadline."','Body: one sentence of what you need, one of why, one of thanks. No apology for emailing.','Send it before you reread it. Rereading is where the four days went.'],
+   cant:'Send only the subject line and "Could I ask you this in office hours?" They will say yes.',
+   say:{fy:'"Dear Professor [name], I have a question about [thing]. [The question.] Thank you for your time. [Name], [course]."', up:'"Professor [name], a quick one about [thing]: [the question]. If office hours are better for this, I can come Tuesday. Thanks, [name]."', grad:'"Dear [name], I wanted to check [thing] with you before I go further. [The question.] A one-line reply is plenty. Best, [name]."'},
+   later:'Keep the three-sentence shape as a note on your phone and never draft an email anywhere else. Steel (2007): aversiveness and delay drive procrastination, and a template removes both.',
+   why:'Steel (2007). Gelbar, Smith and Reichow (2014) on where college asks for unstructured social work.' },
+ { id:'cancel', cat:'words', dots:1, t:'I said yes to studying together and now I want to cancel.',
+   h:'The yes was real and so is the wanting to cancel. Both are allowed. What matters is which one costs more tomorrow, and a cancelled plan with a new date costs almost nothing.',
+   now:['Decide in one minute: go for thirty minutes, or move it. Both are fine.','If you go: tell them the end time when you arrive. "I have until 3." Leave at 3.','If you move it: send the line below now, with a day in it. Not "sometime."'],
+   cant:'Send the line below. The plan is moved, not broken.',
+   say:'"I need to move today. Thursday at 2, same place? I will bring the questions for the exam."',
+   later:'Say yes to study plans only with an end time attached, and let the end time be short. Thirty minutes with another person in the room is the body doubling that makes the work start, and it is the studio’s practice, not a study.',
+   why:'Studio practice. Gelbar, Smith and Reichow (2014) on social load.' },
+ { id:'present', cat:'words', dots:3, t:'I have to present on Thursday.',
+   h:'A presentation is a reading of a document you have not written yet. Write the document first, in the shape of what you will say, and the presenting becomes reading, which you know how to do.',
+   now:['Write what you will say as a script, in full sentences, one page. Not slides. The script.','Read it aloud twice with a timer. Cut until it fits the time with a minute to spare.','Make the slides last, one per paragraph, five words each, from the script. The slides are for them. The script is for you.'],
+   cant:'Write the first sentence and the last sentence of the talk. Memorize those two. Everything between them can be read from a page.',
+   say:{fy:'Opening line: "I am going to walk through one idea from the reading and one question I have about it."', up:'Opening line: "Three things in ten minutes: what the piece claims, where it is weakest, and what I would do with it."', grad:'Opening line: "I want to use the ten minutes to make one argument about method, and I will take questions on everything else after."'},
+   later:'Keep every script. The next presentation starts from the last one. Sweller (1988): the script holds the load so the room gets your attention.',
+   why:'Sweller (1988). The script-first method is the studio’s practice.' },
+ { id:'allatonce', cat:'week', dots:1, t:'It is the week everything is due at once.',
+   h:'Four things due in one week is four decisions about what to do first, remade every hour. Make the decision once, in writing, and the week becomes a list.',
+   now:['Write the four things with their due clock times. Order them by due time, not by size or dread.','For each, write the two-hour version: what you would submit if two hours were all you had.','Do the two-hour versions in order. Then, if time remains, improve the one due last.'],
+   cant:'Do the two-hour version of the one due first. Submit it. Draw this card again tomorrow.',
+   say:'To a professor, before the week and not during: "I have four deadlines in the same week. Is there any flexibility on [the one due last]? If not, I will plan around it."',
+   later:'In week one, find the weeks where things collide and email about the last-due one then. Barkley (2001): the collision is only visible when the calendar is outside your head.',
+   why:'Barkley, Murphy and Bush (2001), Steel (2007).' },
+ { id:'register', cat:'week', dots:2, t:'Registration opens at 7 am and I have not planned.',
+   h:'Registration is a timed task with a hidden cost: every course you pick is a set of deadlines you will meet in April. The plan is not about which courses. It is about which weeks.',
+   now:['Tonight: list the courses you need, then the ones you want. Four plus two alternates.','For each, check when the big assignments fall, if the syllabus is posted. Avoid two courses with papers in the same week.','Set an alarm for 6:50. Have the course numbers in a note. At 7:00, enter them in order. Do not browse.'],
+   cant:'Register for the required ones only. Add the rest during add-drop, when nothing is timed.',
+   say:'To an advisor, in the week before: "I want to avoid stacking deadlines. Which two of these courses have papers in the same weeks?"',
+   later:'Keep a one-page map of the term with assignment weeks shaded, and choose next term’s courses against it. DuPaul (2009): the gap for students with ADHD is in the planning of the work, and this is the planning.',
+   why:'DuPaul et al. (2009), Barkley, Murphy and Bush (2001).' },
+ { id:'lapse', cat:'week', dots:1, t:'I have not opened this in three weeks.',
+   h:'Every system breaks down. That is what systems do, and the gap is not evidence about you. The kit was built to be returned to, not kept up.',
+   now:['Nothing to catch up on. There is no streak.','Draw one card. Use it or do not.','Close this.'],
+   cant:'You already did it. You opened this.',
+   say:'To yourself: "It is still here."',
+   later:'If the gap keeps happening, the kit is in the wrong place. Move it to the home screen page you open at 11 pm, since that is when you are.',
+   why:'Breines and Chen (2012).' }
+];
+
+var log = []; try { log = JSON.parse(localStorage.getItem('sk-log') || '[]'); } catch (e) { log = []; }
+function save() { try { localStorage.setItem('sk-log', JSON.stringify(log)); } catch (e) {} }
+var home = document.getElementById('home'), cardView = document.getElementById('cardView'), rv = document.getElementById('researchView');
+var pv = document.getElementById('philView');
+var tv = document.getElementById('tellView');
+function show(v) { home.hidden = v !== 'home'; cardView.hidden = v !== 'card'; rv.hidden = v !== 'research'; pv.hidden = v !== 'phil'; tv.hidden = v !== 'tell'; document.getElementById('t-tell').setAttribute('aria-selected', v === 'tell' ? 'true' : 'false'); document.getElementById('t-cards').setAttribute('aria-selected', (v === 'home' || v === 'card') ? 'true' : 'false'); document.getElementById('t-research').setAttribute('aria-selected', v === 'research' ? 'true' : 'false'); document.getElementById('t-phil').setAttribute('aria-selected', v === 'phil' ? 'true' : 'false'); window.scrollTo(0, 0); }
+document.getElementById('t-cards').addEventListener('click', function () { show('home'); });
+document.getElementById('t-research').addEventListener('click', function () { show('research'); });
+document.getElementById('backFromR').addEventListener('click', function () { show('home'); });
+document.getElementById('t-phil').addEventListener('click', function () { show('phil'); });
+document.getElementById('backFromP').addEventListener('click', function () { show('home'); });
+document.querySelectorAll('[data-level]').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.level === LEVEL ? 'true' : 'false'); b.addEventListener('click', function () { LEVEL = b.dataset.level; try { localStorage.setItem('sk-level', LEVEL); } catch (e) {} document.querySelectorAll('[data-level]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); if (!cardView.hidden && last) open(last, 'relevel'); }); });
+['p1','p2','p3'].forEach(function (id) { try { var v = localStorage.getItem('sk-' + id); if (v) document.getElementById(id).value = v; } catch (e) {} });
+document.getElementById('philGen').addEventListener('click', function () {
+  var a = document.getElementById('p1').value.trim(), b = document.getElementById('p2').value.trim(), c = document.getElementById('p3').value.trim();
+  try { localStorage.setItem('sk-p1', a); localStorage.setItem('sk-p2', b); localStorage.setItem('sk-p3', c); } catch (e) {}
+  var out = 'My philosophy of use, ' + new Date().toLocaleDateString() + '.\n\n' + (a ? 'What the tool is, as I understand it: ' + a + ' ' : '') + (b ? 'Whose writing it misreads, and what that means for me: ' + b + ' ' : '') + (c ? 'What I will use it for, what I will refuse, and how I will say so: ' + c : '');
+  document.getElementById('philOut').textContent = out.trim() || 'Answer at least one question.';
+});
+document.getElementById('philCopy').addEventListener('click', function () { var t = document.getElementById('philOut').textContent; var done = function () { var d = document.createElement('div'); d.className = 'toast'; d.textContent = 'Copied'; document.body.appendChild(d); setTimeout(function () { d.remove(); }, 1500); }; if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done).catch(done); else done(); });
+var list = document.getElementById('list');
+Object.keys(CAT).forEach(function (c) {
+  var items = E.filter(function (e) { return e.cat === c; }); if (!items.length) return;
+  var h = document.createElement('div'); h.className = 'c-' + c; h.innerHTML = '<div class="tag" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:16px 4px 6px">' + CAT[c] + ', ' + items.length + '</div>'; list.appendChild(h);
+  items.forEach(function (e) { var b = document.createElement('button'); b.className = 'c-' + e.cat; b.innerHTML = '<span class="tag" style="min-width:0">' + '\u25CF'.repeat(e.dots) + '\u25CB'.repeat(3 - e.dots) + '</span><span>' + e.t + '</span>'; b.addEventListener('click', function () { open(e, 'picked'); }); list.appendChild(b); });
+});
+function open(e, how) {
+  log.push({ id: e.id, how: how, at: new Date().toISOString() }); save();
+  var dots = '●'.repeat(e.dots) + '○'.repeat(3 - e.dots);
+  cardView.className = 'card c-' + e.cat;
+  cardView.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:baseline"><span class="tag">' + CAT[e.cat] + '</span><span class="dots" title="How much capacity this card assumes">' + dots + '</span></div><h2>' + e.t + '</h2>' +
+    '<div class="sec"><div class="lab">What is happening</div><p>' + e.h + '</p></div>' +
+    '<div class="sec" id="nowSec"><div class="lab">Do this now</div><ol class="steps">' + e.now.map(function (s, i) { return '<li><input type="checkbox" aria-label="Step ' + (i + 1) + ' done"><span>' + s + '</span></li>'; }).join('') + '</ol><div class="donewhen">Done when: ' + (e.now.length === 1 ? 'that one step is ticked.' : 'all ' + ['','one','two','three','four','five'][e.now.length] + ' are ticked. Then stop, even if there is time left.') + '</div><button type="button" class="toobig" id="tooBig">Too big</button></div>' +
+    '<div class="sec cant"><div class="lab">If you cannot</div><p>' + e.cant + '</p></div>' +
+    '<div class="sec say"><div class="lab">Say this</div><p>' + sayFor(e) + '</p></div>' +
+    '<div class="sec later"><div class="lab">Later, on a better week</div><p>' + e.later + '</p><div class="why">Behind this card: ' + e.why + ' <a href="#" id="toR">The research tab.</a></div></div>' +
+    '<div class="mark"><button data-mark="helped">This helped</button><button data-mark="no">Not this</button></div>' +
+    '<div class="row" style="margin-top:4px"><button class="ghost" id="another">Draw another</button><button class="ghost" id="backHome">Back</button></div>';
+  show('card');
+  cardView.querySelectorAll('.steps input').forEach(function (c) { c.addEventListener('change', function () { c.parentNode.classList.toggle('done', c.checked); }); });
+  document.getElementById('tooBig').addEventListener('click', function () {
+    log.push({ id: e.id, how: 'toobig', at: new Date().toISOString() }); save();
+    document.getElementById('nowSec').innerHTML = '<div class="lab">One step, tonight</div><ol class="steps"><li><input type="checkbox" aria-label="Done"><span>' + e.cant + '</span></li></ol><div class="donewhen">Done when: this one thing is done. Nothing else on this card is owed today.</div>';
+    var c = cardView.querySelector('#nowSec input'); c.addEventListener('change', function () { c.parentNode.classList.toggle('done', c.checked); });
+    var ct = cardView.querySelector('.cant'); if (ct) ct.remove();
+  });
+  cardView.querySelectorAll('[data-mark]').forEach(function (b) { b.addEventListener('click', function () { cardView.querySelectorAll('[data-mark]').forEach(function (x) { x.classList.remove('on'); }); b.classList.add('on'); log.push({ id: e.id, how: 'mark:' + b.dataset.mark, at: new Date().toISOString() }); save(); }); });
+  document.getElementById('toR').addEventListener('click', function (ev) { ev.preventDefault(); show('research'); });
+  document.getElementById('another').addEventListener('click', draw);
+  document.getElementById('backHome').addEventListener('click', function () { show('home'); });
+}
+var last = null;
+function draw() { var e; do { e = E[Math.floor(Math.random() * E.length)]; } while (E.length > 1 && e === last); last = e; open(e, 'drawn'); }
+document.getElementById('drawBtn').addEventListener('click', draw);
+
+var TELL = {
+  dro: { name: 'Disability resource office', scripts: [
+    { t: 'Asking for a first appointment', f: ['Your name', 'Student ID', 'What makes the term hard'], body: 'Hello,\n\nI am {Your name} ({Student ID}), and I would like to register with your office and request accommodations for this term. The short version: {What makes the term hard}. I have documentation, or can get it, and I would like to know what you need from me and the next open appointment.\n\nThank you,\n{Your name}' },
+    { t: 'Asking to change an accommodation', f: ['Your name', 'Which accommodation', 'What is not working'], body: 'Hello,\n\nI am {Your name}. My current accommodation for {Which accommodation} is not working the way I need it to: {What is not working}. Could we meet to adjust it before the next deadline?\n\nThank you,\n{Your name}' } ] },
+  prof: { name: 'A professor', scripts: [
+    { t: 'Sending the accommodation letter', f: ['Professor', 'Course', 'Your name'], body: 'Dear Professor {Professor},\n\nI am in {Course}, and I have sent my accommodation letter through the disability resource office. I wanted to name it directly as well, so it is not a surprise later in the term. I do not need to discuss the reasons, and I am glad to talk through how it works for your assignments if that is useful.\n\nThank you,\n{Your name}' },
+    { t: 'Asking for an extension before the deadline', f: ['Professor', 'Assignment', 'New date', 'Your name'], body: 'Dear Professor {Professor},\n\nI am asking for an extension on {Assignment}, under my accommodations. I can submit it by {New date}. I am asking now, before the deadline, so you can plan around it.\n\nThank you,\n{Your name}' },
+    { t: 'Asking how AI is allowed in this course', f: ['Professor', 'Course', 'Your name'], body: 'Dear Professor {Professor},\n\nI want to use AI in {Course} only in ways you allow, and the syllabus leaves part of it open for me. Here is how I work, so you can tell me where the line is:\n\n{PHIL}\n\nCould you tell me which of these you are comfortable with?\n\nThank you,\n{Your name}' } ] },
+  adv: { name: 'An advisor or committee', scripts: [
+    { t: 'Naming what helps in meetings', f: ['Advisor', 'Your name'], body: 'Dear {Advisor},\n\nBefore our next meeting, one practical note about how I work best. Written follow-up after we talk, with the next step and its date, makes it much likelier I act on what we decide. If you are willing, I will send you a three-line summary after each meeting for you to correct.\n\nThank you,\n{Your name}' },
+    { t: 'Telling the chair a chapter is late', f: ['Advisor', 'Chapter', 'New date', 'Your name'], body: 'Dear {Advisor},\n\n{Chapter} will not be ready on the date we set. I can send it by {New date}. I would rather tell you now than send something I do not stand behind.\n\nThank you,\n{Your name}' } ] },
+  group: { name: 'A group project', scripts: [
+    { t: 'Taking the part you can finish', f: ['Part you will take', 'Date'], body: 'Hi all,\n\nI will take {Part you will take}, and I will have it in the shared folder by {Date}. Fixed tasks with dates are what I do best, so if anything changes, a message with the new task and date is the most useful thing you can send me.' } ] }
+};
+var told = []; try { told = JSON.parse(localStorage.getItem('sk-told') || '[]'); } catch (e) { told = []; }
+function drawTold() { var el = document.getElementById('toldLog'); el.innerHTML = told.length ? '<div class="lab" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)">Who was told what</div>' + told.slice().reverse().map(function (x) { return '<div>' + x.at.slice(0, 10) + ' · ' + x.who + ' · ' + x.t + '</div>'; }).join('') : ''; }
+function esc(x) { return x.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+function drawWho(k) {
+  document.querySelectorAll('#whoBtns button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.k === k ? 'true' : 'false'); });
+  var box = document.getElementById('scripts'); box.innerHTML = '';
+  TELL[k].scripts.forEach(function (sc, i) {
+    var d = document.createElement('div'); d.className = 'script';
+    d.innerHTML = '<h3>' + sc.t + '</h3>' + sc.f.map(function (f, j) { var v = ''; try { v = localStorage.getItem('sk-f-' + f) || ''; } catch (e) {} return '<div><label for="f' + i + j + '">' + f + '</label><input type="text" id="f' + i + j + '" data-f="' + esc(f) + '" value="' + esc(v) + '"></div>'; }).join('') + '<pre></pre><div class="row"><button type="button" class="primary">Copy it</button><button type="button" class="ghost">I sent it</button></div>';
+    var pre = d.querySelector('pre');
+    function fill() { var t = sc.body; d.querySelectorAll('input').forEach(function (inp) { var v = inp.value.trim(); try { localStorage.setItem('sk-f-' + inp.dataset.f, v); } catch (e) {} t = t.split('{' + inp.dataset.f + '}').join(v || '[' + inp.dataset.f.toLowerCase() + ']'); }); var ph = (document.getElementById('philOut').textContent || ''); t = t.replace('{PHIL}', ph.indexOf('My philosophy') === 0 ? ph : '[make your paragraph on the My philosophy tab first, and it appears here]'); pre.textContent = t; }
+    d.querySelectorAll('input').forEach(function (inp) { inp.addEventListener('input', fill); }); fill();
+    var bs = d.querySelectorAll('.row button');
+    bs[0].addEventListener('click', function () { var t = pre.textContent; var done = function () { var x = document.createElement('div'); x.className = 'toast'; x.textContent = 'Copied'; document.body.appendChild(x); setTimeout(function () { x.remove(); }, 1500); }; if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done).catch(done); else done(); });
+    bs[1].addEventListener('click', function () { told.push({ who: TELL[k].name, t: sc.t, at: new Date().toISOString() }); try { localStorage.setItem('sk-told', JSON.stringify(told)); } catch (e) {} drawTold(); bs[1].textContent = 'Logged'; });
+    box.appendChild(d);
+  });
+}
+Object.keys(TELL).forEach(function (k) { var b = document.createElement('button'); b.type = 'button'; b.dataset.k = k; b.textContent = TELL[k].name; b.addEventListener('click', function () { drawWho(k); }); document.getElementById('whoBtns').appendChild(b); });
+drawWho('dro'); drawTold();
+document.getElementById('t-tell').addEventListener('click', function () { show('tell'); });
+document.getElementById('backFromT').addEventListener('click', function () { show('home'); });
+(function () { try { var a = localStorage.getItem('sk-p1'), b = localStorage.getItem('sk-p2'), c = localStorage.getItem('sk-p3'); if (a || b || c) document.getElementById('philGen').click(); } catch (e) {} })();
+</script>
+
+</body></html>

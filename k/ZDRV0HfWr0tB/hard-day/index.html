@@ -1,0 +1,405 @@
+<!doctype html><html><head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>The Hard Day Kit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Libre+Franklin:wght@400;500;600&display=swap">
+<style>
+/* Layout: one column, phone-first, the card fills the thumb zone; dark-first because the reader is in the dark. */
+:root {
+  --bg: #231A2B; --bg2: #2E2338; --fg: #F3EDE4; --fg2: #CFC3C9; --mute: #8F8396;
+  --sage: #A9BBA9; --blush: #DDB6AF; --taupe: #C2B1A2; --ink: #F3EDE4;
+  --line: rgba(243,237,228,.14);
+  --display: 'DM Serif Display', Georgia, serif; --body: 'Libre Franklin', system-ui, sans-serif;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg: #F6F0E8; --bg2: #FFFFFF; --fg: #231A2B; --fg2: #4A3F52; --mute: #857A8C; --sage: #5F7A62; --blush: #A8605A; --taupe: #7E6B5A; --ink: #231A2B; --line: rgba(35,26,43,.14); color-scheme: light } }
+:root[data-theme="light"] { --bg: #F6F0E8; --bg2: #FFFFFF; --fg: #231A2B; --fg2: #4A3F52; --mute: #857A8C; --sage: #5F7A62; --blush: #A8605A; --taupe: #7E6B5A; --ink: #231A2B; --line: rgba(35,26,43,.14); color-scheme: light }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 17px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 560px; margin: 0 auto; padding-block: 18px 40px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 18px; min-height: 100%; box-sizing: border-box; }
+header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.brand { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mute); }
+h1 { font-family: var(--display); font-weight: 400; font-size: 30px; margin: 0; line-height: 1.1; }
+.pilot { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--blush); }
+button { font: inherit; cursor: pointer; border: 0; border-radius: 14px; }
+button:focus-visible, a:focus-visible { outline: 3px solid var(--blush); outline-offset: 3px; }
+.draw { background: var(--fg); color: var(--bg); font-weight: 600; font-size: 20px; padding: 22px; width: 100%; border-radius: 18px; }
+.draw:active { transform: scale(.985); }
+.ghost { background: transparent; color: var(--fg2); border: 1px solid var(--line); padding: 12px 16px; font-size: 15px; }
+.row { display: flex; gap: 10px; flex-wrap: wrap; }
+.row > * { flex: 1 1 140px; }
+.list { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--line); }
+.list button { text-align: left; background: transparent; color: var(--fg); border-radius: 0; border-bottom: 1px solid var(--line); padding: 14px 4px; font-size: 17px; line-height: 1.35; display: flex; gap: 12px; align-items: baseline; }
+.list .tag { flex-shrink: 0; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); min-width: 76px; }
+.card { background: var(--bg2); border-radius: 20px; padding: 24px 22px 20px; display: flex; flex-direction: column; gap: 18px; }
+.card .tag { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+.card h2 { font-family: var(--display); font-weight: 400; font-size: 28px; line-height: 1.12; margin: 0; text-wrap: balance; }
+.sec { display: flex; flex-direction: column; gap: 6px; }
+.sec .lab { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mute); }
+.sec p { margin: 0; font-size: 17px; }
+.sec ol { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px; }
+.cant { border: 1.5px solid var(--blush); border-radius: 14px; padding: 14px 16px; }
+.cant .lab { color: var(--blush); }
+.cant p { font-size: 18px; font-weight: 500; }
+.say p { font-family: var(--display); font-size: 21px; line-height: 1.3; }
+.later details { border-top: 1px solid var(--line); padding-top: 10px; }
+.more { border-top: 1px solid var(--line); padding-top: 12px; display: flex; flex-direction: column; gap: 14px; }
+.more > summary { cursor: pointer; font-size: 15px; color: var(--fg2); list-style: none; }
+.more > summary::-webkit-details-marker { display: none; }
+.more > summary::before { content: '+ '; color: var(--blush); }
+.more[open] > summary::before { content: '\u2013 '; }
+.later summary { cursor: pointer; font-size: 14px; color: var(--fg2); }
+.later pre { white-space: pre-wrap; font: 14px/1.5 var(--body); background: var(--bg); padding: 12px 14px; border-radius: 10px; margin: 10px 0 0; }
+.mark { display: flex; gap: 10px; border-top: 1px solid var(--line); padding-top: 14px; }
+.mark button { flex: 1; background: transparent; border: 1px solid var(--line); color: var(--fg2); padding: 12px; font-size: 14px; }
+.mark button.on { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.c-dinner .tag, .c-dinner .lab.cat { color: var(--sage); }
+.c-evening .tag { color: var(--blush); }
+.c-morning .tag { color: var(--taupe); }
+.c-words .tag { color: var(--fg2); }
+.dots { letter-spacing: 2px; color: var(--mute); font-size: 12px; }
+.log { display: flex; flex-direction: column; gap: 10px; }
+.log table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+.log td { padding: 8px 4px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.log td:last-child { text-align: right; white-space: nowrap; }
+.note { font-size: 13px; color: var(--mute); line-height: 1.5; }
+.toast { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--fg); color: var(--bg); padding: 10px 16px; border-radius: 999px; font-size: 14px; }
+@media (prefers-reduced-motion: reduce) { .draw:active { transform: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div><div class="brand">Midnight Mom's Collective</div><h1>The Hard Day Kit</h1></div>
+    <div class="pilot">Founding edition</div>
+  </header>
+
+  <div id="home">
+    <button class="draw" id="drawBtn">Draw a card</button>
+    <p class="note" style="margin: 12px 0 18px">Or find the hour you are in.</p>
+    <div class="list" id="list"></div>
+    <div class="row" style="margin-top: 18px"><button class="ghost" id="rBtn">The research</button><button class="ghost" id="logBtn">What I opened</button></div>
+    <p class="note" style="margin-top: 14px">Twenty five cards, written in the first person by the person who made this, grouped by the kind of hour they are. Nothing needs setting up. Every card works tonight with nothing on the fridge. The sheet, the rules, the board, the drafts are things the cards make for you, one good day at a time. The dots are how much capacity a card assumes. Each card is three parts, and the rest folds under "more, if you want it." Nothing here is stored anywhere but on this phone. Add this page to your home screen and open it when it is the hour it is.</p>
+  </div>
+
+  <div id="cardView" hidden></div>
+
+
+  <div id="researchView" hidden class="log">
+    <h2 style="font-family: var(--display); font-weight: 400; font-size: 26px; margin: 0">What the cards are built on</h2>
+    <p class="note">Every instruction comes from one of these, or is marked on the card as the studio’s own practice. Verified by DOI against Crossref in October 2026. The summaries are the studio’s.</p>
+    <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px; line-height: 1.5">
+      <div><b>A card is an if-then plan.</b> Gollwitzer and Sheeran (2006), Advances in Experimental Social Psychology 38. doi:10.1016/S0065-2601(06)38002-1. "When X, I will Y" plans raised goal attainment across 94 studies. Every card is one, with the hour as X.</div>
+      <div><b>Decisions run out.</b> Pignatiello, Martin and Hickman (2020), Journal of Health Psychology 25(1). doi:10.1177/1359105318763510. Decision fatigue defined, with the lab evidence noted as contested; the cards depend only on the observation that the last decision of the day is where the plan fails.</div>
+      <div><b>Structure outside the head.</b> Barkley (1997), Psychological Bulletin 121(1). doi:10.1037/0033-2909.121.1.65. Accommodation for ADHD works at the point of performance: the fridge, the card, the board.</div>
+      <div><b>Checklists work for experts too.</b> Haynes et al. (2009), New England Journal of Medicine 360. doi:10.1056/NEJMsa0810119. A nineteen-item checklist cut surgical deaths among people who knew every item. The morning list and the reset are checklists for a person who knows what to do and cannot hold it.</div>
+      <div><b>Working memory is small.</b> Sweller (1988), Cognitive Science 12(2). doi:10.1207/s15516709cog1202_4. One task per page, three steps at most, one card at a time.</div>
+      <div><b>Time is harder to feel with ADHD.</b> Barkley, Murphy and Bush (2001), Neuropsychology 15(3). doi:10.1037/0894-4105.15.3.351. Visible timers, clock times said aloud, screen-off as a time and not a warning.</div>
+      <div><b>The late hour has a name.</b> Kroese, De Ridder, Evers and Adriaanse (2014), Frontiers in Psychology 5. doi:10.3389/fpsyg.2014.00611. Bedtime procrastination measured and tied to self-regulation and daytime fatigue.</div>
+      <div><b>Light is a lever.</b> Cajochen (2007), Sleep Medicine Reviews 11(6). doi:10.1016/j.smrv.2007.07.009. Light raises alertness within minutes; the overhead light off and the amber night light follow from it.</div>
+      <div><b>Rewards undermine the thing rewarded.</b> Deci, Koestner and Ryan (1999), Psychological Bulletin 125(6). doi:10.1037/0033-2909.125.6.627. No streaks, no prizes, no sticker charts, and no fight over a plate.</div>
+      <div><b>Spread the effort.</b> Cepeda, Pashler, Vul, Wixted and Rohrer (2006), Psychological Bulletin 132(3). doi:10.1037/0033-2909.132.3.354. The same hour spread across the week beats one night of it.</div>
+      <div><b>Aversiveness drives avoidance.</b> Steel (2007), Psychological Bulletin 133(1). doi:10.1037/0033-2909.133.1.65. The call, the email, the meeting: shrink the task and the delay and the avoidance shrinks with them.</div>
+      <div><b>Unstructured social tasks cost the most.</b> Gelbar, Smith and Reichow (2014), Journal of Autism and Developmental Disorders 44. doi:10.1007/s10803-014-2135-5. The scripts exist because the open conversation is the hard part.</div>
+      <div><b>Kindness after a lapse brings you back.</b> Breines and Chen (2012), Personality and Social Psychology Bulletin 38(9). doi:10.1177/0146167212445599. The lapse card, the fairness clause, and the one-sorry rule.</div>
+      <div><b>Two books, not studies, and said so on the cards:</b> Kennedy, Good Inside (2022), for the shape of the words to say, two things are true and the line still holds; Davis, How to Keep House While Drowning (2022), for the reset. <b>Not in any study, and said so on the cards:</b> the door room, the four-item lunch, the one-base Sunday, the three drafts for a sick day, body doubling at homework, and the sentence for relatives. The studio uses them and will not pretend they are proven. One card is held back. The visible-first fridge, a practice passed around by people with ADHD online and described at dopakitchen.com, is written and sits in the file untested. It goes into the kit when the person who made it has done it in her own kitchen and logged it here.</div>
+    </div>
+    <div class="row"><button class="ghost" id="backFromR">Back to the cards</button></div>
+  </div>
+
+  <div id="logView" hidden class="log">
+    <h2 style="font-family: var(--display); font-weight: 400; font-size: 26px; margin: 0">What I opened</h2>
+    <div id="logBody"></div>
+    <div class="row"><button class="ghost" id="copyLog">Copy log</button><button class="ghost" id="backFromLog">Back</button></div>
+    <p class="note">Copy the log at the end of fourteen days and send it to Claude. Whatever you opened twice is the kit.</p>
+  </div>
+</div>
+
+<script>
+const CAT = { dinner: 'Dinner', evening: 'The Evening', morning: 'The Morning After', words: 'Words' };
+const ALL = [
+ { id:'540', cat:'dinner', dots:1, t:'It is 5:40 and there is no plan.',
+   h:'This is the hour the day usually breaks for me. Not because I forgot to plan. Because planning is a thing I have been doing since seven this morning and it is gone.',
+   now:['Freezer, not fridge. Whatever has a cooking time on the box.','Put it in and set the oven timer, because I will not hear my phone.','Then sit down somewhere until it goes. I am allowed to sit.'],
+   cant:'It is cereal tonight, and that is a dinner. I have done it more weeks than not.',
+   say:'If the children ask, I do not owe an explanation. "Dinner is at 6:15 and it is the one in the oven." If they push: "I know you wanted something else. Tonight it is this one. Both of those are true."',
+   later:'On a better day, write three dinners I can make with my eyes closed on a sheet on the fridge, so 5:40 becomes reading a list instead of making one. That is the whole trick, and it took me a year to do it.',
+   why:'Pignatiello (2020) on decision fatigue, Gollwitzer and Sheeran (2006) on the cue. The words borrow the shape of Kennedy, Good Inside (2022), a book.',
+   ai:'I have [ingredients in the house]. Give me one dinner, not a list, that takes under twenty minutes and one pan, for [number] people, one of whom will not eat [thing]. Steps in order with times.' },
+ { id:'kitchen', cat:'dinner', dots:1, t:'I have been standing in the kitchen for ten minutes doing nothing.',
+   h:'I know exactly what to do. I cannot start it. Those are two different things, and the second one is the one that goes first when I am tired.',
+   now:['Name the first object I have to touch. Only that one. The pan.','Touch it. Move it one place.','Say the next object out loud. It sounds absurd and it works.'],
+   cant:'Leave the kitchen. Come back in five minutes. The standing will be over, most of the time.',
+   say:'To myself, out loud: "First the pan." Nobody else needs to hear it.',
+   later:'A card on the fridge that says FIRST THE PAN. It is embarrassing and it is there and it has started more dinners than I have.',
+   why:'Barkley (1997), structure at the point of performance.',
+   ai:'I am stuck starting dinner. Give me the very first physical action, in five words or fewer, then wait for me to say done before the next one.' },
+ { id:'nobodyeats', cat:'dinner', dots:2, t:'I made dinner and nobody will eat it.',
+   h:'I made the thing and the thing is being refused, and the fight I can feel coming will cost more than the meal did. Food refusal is common and repetitive and mostly not about the food, and knowing that does not make it feel better.',
+   now:['Put the plate down. Say the one sentence below. Stop talking about food.','The one food they always eat goes on the same plate, without comment. I already know what it is. It does not need to be written down yet.','Eat my own dinner. They are watching whether dinner is a fight or a meal.'],
+   cant:'Toast. Everyone gets toast. Dinner is over and nobody lost.',
+   say:'"I hear that you do not want this. This is what dinner is tonight, and the [safe food] is here if you want it." Then nothing else.',
+   later:'Write the one food each child always eats on a sheet on the fridge, so it is never a negotiation. And the rule I wrote for myself: nobody evaluates a hard-day dinner, including the one I cooked.',
+   why:'Deci, Koestner and Ryan (1999) on why the reward and the fight both backfire. Kennedy, Good Inside (2022), a book, for the shape of the sentence.',
+   ai:'My child, [age], refuses most dinners. Using the household notes above if I pasted any, give me a two-week rotation where every dinner includes one food they reliably eat, with no separate meals cooked. One line per night.' },
+ { id:'groceries', cat:'dinner', dots:2, t:'There are no groceries and I cannot face the store.',
+   h:'The store is four hundred decisions under lights I hate. Avoiding it after a day of deciding is not weakness. The only cost is dinner, and dinner has a card.',
+   now:['Order ten things for pickup tomorrow, no browsing. If I have never written the list of things I always buy, this is one: eggs, bread, milk, pasta, a jar of sauce, cheese, frozen vegetables, apples, rice, one frozen dinner.','Tonight is the freezer or the toast.','Put the pickup time on the fridge board so someone else can collect it.'],
+   cant:'Order the three dinners that always work and nothing else. Eat the first one tomorrow.',
+   say:'To a partner, if there is one: "Groceries are ordered for pickup at [time] tomorrow. Can you get them on your way?"',
+   later:'A standing pickup order of the ten things I always buy, reordered with one tap on Sundays. The store stopped being a decision the week I did this.',
+   why:'Sweller (1988). Pignatiello (2020).',
+   ai:'Using the household notes above if I pasted any, and the dinners that always work in my house, write a standing weekly grocery list of no more than twenty five items, grouped by aisle, that covers seven dinners and the lunches.' },
+ { id:'lunches', cat:'dinner', dots:1, t:'Tomorrow’s lunches have to be made and it is 9 pm.',
+   h:'The lunches arrive after the day is over, every day, forever, and the resentment is reasonable. The task is five minutes if it never involves a decision.',
+   now:['Four items per lunch, the same four as yesterday. If there was no yesterday, it is a sandwich, a fruit, a crunchy thing, and a drink. Sameness is a system.','Standing up, now, before I sit down. Sitting ends the day.','Fridge, by the door, so the morning finds them.'],
+   cant:'Lunch money in the bag. Done. Nobody has ever been harmed by a bought lunch.',
+   say:'To the child who complains in the morning: "I know you wanted something different. This is the lunch today. You can trade it."',
+   later:'The four items written on the fridge. The child over ten makes their own from the list. Everyone in the house gets one job on a hard night, and this is one of theirs.',
+   why:'Gollwitzer and Sheeran (2006). The four-item rule is mine, not a study.',
+   ai:'Using the household notes above if I pasted any, write five lunches of four items each that need no cooking, pack in five minutes, and survive a day without a cold pack.' },
+ { id:'fridge', cat:'dinner', dots:3, held:true, t:'The fridge is full and we still have nothing to eat.',
+   h:'A full fridge with nothing in it is a fridge where the food that spoils is hidden in drawers and the food that keeps is in my face. If I cannot see it, for my brain it does not exist. Then it goes off and I feel bad, which is the expensive part.',
+   now:['Swap the places. Fruit, vegetables, and anything that spoils this week go straight into the top door bins and onto the eye-level shelf. The door bin is the container.','Jars from the top door bins stand up at the back of the bottom shelf. The condiments already in the lower door bins stay. They keep for months and cannot be forgotten to death. Nothing goes in a drawer to roll.','Leftovers front and center on the top shelf, with the date on tape. Tonight’s dinner is whatever is dated oldest.'],
+   cant:'Pull everything from the drawers onto the counter. Throw out what is gone. Put back only what I would eat this week, where I can see it.',
+   say:'To the household: "The fridge is upside down now on purpose. Fresh things are where you can see them. Sauces live at the bottom."',
+   later:'Empty drawers, or drinks only, so nothing can hide. A dry-erase line on the door for what needs eating first. This is the visible-first fridge people with ADHD pass around online. I have not done it yet. It is next.',
+   why:'A practice, not a study. The visible-first or inverted fridge is described at dopakitchen.com and in a great many reels, and the studio uses it.',
+   ai:'Using what is in my fridge right now: [list], and the household notes above if I pasted any, tell me which three things to eat first this week and one dinner for tonight from them.' },
+
+ { id:'yelling', cat:'evening', dots:1, t:'Everyone is yelling, including me.',
+   h:'By seven, three people’s noise has been added to mine all day, and the one nervous system in the house that is supposed to regulate the others has nothing left to do it with. That is mine. I am not a bad parent at 7:15. I am a full one.',
+   now:['Say the sentence below. Then the nearest room with a door.','Two minutes. Door shut. No phone.','Come back and do one thing for one child. Not the argument. A glass of water.'],
+   cant:'Turn off the overhead light. The room gets quieter within a minute. I do not know why and I do not need to.',
+   say:'"I am too loud right now and I need two minutes. Nobody is in trouble. I am coming back." And then I come back.',
+   later:'Decide in daylight which room is the door room, and tell the children. Then it is a rule and not an exit, and a child who sees a parent take two minutes learns that it is allowed.',
+   why:'Cajochen (2007) on light and arousal. Kennedy, Good Inside (2022), a book, on the repair: coming back is the part that matters.',
+   ai:'Write me a ninety-second script for a household reset when everyone is dysregulated, for children aged [ages], that does not include a lecture or an apology.' },
+ { id:'bedtime', cat:'evening', dots:2, t:'Bedtime has gone on for an hour.',
+   h:'Bedtime is six transitions in a row, and transitions are the thing that costs the most for the child and for me. They are not stalling for sport. Every step is a new start, and starts are what we are both out of.',
+   now:['The last two steps only tonight: teeth and lights. The rest is dropped.','Say the minutes out loud. A visible timer if there is one.','When it ends, lights off, even if teeth did not happen. The teeth will survive.'],
+   cant:'Lie down on the floor of their room with the light off. Say nothing. Bedtime is whatever happens next.',
+   say:'"I know you are not ready. Tonight is a short bedtime. Teeth, then lights, and I will stay a minute after. Both of those are true."',
+   later:'The bedtime steps on one card by the bathroom door, in order. The card runs bedtime so that I do not have to be the one saying each step. The steps did not change. Who was saying them did.',
+   why:'Barkley, Murphy and Bush (2001) on time outside the head. Haynes (2009) on checklists. Kennedy (2022) for the sentence.',
+   ai:'Make me a six-step bedtime card for a [age] year old, each step five words or fewer, in order, that I can print and tape by the bathroom.' },
+ { id:'11pm', cat:'evening', dots:1, t:'It is 11 pm and I am still up.',
+   h:'This is the first hour with nobody in it, and I will spend all of it, because it is mine. There is a name for this and knowing the name has never once sent me to bed.',
+   now:['Phone on the charger in another room. The walk is the step.','A glass of water, standing.','Lie down in the dark. Not trying to sleep. Lying down is the whole job.'],
+   cant:'Set the morning alarm. Then stay up. Tomorrow is a hard day, and there is a page here for it.',
+   say:'To a partner: "I am going down. If I am not up by seven, wake me and do not say anything about the time."',
+   later:'The hour the phone leaves the bedroom, written on the fridge where everyone sees it, for every grown-up in the house. I have never once kept a rule that only applied to me.',
+   why:'Kroese et al. (2014), bedtime procrastination. Cajochen (2007).',
+   ai:'Give me three ten-minute things to do with a free hour at 11 pm that count as rest and do not involve a screen, for someone with ADHD who will otherwise scroll.' },
+ { id:'meltdown', cat:'evening', dots:1, t:'A child is melting down and I am about to.',
+   h:'Two overloaded nervous systems cannot settle each other. One of us has to borrow calm from somewhere, and tonight the only places it comes from are a lower light, a lower voice, and fewer words.',
+   now:['Stop talking. Every sentence is more input into a system that is full.','Get down to the floor a few feet away. Lower the light if I can reach it.','Wait. When the volume drops, one short sentence.'],
+   cant:'Say nothing and sit nearby. That is the whole intervention, and it is a good one.',
+   say:'"I am right here. You are not in trouble. We are not talking about it now, and I am not going anywhere."',
+   later:'On the back of this card, what happened in the twenty minutes before: the hunger, the transition, the hour. Three of those and there is a pattern, and the pattern tells me which page here to open before it happens.',
+   why:'Cajochen (2007) on light. Sweller (1988) on input when working memory is full. Kennedy (2022) on staying.',
+   ai:'My child, [age], melts down most often at [time or transition]. Using the household notes above if I pasted any, suggest three changes to the twenty minutes before that moment, each one sentence, that reduce transitions or sensory input. No parenting theory.' },
+ { id:'homework', cat:'evening', dots:2, t:'The homework is not done and it is 7:30.',
+   h:'Homework at 7:30 is a tired child starting a task while a tired parent supervises it, and the worksheet is the least important thing in the room.',
+   now:['Ten minutes on a timer we can both see. Whatever is done at the end goes in.','Sit beside, not across. Do a small thing of my own at the table. Two bodies at a table start work that one cannot.','When the timer ends, the homework is finished, by definition.'],
+   cant:'Write the note below and skip it. A missed worksheet has not changed a life yet.',
+   say:'To the teacher: "[Name] worked on this for ten minutes tonight and that was what we had. Let me know if a pattern is forming and we will talk."',
+   later:'Homework moves to the twenty minutes after school and before anything else, same timer, every day. The time of day does the reminding, which means I do not.',
+   why:'Gollwitzer and Sheeran (2006). Sitting beside is a thing I do, not a study.',
+   ai:'Write a two-sentence note to my child’s teacher explaining that homework was cut short tonight, warm, without apology, asking to be told if it becomes a pattern.' },
+ { id:'screen', cat:'evening', dots:2, t:'The screen has to go off and I cannot face the fight.',
+   h:'The screen is doing the regulating that the evening cannot, and taking it away is the hardest transition in the house. The fight is predictable. Predictable things can be scheduled out of existence.',
+   now:['A time, not a warning. "Off at 7:15," once, with a clock we can both see.','At 7:15 the device goes to the charger in the kitchen, by me, without discussion. The discussion is the fight.','The next thing starts right away. Bath, book, floor. A gap is where the fight lives.'],
+   cant:'Let it run until bedtime tonight. Tomorrow, write the off time on the fridge where everyone sees it. One night is one night.',
+   say:'"I know you wanted to keep going. It goes off at 7:15, and I am not going to argue about it. You do not have to like it, and I still love you when you are angry at me."',
+   later:'The screen-off time written on the fridge, for every grown-up in the house, phones included. A rule that binds only children is a punishment, and they know it.',
+   why:'Barkley, Murphy and Bush (2001). Kennedy (2022) for the last clause.',
+   ai:'Using the household notes above if I pasted any, write a screen-off routine for 7:15 pm as five steps, each under eight words, with what happens immediately after the screen so there is no gap.' },
+ { id:'alone', cat:'evening', dots:1, t:'I need ten minutes alone and there is nowhere to go.',
+   h:'This is not a wish. It is a regulation requirement, and a house with no door for the adult is a house with no reset in it. The car has a door. So does the bathroom.',
+   now:['Say the sentence. Set a kitchen timer for ten minutes where the children can see it.','Car, bathroom, porch, closet. Sit. No phone.','Come back when it goes and not before, even if it is quiet.'],
+   cant:'Headphones on with nothing playing, at the kitchen table, eyes closed, three minutes. Nobody notices and it counts.',
+   say:'"I am taking ten minutes. The timer is on the stove. Nobody is in trouble and nobody needs me until it goes."',
+   later:'The ten minutes written on the fridge as a right, with a time, and the children get one too. A house where only the adult needs a door does not believe adults need one.',
+   why:'Breines and Chen (2012), self-compassion as the thing that keeps people going.',
+   ai:'' },
+
+ { id:'morning', cat:'morning', dots:2, t:'It is the morning after a bad night.',
+   h:'Sleep debt takes executive function first. Today I will have less working memory, not less competence, and the trick is to plan for the memory and not pretend about it.',
+   now:['The three things that must happen today, on my hand or a sticky note. Three.','The one with a clock on it first.','Cancel one thing. Anything. Say it was me.'],
+   cant:'Get the children where they go. Nothing else is today.',
+   say:'To whoever I am cancelling on: "I need to move this. Not today. I will send a new day by Thursday." No reason given. Nobody has ever asked for one.',
+   later:'A bad-night list of what is droppable, written on a good day, so I never decide what to drop while I am the one who cannot decide.',
+   why:'Sweller (1988). Barkley (1997).',
+   ai:'I slept four hours. Here is my day: [paste]. Tell me what to drop, what to move, and the one thing to do first, in that order, in under eighty words.' },
+ { id:'wrecked', cat:'morning', dots:2, t:'The house is wrecked and I do not know where to start.',
+   h:'A wrecked room is a hundred decisions all at once, and what I feel standing in the doorway is the cost of seeing all of them with nothing sorted into first. It is not laziness. I have checked.',
+   now:['One room. One trash bag. Only trash.','Then only dishes, to the sink, not washed.','Then only laundry, to one pile, not sorted. Stop.'],
+   cant:'The one surface I will look at most today. The table, or the counter by the kettle. That one.',
+   say:'To the household: "Trash, dishes, laundry. Ten minutes each. Then we stop, whatever it looks like."',
+   later:'A reset is four things named on a sheet on the fridge, and when the four are done the house is reset, whatever else is on the floor. I took that from a book about keeping house while drowning and it is the truest sentence I own about housework.',
+   why:'Sweller (1988). Haynes (2009). Davis, How to Keep House While Drowning (2022), a book.',
+   ai:'My [room] is wrecked. Walk me through a fifteen-minute reset in categories, one category at a time. Wait for me to say done between each.' },
+ { id:'mornings', cat:'morning', dots:2, t:'The morning falls apart at the same step every day.',
+   h:'A morning that breaks at the shoes every day is not a child problem or a parent problem. It is a sequence with one bad step in it, and sequences get fixed at the step.',
+   now:['Name the step. Shoes, teeth, the bag, the door.','Move it ten minutes earlier, or to the night before. Shoes by the door at bedtime.','Say the new order at breakfast for a week. Then it is the order.'],
+   cant:'Do the failing step myself today, without comment. Tomorrow has a plan, and it is on this page.',
+   say:'"From tomorrow, shoes go by the door at bedtime. That is the only thing that changes."',
+   later:'The morning as a list on the fridge, one owner per step, clock times beside each. Surgeons use checklists for things they have done a thousand times. A morning is that.',
+   why:'Haynes et al. (2009). Gollwitzer and Sheeran (2006).',
+   ai:'Our mornings fall apart at [the step]. Using the household notes above if I pasted any, write the morning as a numbered list with a clock time and one owner per step, built around the failing step.' },
+ { id:'forgot', cat:'morning', dots:1, t:'I forgot the thing. Again.',
+   h:'Working memory does not keep recurring tasks. It keeps the last thing I looked at. Forgetting the form, the refill, the permission slip is my memory doing what it does, and I have spent years treating it as my character doing what it does.',
+   now:['Do it now if it takes under five minutes. Most forgotten things do.','If longer, write it with a clock time for tomorrow on whatever is on the fridge, a board, a sticky note, the back of an envelope, and nowhere else.','One sentence to whoever it affected, then stop.'],
+   cant:'Text: "I forgot. Doing it tomorrow at [time]." The time is the apology.',
+   say:'"I forgot the [thing]. It will be done by [time]." And then I do not spend the evening on how I feel about it, which is the part I am still learning.',
+   later:'Every recurring thing on a board on the fridge as a weekly line, same day each week, and the board does the remembering. It lives outside my head or it does not live.',
+   why:'Barkley (1997). Breines and Chen (2012).',
+   ai:'Using the household notes above if I pasted any, list the fifteen recurring things a house like mine forgets, with how often each comes due, so I can put them on a weekly board.' },
+ { id:'appointment', cat:'morning', dots:1, t:'The appointment I keep not booking.',
+   h:'It has been on the list three weeks because a phone call is an open conversation with a stranger with a hold queue in front of it. I am avoiding the call, not the appointment, and those are different.',
+   now:['Four sentences on paper: who, what, which days work, thanks.','Call in the first ten minutes they are open, when the queue is shortest.','When I hang up, the appointment goes on the fridge, on anything, before I do one more thing.'],
+   cant:'Online booking if it exists. If not, the four sentences go to a partner by text with "can you call." Asking is a strategy, not a failure.',
+   say:'"Hi, I need to book [thing] for [who]. [Days] work for us. What do you have?"',
+   later:'Book the next one before leaving the current one. An appointment that exists needs no call.',
+   why:'Steel (2007), aversiveness drives procrastination. Gelbar (2014) on unstructured social tasks.',
+   ai:'I keep not booking [appointment]. Write the four sentences to say when they answer, with the days that work for us, then the two-line text to send instead if I cannot call.' },
+ { id:'sick', cat:'morning', dots:1, t:'A child is sick and the day is cancelled.',
+   h:'A sick day cancels the plan and replaces it with one nobody wrote. The work is three messages and a couch, and the three messages are the hard part.',
+   now:['The three messages under If you want words. Copy, paste, send. Ten minutes.','Couch, blanket, screen, fluids. The screen rule is suspended today and that is written down.','One thing of my own on the couch beside them, or nothing. Nothing is allowed.'],
+   cant:'The work message only. The school already knows when a child is not there.',
+   say:'To work: "My child is home sick today. I am reachable for anything urgent and will catch up tomorrow." To school: "[Name] is home sick today." To the other thing: "I need to move today. New day by Thursday."',
+   later:'The three messages saved on my phone with the names filled in, so a sick day starts with send, send, send.',
+   why:'Gollwitzer and Sheeran (2006). The drafts are mine, not a study.',
+   ai:'' },
+
+ { id:'school', cat:'words', dots:2, t:'The school emailed and I cannot open it.',
+   h:'I know what this is. My body treats a possible criticism of my child as a threat and routes around the email. It is not a character flaw. It is still sitting there unopened.',
+   now:['Open it with someone in the room, or on speaker with someone.','The first sentence and the last one. That is all for tonight.','Reply with the line below. Nothing more.'],
+   cant:'Forward it to a partner or a friend: "Read this and tell me the one thing I need to do."',
+   say:'"Thank you for this. I have read it and will come back to you by [day]."',
+   later:'School email opens at 4 pm on weekdays and never at night. The rule holds the dread to one hour, which is the most I have managed.',
+   why:'Steel (2007) on aversiveness. The 4 pm rule is mine.',
+   ai:'Here is an email from my child’s school: [paste]. Tell me in two sentences what it is asking me to do and by when. Then draft a three-sentence reply that is warm and commits to nothing tonight.' },
+ { id:'partner', cat:'words', dots:2, t:'My partner asked what they can do and I snapped.',
+   h:'Being asked to delegate is one more thing to do, and it lands on the person already holding the list. The snap was the cost of being asked to think. It was not an opinion about them.',
+   now:['Say the sentence below. It names what happened, not who was wrong.','Hand over one concrete thing: the dishes, the dog, bedtime. Whatever is next on the clock.','Leave the room while they do it. Supervising is still holding.'],
+   cant:'"Bedtime. All of it. I am going upstairs." Then go.',
+   say:'"Asking me what to do is another thing for me to do, and I did not have it. Tonight, take bedtime. Tomorrow let’s write down who owns what, so neither of us has to ask."',
+   later:'Who owns what, written on the fridge, filled in together on a good day. The fridge gets asked instead of me.',
+   why:'Sweller (1988). The who-owns-what line is mine, not a study.',
+   ai:'My partner and I need a default division of evening tasks for a household with [children, ages]. Draft a two-column list, mine and theirs, that we can argue with, in under 120 words.' },
+ { id:'teacher', cat:'words', dots:2, t:'The teacher wants a meeting and I am dreading it.',
+   h:'A meeting about my child feels like a meeting about me, with a stranger who sees them five hours a day. The meeting is twenty minutes. The dread is a week.',
+   now:['Three lines on a page: what I have noticed, what I want to know, what I need from them.','Bring the page. Read from it. Reading from a page in a meeting is allowed.','Ask for the one thing to do at home. Write it down. Leave.'],
+   cant:'"I would prefer to do this in writing so I can think. What are you seeing?" A written answer is a better record anyway.',
+   say:'"I want to be useful here. What is the one thing you would most like me to do at home, and what will you do at school?"',
+   later:'One page per child per year: what the school said, what we did, what changed. The next meeting starts from the page instead of from the dread.',
+   why:'Gelbar (2014) on unstructured institutional conversations. Haynes (2009) on the list.',
+   ai:'The school wants to meet about my child, [age], about [issue]. Using the household notes above if I pasted any, write three one-line things I have noticed at home, three questions to ask, and one request to make. Plain, not defensive.' },
+ { id:'friend', cat:'words', dots:1, t:'A friend texted three days ago and I have not answered.',
+   h:'The reply got harder every day because it now has to account for the three days. It does not. A late reply with no explanation is a reply, and the friends who matter already know this about me.',
+   now:['Reply now with the line below. No explanation of the gap.','One sorry. Then the content.','If they asked a question, answer only the question.'],
+   cant:'A heart, or "thinking of you, more soon." It is a reply. The thread is alive.',
+   say:'"Sorry, slow week. Yes to [the thing]. How are you?"',
+   later:'Tell the friends who matter, once, on a good day: "If I go quiet it is the week and not you, and you can always text twice." The ones worth keeping say thank you for telling them.',
+   why:'Breines and Chen (2012). Steel (2007).',
+   ai:'' },
+ { id:'help', cat:'words', dots:2, t:'Someone offered to help and I said we are fine.',
+   h:'"We are fine" is the fastest sentence I own and the most expensive. The offer was real. Accepting it is a skill, and the skill is naming one specific thing.',
+   now:['Text them back within the hour with one task and a day. The task is whatever I was dreading most this week. There is always one.','A task that does not need me present. A pickup, groceries collected, a dinner dropped at the door.','Thank you once, when it is done.'],
+   cant:'"Actually, yes. Could you [one thing] on [day]?" Six words of nerve.',
+   say:'"Actually, yes. Thursday pickup at 3 would change my week. Can you?"',
+   later:'Three things a helper could do without me, written on the fridge, so the next offer has an answer ready. I had to write them down because I could not think of one when asked, every single time.',
+   why:'Gelbar (2014). The ready-list is mine.',
+   ai:'Using the household notes above if I pasted any, write three specific things I could say yes to when someone offers help, each as one sentence I can send as it is.' },
+ { id:'inlaws', cat:'words', dots:2, t:'A relative has opinions about how we are doing this.',
+   h:'Advice from a relative is about their standing, not my house, and arguing with it gives it standing. The way out is one sentence that neither agrees nor argues, said the same way every time.',
+   now:['The sentence below, same words each time. The sameness is the point.','Change the subject to something they are good at. Ask about it.','Do not explain the household. It does not need defending.'],
+   cant:'"We have a system that works for us." Then an errand in another room.',
+   say:'"That is one way. We do it this way, and it works for us. How is [their thing]?"',
+   later:'One sentence about the house that my partner and I both say to everyone. Agreement between the two of us is the whole defense, and it took one conversation.',
+   why:'Mine, not a study. The same rule as the rest of this: the page is the plan, so I do not have to make one in the moment.',
+   ai:'' },
+ { id:'lapse', cat:'words', dots:1, t:'I have not opened this in three weeks.',
+   h:'Every system I have ever built has broken down, including this one, and the gap is not evidence about me. I built this to be come back to. There is nothing to keep up.',
+   now:['Nothing to catch up on. There is no streak.','Draw one card. Use it or do not.','Close this.'],
+   cant:'I already did it. I opened this.',
+   say:'To myself: "It is still here."',
+   later:'If the gap keeps happening, it is in the wrong place. A different home screen page, the fridge, a partner’s phone. This moves. I do not have to.',
+   why:'Breines and Chen (2012).',
+   ai:'' }
+];
+const E = ALL.filter(e => !e.held);
+
+let log = [];
+try { log = JSON.parse(localStorage.getItem('hdk-log') || '[]'); } catch (e) { log = []; }
+function save() { try { localStorage.setItem('hdk-log', JSON.stringify(log)); } catch (e) {} }
+
+const home = document.getElementById('home'), cardView = document.getElementById('cardView'), logView = document.getElementById('logView'), rView = document.getElementById('researchView');
+function show(v) { home.hidden = v !== 'home'; cardView.hidden = v !== 'card'; logView.hidden = v !== 'log'; rView.hidden = v !== 'research'; window.scrollTo(0, 0); }
+document.getElementById('rBtn').addEventListener('click', () => show('research'));
+document.getElementById('backFromR').addEventListener('click', () => show('home'));
+
+const list = document.getElementById('list');
+Object.keys(CAT).forEach(c => {
+  const items = E.filter(e => e.cat === c); if (!items.length) return;
+  const h = document.createElement('div'); h.className = 'c-' + c; h.innerHTML = '<div class="tag" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:16px 4px 6px">' + CAT[c] + ', ' + items.length + '</div>'; list.appendChild(h);
+  items.forEach(e => { const b = document.createElement('button'); b.className = 'c-' + e.cat; b.innerHTML = '<span class="tag" style="min-width:0">' + '\u25CF'.repeat(e.dots) + '\u25CB'.repeat(3 - e.dots) + '</span><span>' + e.t + '</span>'; b.addEventListener('click', () => open(e, 'picked')); list.appendChild(b); });
+});
+
+function open(e, how) {
+  log.push({ id: e.id, how, at: new Date().toISOString() }); save();
+  const dots = '●'.repeat(e.dots) + '○'.repeat(3 - e.dots);
+  cardView.className = 'card c-' + e.cat;
+  cardView.innerHTML =
+    '<div style="display:flex;justify-content:space-between;align-items:baseline"><span class="tag">' + CAT[e.cat] + '</span><span class="dots" title="How much capacity this card assumes">' + dots + '</span></div>' +
+    '<h2>' + e.t + '</h2>' +
+    '<div class="sec"><p>' + e.h + '</p></div>' +
+    '<div class="sec"><div class="lab">What I do</div><ol>' + e.now.map(s => '<li>' + s + '</li>').join('') + '</ol></div>' +
+    '<div class="sec cant"><div class="lab">If that is too much</div><p>' + e.cant + '</p></div>' +
+    '<details class="more"><summary>More, if you want it</summary>' +
+      '<div class="sec say"><div class="lab">If you want words</div><p>' + e.say + '</p></div>' +
+      '<div class="sec later"><div class="lab">On a better day</div><p>' + e.later + '</p>' +
+      (e.ai ? '<details><summary>If you want the prompt</summary><pre id="ai-' + e.id + '">' + e.ai + '</pre><button class="ghost" style="margin-top:8px" data-copy="ai-' + e.id + '">Copy the prompt</button></details>' : '') +
+      '<div class="why" style="font-size:13px;color:var(--mute);margin-top:10px">Behind this card: ' + e.why + ' <a href="#" id="toR" style="color:var(--sage)">The research.</a></div></div>' +
+    '</details>' +
+    '<div class="mark"><button data-mark="helped">This one is right</button><button data-mark="no">Not this</button></div>' +
+    '<div class="row" style="margin-top:4px"><button class="ghost" id="another">Draw another</button><button class="ghost" id="backHome">Back</button></div>';
+  show('card');
+  cardView.querySelectorAll('[data-mark]').forEach(b => b.addEventListener('click', () => {
+    cardView.querySelectorAll('[data-mark]').forEach(x => x.classList.remove('on')); b.classList.add('on');
+    log.push({ id: e.id, how: 'mark:' + b.dataset.mark, at: new Date().toISOString() }); save();
+  }));
+  const cp = cardView.querySelector('[data-copy]');
+  if (cp) cp.addEventListener('click', () => copyText(document.getElementById(cp.dataset.copy).textContent, 'Prompt copied'));
+  document.getElementById('toR').addEventListener('click', (ev) => { ev.preventDefault(); show('research'); });
+  document.getElementById('another').addEventListener('click', draw);
+  document.getElementById('backHome').addEventListener('click', () => show('home'));
+}
+
+let last = null;
+function draw() { let e; do { e = E[Math.floor(Math.random() * E.length)]; } while (E.length > 1 && e === last); last = e; open(e, 'drawn'); }
+document.getElementById('drawBtn').addEventListener('click', draw);
+
+function renderLog() {
+  const counts = {}; log.forEach(l => { if (!l.how.startsWith('mark')) counts[l.id] = (counts[l.id] || 0) + 1; });
+  const helped = {}; log.forEach(l => { if (l.how === 'mark:helped') helped[l.id] = (helped[l.id] || 0) + 1; });
+  const rows = E.map(e => '<tr><td>' + e.t + '</td><td>' + (counts[e.id] || 0) + (helped[e.id] ? ' · ' + helped[e.id] + ' helped' : '') + '</td></tr>').join('');
+  document.getElementById('logBody').innerHTML = log.length ? '<table>' + rows + '</table><p class="note">' + log.filter(l => !l.how.startsWith('mark')).length + ' opens since ' + new Date(log[0].at).toLocaleDateString() + '.</p>' : '<p class="note">Nothing opened yet.</p>';
+}
+document.getElementById('logBtn').addEventListener('click', () => { renderLog(); show('log'); });
+document.getElementById('backFromLog').addEventListener('click', () => show('home'));
+document.getElementById('copyLog').addEventListener('click', () => {
+  const lines = ['HARD DAY KIT LOG'].concat(log.map(l => l.at.slice(0, 16).replace('T', ' ') + '  ' + l.id + '  ' + l.how));
+  copyText(lines.join('\n'), 'Log copied');
+});
+
+function copyText(t, msg) {
+  const done = () => { const d = document.createElement('div'); d.className = 'toast'; d.textContent = msg; document.body.appendChild(d); setTimeout(() => d.remove(), 1600); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done).catch(() => fallback(t, done)); else fallback(t, done);
+}
+function fallback(t, done) { const ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (e) {} ta.remove(); done(); }
+</script>
+
+</body></html>

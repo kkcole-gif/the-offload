@@ -224,11 +224,11 @@ footer { margin-top: 24px; }
     if (!ans) return;
     if (!q.who || !q.when) { ans.textContent = 'Tap one from each row.'; return; }
     var out;
-    if (q.who === 'child') out = '<b>The Book Detective Agency.</b> Ten minutes a day, a card, a timer, a binder. <a href="https://thebookdetectiveagency.com">Open the Agency site</a> or <a href="#kit-agency">read about it below</a>.';
-    else if (q.who === 'me' && q.when === 'evening') out = '<b>The Hard Day Kit, November.</b> For the evening the plan already failed. <a href="#kit-hardday">Read about it</a> or <a href="#list">get the date by email</a>.';
-    else if (q.who === 'academic') out = '<b>The Archive Kit.</b> From notes to submitted draft, with sources cached where you can find them again. <a href="#kit-archive">Read about it</a> or <a href="#list">get the date by email</a>.';
-    else if (q.who === 'student' || q.when === 'school') out = '<b>The Seminar Kit, 2027.</b> The reading week, the paper, the disclosure conversation. <a href="#list">Get the date by email</a>.';
-    else out = '<b>The Hard Day Kit</b> is the closest fit, November. <a href="#kit-hardday">Read about it</a>.';
+    if (q.who === 'child') out = '<b>The Book Detective Agency.</b> Ten minutes a day, a card, a timer, a binder. <a href="https://thebookdetectiveagency.com">Open the Agency site</a> or <a href="index.html#kit-agency">read about it</a>.';
+    else if (q.who === 'me' && q.when === 'evening') out = '<b>The Hard Day Kit, $15.</b> For the evening the plan already failed. <a href="index.html#kit-hardday">Read about it and get the kit</a>.';
+    else if (q.who === 'academic') out = '<b>The Archive Kit, $19.</b> From notes to submitted draft, with sources cached where you can find them again. <a href="index.html#kit-archive">Read about it and get the kit</a>.';
+    else if (q.who === 'student' || q.when === 'school') out = '<b>The Seminar Kit, $19.</b> The reading week, the paper, the disclosure conversation. <a href="index.html#kit-seminar">Read about it and get the kit</a>.';
+    else out = '<b>The Hard Day Kit</b> is the closest fit. <a href="index.html#kit-hardday">Read about it</a>.';
     ans.innerHTML = out;
   }
   document.querySelectorAll('[data-q]').forEach(function (b) { b.addEventListener('click', function () { var p = b.getAttribute('data-q').split(':'); q[p[0]] = p[1]; document.querySelectorAll('[data-q^="' + p[0] + ':"]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); route(); }); });

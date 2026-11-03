@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The Archive Kit</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Libre+Franklin:wght@400;500;600&family=IBM+Plex+Mono&display=swap">
+<style>
+/* One phone column. Paper by day, night after seven, as the spec asks. Rose card shades by unit. */
+:root {
+  --bg: #F6F1E8; --bg2: #FFFFFF; --fg: #231A2B; --fg2: #4A3F4F; --mute: #7E7480; --line: rgba(35,26,43,.14);
+  --rose: #A8605A; --accent: #94524C;
+  --u-source: #5E2E2A; --u-claim: #7A3F3A; --u-section: #94524C; --u-submission: #A8605A;
+  --display: 'DM Serif Display', Georgia, serif; --body: 'Libre Franklin', system-ui, sans-serif; --mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+:root[data-ground="night"] { --bg: #231A2B; --bg2: #2F2438; --fg: #F3ECE6; --fg2: #D5CBCF; --mute: #A69AA6; --line: rgba(243,236,230,.15); --accent: #E3A49C; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 600px; margin: 0 auto; padding: 0 max(16px, env(safe-area-inset-right)) 40px max(16px, env(safe-area-inset-left)); display: flex; flex-direction: column; gap: 16px; }
+.head { background: var(--u-section); color: #FFFFFF; margin: 0 calc(-1 * max(16px, env(safe-area-inset-left))); padding: calc(18px + env(safe-area-inset-top)) 20px 18px; display: grid; grid-template-columns: 1fr 92px; gap: 10px; align-items: end; }
+.head .brand { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; opacity: .8; }
+.head h1 { font-family: var(--display); font-weight: 400; font-size: 34px; margin: 2px 0 2px; line-height: 1.05; }
+.head .sub { font-size: 14px; opacity: .92; }
+.head img { width: 92px; height: auto; display: block; }
+.ed { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; opacity: .8; margin-top: 6px; }
+.counts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.count { background: var(--bg2); border-radius: 14px; padding: 12px 14px; }
+.count b { font-family: var(--display); font-weight: 400; font-size: 32px; line-height: 1; display: block; }
+.count span { font-size: 12px; color: var(--mute); letter-spacing: .06em; text-transform: uppercase; }
+h2 { font-family: var(--display); font-weight: 400; font-size: 26px; margin: 0; line-height: 1.1; }
+h3 { font-family: var(--display); font-weight: 400; font-size: 21px; margin: 0; line-height: 1.15; }
+button { font: inherit; cursor: pointer; border: 0; border-radius: 12px; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.tabs button { flex: 1 1 30%; background: transparent; color: var(--fg2); border: 1px solid var(--line); padding: 10px 6px; font-size: 14px; }
+.tabs button[aria-selected="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.primary { background: var(--fg); color: var(--bg); font-weight: 600; font-size: 17px; padding: 16px; width: 100%; border-radius: 14px; }
+.ghost { background: transparent; color: var(--fg2); border: 1px solid var(--line); padding: 12px 14px; font-size: 15px; }
+.row { display: flex; gap: 10px; flex-wrap: wrap; } .row > * { flex: 1 1 140px; }
+.note { font-size: 14px; color: var(--mute); margin: 0; }
+.panel { background: var(--bg2); border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 12px; }
+.card { border-radius: 18px; padding: 20px; color: #FFFFFF; display: flex; flex-direction: column; gap: 14px; }
+.card .top { display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+.card h2 { color: #FFFFFF; font-size: 30px; }
+.card .lab { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; opacity: .8; margin-bottom: 4px; }
+.card ol { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.card li { display: flex; gap: 10px; align-items: flex-start; }
+.card li input { width: 20px; height: 20px; margin-top: 2px; flex-shrink: 0; accent-color: #FFFFFF; }
+.card li.done span { opacity: .6; text-decoration: line-through; }
+.donewhen { font-size: 14px; border-left: 3px solid rgba(255,255,255,.7); padding: 3px 0 3px 10px; }
+.card button { background: rgba(255,255,255,.14); color: #FFFFFF; padding: 11px 12px; font-size: 15px; }
+.card button.solid { background: #FFFFFF; color: var(--u-source); font-weight: 600; }
+.card .toobig { align-self: flex-start; background: transparent; border: 1.5px solid #FFFFFF; border-radius: 999px; padding: 7px 14px; font-size: 14px; }
+.timer { font-family: var(--mono); font-size: 40px; text-align: center; }
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.grid4 button { color: #FFFFFF; font-size: 12px; padding: 10px 4px; line-height: 1.25; border-radius: 10px; }
+label { font-size: 14px; font-weight: 500; display: block; margin-bottom: 4px; }
+input[type=text], textarea, select { width: 100%; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font: inherit; font-size: 15px; }
+textarea { min-height: 70px; resize: vertical; }
+pre { white-space: pre-wrap; font: 14.5px/1.5 var(--body); background: var(--bg); border-radius: 12px; padding: 14px; margin: 0; color: var(--fg); }
+.who { display: flex; gap: 6px; flex-wrap: wrap; }
+.who button { background: transparent; color: var(--fg2); border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; font-size: 14px; }
+.who button[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.stack { display: flex; flex-direction: column; gap: 14px; }
+.logline { font-size: 14px; color: var(--fg2); border-top: 1px solid var(--line); padding-top: 8px; }
+.study { border-top: 1px solid var(--line); padding-top: 12px; display: flex; flex-direction: column; gap: 4px; }
+.study .cite { font-size: 13px; color: var(--fg2); } .study a, .panel a { color: var(--accent); word-break: break-word; }
+.study p { margin: 0; font-size: 15px; }
+.rule { border-top: 1px solid var(--line); padding-top: 10px; }
+.rule b { font-weight: 600; }
+.toast { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom)); transform: translateX(-50%); background: var(--fg); color: var(--bg); padding: 10px 16px; border-radius: 999px; font-size: 14px; }
+.meet { position: fixed; inset: 0; background: rgba(35,26,43,.6); display: flex; align-items: flex-end; justify-content: center; padding: 16px; z-index: 5; }
+.meet .panel { max-width: 560px; width: 100%; }
+.meet img { width: 120px; align-self: center; }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <div>
+      <div class="brand">Offload, for academics</div>
+      <h1>The Archive Kit</h1>
+      <div class="sub">For academics with ADHD, from notes to submitted draft.</div>
+      <div class="ed">First edition</div>
+    </div>
+    <img id="archivist" src="../../../assets/squirrel-gliding.png" alt="The Archivist, a southern flying squirrel, gliding with a folded letter">
+  </div>
+
+  <div class="counts" aria-live="polite">
+    <div class="count"><b id="nSessions">0</b><span>Sessions</span></div>
+    <div class="count"><b id="nSources">0</b><span>Sources cached</span></div>
+  </div>
+  <p class="note">Both counts measure volume, not quality, and neither one ever goes down.</p>
+
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-v="cards" aria-selected="true">Cards</button>
+    <button type="button" role="tab" data-v="cache">Cache</button>
+    <button type="button" role="tab" data-v="page">Working page</button>
+    <button type="button" role="tab" data-v="world">Outside world</button>
+    <button type="button" role="tab" data-v="rules">Rules</button>
+    <button type="button" role="tab" data-v="research">Research</button>
+  </div>
+
+  <!-- CARDS -->
+  <section id="v-cards" class="stack">
+    <p class="note">Each card pairs a unit of the work with the next thing to do to it. The color is the unit: source, claim, section, submission. The name is the verb: read, note, write, revise. The dots show how much energy the card assumes.</p>
+    <button type="button" class="primary" id="drawBtn">Draw a card</button>
+    <p class="note">Or pick the pairing you already know you need.</p>
+    <div class="grid4" id="grid"></div>
+    <div id="cardView" hidden></div>
+    <button type="button" class="ghost" id="paperBtn">Log a paper session</button>
+  </section>
+
+  <!-- CACHE -->
+  <section id="v-cache" class="stack" hidden>
+    <div class="panel">
+      <h2>Cache a source</h2>
+      <p class="note">Search, then cache what you keep. One field is enough. Nothing leaves this phone, and no account connects unless you tap it open yourself.</p>
+      <div><label for="q">What you are looking for</label><input type="text" id="q" placeholder="care work, writing program administration"></div>
+      <div class="row">
+        <button type="button" class="ghost" data-search="scholar">Google Scholar</button>
+        <button type="button" class="ghost" data-search="rabbit">ResearchRabbit</button>
+        <button type="button" class="ghost" data-search="lib">My library</button>
+      </div>
+      <div><label for="libUrl">My library's search address</label><input type="text" id="libUrl" placeholder="https://www.lib.ncsu.edu/search?q="><p class="note" style="margin-top:4px">Set once. The search words go on the end. Leave empty to use NC State University Libraries.</p></div>
+      <div><label for="cTitle">Author and title</label><input type="text" id="cTitle"></div>
+      <div class="row"><div><label for="cPage">Page</label><input type="text" id="cPage"></div><div><label for="cLink">Link or DOI</label><input type="text" id="cLink"></div></div>
+      <div><label for="cQuote">The line worth coming back for</label><textarea id="cQuote"></textarea></div>
+      <div><label for="cWhere">Where in the draft it goes</label><input type="text" id="cWhere" placeholder="section two, the counterargument"></div>
+      <button type="button" class="primary" id="cacheBtn">Cache a source · +1</button>
+    </div>
+    <div class="row"><button type="button" class="ghost" id="copyCache">Copy the cache</button><button type="button" class="ghost" id="dlCache">Download as a file</button></div>
+    <div id="cacheList" class="stack"></div>
+  </section>
+
+  <!-- WORKING PAGE -->
+  <section id="v-page" class="stack" hidden>
+    <div class="panel">
+      <h2>The editorial pass</h2>
+      <p class="note">The kit asks three questions before anything else. Then it writes the instructions for whatever AI you already use, so the AI works as a thinking partner. It asks questions, proposes structure, and never drafts your prose. Or switch the AI off and review the section yourself.</p>
+      <div><label for="e1">What is this section doing?</label><input type="text" id="e1" placeholder="It sets up the gap the article fills."></div>
+      <div><label for="e2">Who will read it?</label><input type="text" id="e2" placeholder="Reviewers at a rhetoric journal"></div>
+      <div><label for="e3">How many items today?</label><select id="e3"><option>3</option><option selected>5</option><option>8</option></select></div>
+      <div class="row"><button type="button" class="primary" id="aiOn">Write the AI instructions</button><button type="button" class="ghost" id="aiOff">AI off: review it myself</button></div>
+      <pre id="passOut">Answer the three questions first.</pre>
+      <div class="row"><button type="button" class="ghost" id="passCopy">Copy it</button><button type="button" class="ghost" id="passDone">I finished a pass · +1</button></div>
+    </div>
+    <div class="panel">
+      <h2>My rules</h2>
+      <p class="note">Five questions, answered once. Each answer becomes a rule the editorial pass carries. Rules are plain sentences, and you edit them here.</p>
+      <div><label for="r1">Genre and audience</label><input type="text" id="r1" placeholder="Journal article, humanities reviewers"></div>
+      <div><label for="r2">Punctuation habits to keep or drop</label><input type="text" id="r2" placeholder="No em dashes. Commas and periods first."></div>
+      <div><label for="r3">Sentence patterns to flag</label><input type="text" id="r3" placeholder="'Not X but Y'. Short sentences that comment on the one before."></div>
+      <div><label for="r4">How much help</label><select id="r4"><option value="q">Questions only</option><option value="one" selected>Questions and at most one wording per item</option></select></div>
+      <div><label for="r5">Words to flag</label><input type="text" id="r5" placeholder="significant, increasingly, utilize"></div>
+      <button type="button" class="ghost" id="saveRules">Save my rules</button>
+    </div>
+  </section>
+
+  <!-- OUTSIDE WORLD -->
+  <section id="v-world" class="stack" hidden>
+    <h2>The outside world</h2>
+    <p class="note">Scripts for the people the work answers to, with a log of who was told what, so nobody has to remember whether it was sent. Fill the blanks you know.</p>
+    <div class="who" id="whoBtns"></div>
+    <div id="scripts" class="stack"></div>
+    <div id="toldLog"></div>
+  </section>
+
+  <!-- RULES, DIRECTIONS, GUIDE -->
+  <section id="v-rules" class="stack" hidden>
+    <div class="panel">
+      <h2>The rules</h2>
+      <div class="rule"><b>One card at a time.</b> A card is the next thing, and the rest of the project waits.</div>
+      <div class="rule"><b>Twenty five minutes, then stop.</b> Start the timer from the card. When it ends, the session counts, whatever got done.</div>
+      <div class="rule"><b>The counts never go down.</b> A bad week adds nothing and takes nothing away.</div>
+      <div class="rule"><b>Cache before you cite.</b> A source goes in the cache with its page the moment it earns a place, so the draft goes back to the cache and never to forty tabs.</div>
+      <div class="rule"><b>The AI never writes the prose.</b> It asks, it proposes structure, and it offers at most one wording per item, which you accept, reject, or rewrite yourself.</div>
+    </div>
+    <div class="panel">
+      <h2>The Fairness Clause</h2>
+      <p>On a hard day, any one of these counts as a full session.</p>
+      <div class="row">
+        <button type="button" class="ghost" data-fair="One sentence">One sentence</button>
+        <button type="button" class="ghost" data-fair="Cached one source">Cache one source</button>
+        <button type="button" class="ghost" data-fair="Ten minutes, any task">Ten minutes, any task</button>
+        <button type="button" class="ghost" data-fair="Wrote the next step down">Write the next step down</button>
+      </div>
+      <p class="note">This is the Archivist resting in her pocket. It is a rule, and it is not a failure.</p>
+    </div>
+    <div class="panel">
+      <h2>Directions</h2>
+      <p>Add this page to your home screen. Open it when you sit down, draw one card, press Start, and stop when the timer stops. Cache sources as you meet them. Before a revision, run the editorial pass on one section. When a deadline moves, use the outside world tab the same day. Everything works on paper too: write the card on an index card, keep the cache in a notebook, and log the session here with one tap.</p>
+    </div>
+    <div class="panel">
+      <h2>For whoever helps</h2>
+      <p>If you share a house, an office, or a manuscript with someone using this kit: ask which card they are on, never how the project is going. Twenty five minutes with you in the room counts. Do not count pages, and do not mention a deadline they have already named. If they say they are done for the day, they are.</p>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="v-research" class="stack" hidden>
+    <h2>What the kit is built on</h2>
+    <p class="note">Each rule comes from one of these sources or is marked as the studio's own practice. The DOIs were verified against Crossref in October 2026. The summaries are the studio's.</p>
+    <div class="study"><h3>A plan tied to a cue gets done</h3><div class="cite">Gollwitzer and Sheeran (2006), Advances in Experimental Social Psychology 38. <a href="https://doi.org/10.1016/S0065-2601(06)38002-1">doi:10.1016/S0065-2601(06)38002-1</a></div><p>"When X, I will Y" plans raised goal attainment across 94 studies. Each card is one, with sitting down as X.</p></div>
+    <div class="study"><h3>Working memory is small</h3><div class="cite">Sweller (1988), Cognitive Science 12(2). <a href="https://doi.org/10.1207/s15516709cog1202_4">doi:10.1207/s15516709cog1202_4</a></div><p>Why each card holds one unit and one verb, three steps at most, and why the cache holds the sources so the head does not have to.</p></div>
+    <div class="study"><h3>Writing is planning, drafting, and reviewing, in any order</h3><div class="cite">Flower and Hayes (1981), College Composition and Communication 32(4). <a href="https://doi.org/10.58680/ccc198115885">doi:10.58680/ccc198115885</a></div><p>Writers move among the three processes, and holding all of them at once is the hard part. The verbs on the cards separate them.</p></div>
+    <div class="study"><h3>Procrastination is about the task</h3><div class="cite">Steel (2007), Psychological Bulletin 133(1). <a href="https://doi.org/10.1037/0033-2909.133.1.65">doi:10.1037/0033-2909.133.1.65</a></div><p>Task aversiveness, delay, and low self-efficacy predicted procrastination more than anxiety or perfectionism. The cards shrink the task, and the Too big button shrinks it again.</p></div>
+    <div class="study"><h3>Time is harder to feel with ADHD</h3><div class="cite">Barkley, Murphy and Bush (2001), Neuropsychology 15(3). <a href="https://doi.org/10.1037/0894-4105.15.3.351">doi:10.1037/0894-4105.15.3.351</a></div><p>Adults with ADHD reproduced intervals less accurately, and worse at longer durations. The timer puts the session outside the head.</p></div>
+    <div class="study"><h3>Kindness after a lapse brings you back</h3><div class="cite">Breines and Chen (2012), Personality and Social Psychology Bulletin 38(9). <a href="https://doi.org/10.1177/0146167212445599">doi:10.1177/0146167212445599</a></div><p>Self-compassion after failure raised motivation to improve relative to self-criticism. The Fairness Clause and the counts that never fall are written for this.</p></div>
+    <div class="study"><h3>Studio practice</h3><p>The twenty five minute session, the cache, and the editorial pass format (passage, issue, rule, at most one wording) are the studio's own practice, tested by its maker on her own articles, and not a study.</p></div>
+  </section>
+</div>
+
+<div class="meet" id="meet" hidden>
+  <div class="panel">
+    <img src="../../../assets/squirrel-perched.png" alt="">
+    <h2>Meet the Archivist</h2>
+    <p>She tucks away every good source she finds, a quote here, a page number there. When the draft needs one, she glides straight back to it. No digging through forty open tabs.</p>
+    <div class="row"><button type="button" class="primary" id="meetOpen">Open the kit</button><button type="button" class="ghost" id="meetHide">Hide images</button></div>
+  </div>
+</div>
+
+<script>
+(function () {
+var store = { get: function (k, d) { try { var v = localStorage.getItem('ak-' + k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }, set: function (k, v) { try { localStorage.setItem('ak-' + k, JSON.stringify(v)); } catch (e) {} } };
+function toast(t) { var d = document.createElement('div'); d.className = 'toast'; d.textContent = t; document.body.appendChild(d); setTimeout(function () { d.remove(); }, 1600); }
+function copy(t) { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(function () { toast('Copied'); }).catch(function () { toast('Copied'); }); else toast('Copied'); }
+function esc(x) { return String(x).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+/* ground follows the clock */
+function ground() { var h = new Date().getHours(); document.documentElement.dataset.ground = (h >= 19 || h < 7) ? 'night' : 'paper'; }
+ground(); setInterval(ground, 600000);
+
+/* images */
+if (store.get('noimg', false)) document.querySelectorAll('img').forEach(function (i) { i.hidden = true; });
+if (!store.get('met', false)) document.getElementById('meet').hidden = false;
+document.getElementById('meetOpen').addEventListener('click', function () { store.set('met', true); document.getElementById('meet').hidden = true; });
+document.getElementById('meetHide').addEventListener('click', function () { store.set('met', true); store.set('noimg', true); document.querySelectorAll('img').forEach(function (i) { i.hidden = true; }); document.getElementById('meet').hidden = true; });
+
+/* counts and log */
+var log = store.get('log', []);
+function counts() { document.getElementById('nSessions').textContent = log.filter(function (l) { return l.kind === 'session'; }).length; document.getElementById('nSources').textContent = store.get('cache', []).length; }
+function session(how) { log.push({ kind: 'session', how: how, at: new Date().toISOString() }); store.set('log', log); counts(); toast('Session counted'); }
+counts();
+
+/* tabs */
+var tabs = document.querySelectorAll('.tabs button');
+function show(v) { tabs.forEach(function (b) { b.setAttribute('aria-selected', b.dataset.v === v ? 'true' : 'false'); }); ['cards', 'cache', 'page', 'world', 'rules', 'research'].forEach(function (x) { document.getElementById('v-' + x).hidden = x !== v; }); window.scrollTo(0, 0); }
+tabs.forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.v); }); });
+
+/* cards */
+var UNITS = { source: 'Source', claim: 'Claim', section: 'Section', submission: 'Submission' };
+var VERBS = { read: 'Read', note: 'Note', write: 'Write', revise: 'Revise' };
+var C = {
+ 'source-read': { d: 2, now: ['Open one source you have not read closely.', 'Read the abstract, the last paragraph of the introduction, and the conclusion.', 'Mark the page where its argument is stated most plainly.'], done: 'one page number is marked.', small: 'Read the conclusion only, and mark one page.' },
+ 'source-note': { d: 1, now: ['Write what this source claims, in one sentence of your own.', 'Copy one line worth returning for, with its page.', 'Cache it, with where in the draft it goes.'], done: 'the source is in the cache with a page.', small: 'Cache the citation alone. The quote waits.' },
+ 'source-write': { d: 2, now: ['Find the place in the draft where this source belongs.', 'Write the sentence there with your claim first and the source second.', 'Add the page number to the citation.'], done: 'the sentence and its citation are in the draft.', small: 'Paste the cached quote and page under the heading where it belongs.' },
+ 'source-revise': { d: 2, now: ['Pick one source cited in the draft.', 'Check the quotation against the page, word for word.', 'Check the sentence citing it says only what the source says.'], done: 'one source is checked against its page.', small: 'Check page numbers only.' },
+ 'claim-read': { d: 1, now: ['Find the sentence in the draft that states the argument.', 'Read it aloud.', 'Under it, list what a reader has to believe first.'], done: 'the argument sentence is marked and the list exists.', small: 'Mark the argument sentence. That is all.' },
+ 'claim-note': { d: 1, now: ['Write the argument in one sentence, as if a colleague asked in a hallway.', 'Under it, write the three things that must be true for it to hold.', 'Mark the one you have the least evidence for.'], done: 'one sentence and three lines are written.', small: 'Write the argument badly, in one sentence.' },
+ 'claim-write': { d: 3, now: ['Write the paragraph stating the claim and what changes if the claim is right.', 'Use no sources in this paragraph.', 'End it with the sentence the rest of the article proves.'], done: 'one paragraph exists, however rough.', small: 'Write the claim and the sentence saying why it matters.' },
+ 'claim-revise': { d: 2, now: ['Read every section heading in order.', 'Beside each, write the part of the claim it serves.', 'Mark any section serving nothing.'], done: 'every heading has a note beside it.', small: 'Compare the first paragraph with the last one. Mark where they disagree.' },
+ 'section-read': { d: 1, now: ['Read one section through without fixing anything.', 'In the margin, write in one line what the section does.', 'Write the one question a reviewer would ask of it.'], done: 'one line and one question are written.', small: 'Read the first and last sentence of the section only.' },
+ 'section-note': { d: 2, now: ['List the section as one claim per paragraph.', 'Beside each claim, name the source it needs.', 'Mark any paragraph without a claim.'], done: 'the list is finished for one section.', small: 'Copy the first sentence of each paragraph into a list.' },
+ 'section-write': { d: 3, now: ['Write the first paragraph of the section, with its claim stated.', 'Pull the sources for it from the cache, not from tabs.', 'Write the next step down before you stop.'], done: 'the paragraph and the next step are written.', small: 'Write the section’s claim in one sentence.' },
+ 'section-revise': { d: 2, now: ['Pick one paragraph.', 'Move its claim to the first sentence.', 'Cut any sentence repeating the paragraph before it.'], done: 'one paragraph opens with its claim.', small: 'Rewrite only the first sentence of one paragraph.' },
+ 'submission-read': { d: 1, now: ['Open the journal’s author guidelines.', 'Note the word limit, the citation style, and the anonymizing rules.', 'Skim the contents of the last two issues for the conversation you join.'], done: 'three requirements are written down.', small: 'Find the word limit.' },
+ 'submission-note': { d: 2, now: ['Write one sentence on what the article argues.', 'Write one sentence on why this journal.', 'Write one sentence naming the conversation it joins, with two cited names.'], done: 'three sentences exist for the cover letter.', small: 'Write why this journal, in one sentence.' },
+ 'submission-write': { d: 3, now: ['Write the abstract in this order: problem, claim, method, contribution.', 'Keep it under the journal’s limit.', 'Read it aloud once.'], done: 'the abstract fits the limit.', small: 'Write the claim sentence of the abstract.' },
+ 'submission-revise': { d: 2, now: ['Check the draft against the author guidelines, one requirement at a time.', 'Fix the word count, citation style, and anonymizing.', 'Save a copy named with the journal and the date.'], done: 'every requirement on the list is ticked.', small: 'Check the word count and the citation style only.' }
+};
+var grid = document.getElementById('grid'), cardView = document.getElementById('cardView');
+Object.keys(UNITS).forEach(function (u) { Object.keys(VERBS).forEach(function (v) { var b = document.createElement('button'); b.type = 'button'; b.style.background = 'var(--u-' + u + ')'; b.textContent = UNITS[u] + ' · ' + VERBS[v]; b.addEventListener('click', function () { open(u + '-' + v); }); grid.appendChild(b); }); });
+var last = null, tick = null;
+function steps(list, done) { return '<div><div class="lab">Do this now</div><ol>' + list.map(function (s, i) { return '<li><input type="checkbox" aria-label="Step ' + (i + 1) + ' done"><span>' + s + '</span></li>'; }).join('') + '</ol></div><div class="donewhen">Done when: ' + done + '</div>'; }
+function wire() { cardView.querySelectorAll('li input').forEach(function (c) { c.addEventListener('change', function () { c.parentNode.classList.toggle('done', c.checked); }); }); }
+function open(id) {
+  last = id; var c = C[id], u = id.split('-')[0], v = id.split('-')[1];
+  cardView.hidden = false; cardView.className = 'card'; cardView.style.background = 'var(--u-' + u + ')';
+  cardView.innerHTML = '<div class="top"><span>' + UNITS[u] + '</span><span title="How much energy this card assumes">' + '●'.repeat(c.d) + '○'.repeat(3 - c.d) + '</span></div><h2>' + UNITS[u] + ' · ' + VERBS[v] + '</h2><div id="body">' + steps(c.now, c.done) + '</div><button type="button" class="toobig" id="tooBig">Too big</button><div class="timer" id="clock">25:00</div><div class="row"><button type="button" class="solid" id="start">Start · 25 min</button><button type="button" id="another">Draw another</button></div>';
+  wire();
+  document.getElementById('tooBig').addEventListener('click', function () { document.getElementById('body').innerHTML = steps([c.small], 'this one thing is done. It counts as the session.'); wire(); this.remove(); });
+  document.getElementById('another').addEventListener('click', draw);
+  document.getElementById('start').addEventListener('click', function () { start(this); });
+  cardView.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+function start(btn) {
+  if (tick) { clearInterval(tick); tick = null; }
+  var end = Date.now() + 25 * 60000, clock = document.getElementById('clock'); btn.textContent = 'Running';
+  tick = setInterval(function () { var ms = end - Date.now(); if (ms <= 0) { clearInterval(tick); tick = null; clock.textContent = '00:00'; session('card ' + last); btn.textContent = 'Counted'; return; } var m = Math.floor(ms / 60000), s = Math.floor(ms / 1000) % 60; clock.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s; }, 500);
+}
+function draw() { var ks = Object.keys(C), k; do { k = ks[Math.floor(Math.random() * ks.length)]; } while (k === last); open(k); }
+document.getElementById('drawBtn').addEventListener('click', draw);
+document.getElementById('paperBtn').addEventListener('click', function () { session('paper'); });
+document.querySelectorAll('[data-fair]').forEach(function (b) { b.addEventListener('click', function () { if (b.dataset.fair === 'Cached one source') { show('cache'); return; } session('fairness: ' + b.dataset.fair); }); });
+
+/* cache */
+document.getElementById('libUrl').value = store.get('lib', '');
+document.getElementById('libUrl').addEventListener('change', function () { store.set('lib', this.value.trim()); });
+document.querySelectorAll('[data-search]').forEach(function (b) { b.addEventListener('click', function () { var q = encodeURIComponent(document.getElementById('q').value.trim()); var u = { scholar: 'https://scholar.google.com/scholar?q=', rabbit: 'https://app.researchrabbit.ai/search?q=', lib: store.get('lib', '') || 'https://www.lib.ncsu.edu/search?q=' }[b.dataset.search]; window.open(u + q, '_blank', 'noopener'); }); });
+function drawCache() { var list = store.get('cache', []), el = document.getElementById('cacheList'); el.innerHTML = list.slice().reverse().map(function (c) { return '<div class="panel"><b>' + esc(c.title || 'Untitled') + '</b>' + (c.page ? '<span class="note">p. ' + esc(c.page) + '</span>' : '') + (c.quote ? '<p style="margin:0">“' + esc(c.quote) + '”</p>' : '') + (c.where ? '<span class="note">Goes in: ' + esc(c.where) + '</span>' : '') + (c.link ? '<span class="note">' + esc(c.link) + '</span>' : '') + '</div>'; }).join(''); counts(); }
+function cacheText() { return store.get('cache', []).map(function (c) { return [c.title, c.page ? 'p. ' + c.page : '', c.quote ? '"' + c.quote + '"' : '', c.where ? 'Goes in: ' + c.where : '', c.link].filter(Boolean).join('\n'); }).join('\n\n'); }
+document.getElementById('cacheBtn').addEventListener('click', function () {
+  var f = { title: 'cTitle', page: 'cPage', link: 'cLink', quote: 'cQuote', where: 'cWhere' }, c = {}, any = false;
+  Object.keys(f).forEach(function (k) { c[k] = document.getElementById(f[k]).value.trim(); if (c[k]) any = true; });
+  if (!any) { toast('One field is enough'); return; }
+  c.at = new Date().toISOString(); var list = store.get('cache', []); list.push(c); store.set('cache', list);
+  Object.keys(f).forEach(function (k) { document.getElementById(f[k]).value = ''; }); drawCache(); toast('Cached · +1');
+});
+document.getElementById('copyCache').addEventListener('click', function () { copy(cacheText()); });
+document.getElementById('dlCache').addEventListener('click', function () { var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([cacheText()], { type: 'text/plain' })); a.download = 'archive-cache.txt'; a.click(); });
+drawCache();
+
+/* rules and editorial pass */
+var R = ['r1', 'r2', 'r3', 'r4', 'r5'];
+R.forEach(function (id) { var v = store.get(id, null); if (v !== null) document.getElementById(id).value = v; });
+document.getElementById('saveRules').addEventListener('click', function () { R.forEach(function (id) { store.set(id, document.getElementById(id).value); }); toast('Rules saved'); });
+function rules() { var out = [], g = function (id) { return document.getElementById(id).value.trim(); };
+  if (g('r1')) out.push('The genre and audience: ' + g('r1') + '.');
+  if (g('r2')) out.push('Punctuation: ' + g('r2'));
+  if (g('r3')) out.push('Flag these sentence patterns: ' + g('r3'));
+  if (g('r5')) out.push('Flag these words: ' + g('r5') + '.');
+  return out; }
+document.getElementById('aiOn').addEventListener('click', function () {
+  var a = document.getElementById('e1').value.trim(), b = document.getElementById('e2').value.trim(), n = document.getElementById('e3').value, one = document.getElementById('r4').value === 'one';
+  var t = 'You are my thinking partner for an editorial pass on one section of an academic draft. You ask questions and propose structure. You never draft prose for me.\n\n' +
+    'What the section is doing: ' + (a || '[say what the section is doing]') + '\nWho will read it: ' + (b || '[say who will read it]') + '\n\n' +
+    'Work through at most ' + n + ' items, one at a time. For each item give: the passage, quoted exactly; the issue, in one sentence; the rule it breaks; and ' + (one ? 'at most one possible wording, or none.' : 'a question for me, and no wording.') + ' Then stop and wait for my answer: Accept, Reject, or "I\'ll write it." Do not move to the next item until I answer. After item ' + n + ', stop, even if more remain.\n';
+  var r = rules(); if (r.length) t += '\nMy rules:\n' + r.map(function (x) { return '- ' + x; }).join('\n') + '\n';
+  t += '\nThe section follows.\n\n[paste the section here]';
+  document.getElementById('passOut').textContent = t;
+});
+document.getElementById('aiOff').addEventListener('click', function () {
+  var a = document.getElementById('e1').value.trim();
+  document.getElementById('passOut').textContent = 'Review this section yourself, one question at a time. Write each answer as an item on your revision list.\n\n1. ' + (a ? 'You said the section ' + a.replace(/^it\s+/i, '').replace(/\.$/, '') + '. Which sentence says so? ' : 'Which sentence says what this section does? ') + 'Copy it.\n2. Which paragraph does not serve that sentence?\n3. Where does a reader need a source and have none?\n4. Which sentence would a reviewer quote back at you, and why?\n5. Read the last sentence. Does it hand the reader to the next section?' + (rules().length ? '\n6. Read once more for your own rules: ' + rules().join(' ') : '');
+});
+document.getElementById('passCopy').addEventListener('click', function () { copy(document.getElementById('passOut').textContent); });
+document.getElementById('passDone').addEventListener('click', function () { session('editorial pass'); });
+
+/* outside world */
+var W = {
+  coauthor: { name: 'Co-authors', s: [
+    { t: 'I am behind on my part', f: ['Names', 'My part', 'New date', 'My name'], b: 'Hi {Names},\n\n{My part} is behind. I can have it in the shared draft by {New date}. If that date breaks your part, tell me and I will send what I have now, rough, so you are not waiting on me.\n\n{My name}' },
+    { t: 'Asking who does what', f: ['Names', 'My name'], b: 'Hi {Names},\n\nBefore the next round, could we write down who owns each section and the date for each? A list with names and dates is what keeps me on schedule, and I will draft it if that helps.\n\n{My name}' } ] },
+  editor: { name: 'Editors and journals', s: [
+    { t: 'Asking for more time on a revision', f: ['Editor', 'Manuscript number', 'New date', 'My name'], b: 'Dear {Editor},\n\nThank you for the reviews on {Manuscript number}. I am working through them and want to do them justice. Could I have until {New date} to return the revision?\n\nWith thanks,\n{My name}' },
+    { t: 'Checking on a manuscript', f: ['Editor', 'Manuscript number', 'Submission date', 'My name'], b: 'Dear {Editor},\n\nI am writing to ask about the status of {Manuscript number}, submitted {Submission date}. Any sense of the timeline would help me plan.\n\nWith thanks,\n{My name}' } ] },
+  chair: { name: 'Committee or chair', s: [
+    { t: 'A chapter will be late', f: ['Chair', 'Chapter', 'New date', 'My name'], b: 'Dear {Chair},\n\n{Chapter} will not be ready on the date we set. I can send it by {New date}. I would rather tell you now than send something I do not stand behind.\n\n{My name}' },
+    { t: 'Asking for decisions in writing', f: ['Chair', 'My name'], b: 'Dear {Chair},\n\nAfter each meeting I will send three lines: what we decided, my next step, and its date. Could you correct anything I get wrong? Having it in writing is what makes me act on it.\n\n{My name}' } ] },
+  dept: { name: 'Department or program', s: [
+    { t: 'Asking for a deadline in writing', f: ['Name', 'What is due', 'My name'], b: 'Dear {Name},\n\nCould you send me the deadline and the requirements for {What is due} in one email? I track work from written dates, and I would rather confirm now than guess.\n\nThank you,\n{My name}' } ] },
+  funder: { name: 'Funders', s: [
+    { t: 'Reporting a delay', f: ['Program officer', 'Award', 'What is delayed', 'New date', 'My name'], b: 'Dear {Program officer},\n\nI am writing about {Award}. {What is delayed} is behind the original schedule, and I expect to complete it by {New date}. The scope and budget are unchanged. Please tell me whether this needs a formal request.\n\nWith thanks,\n{My name}' } ] }
+};
+var told = store.get('told', []);
+function drawTold() { document.getElementById('toldLog').innerHTML = told.length ? '<h3>Who was told what</h3>' + told.slice().reverse().map(function (x) { return '<div class="logline">' + x.at.slice(0, 10) + ' · ' + esc(x.who) + ' · ' + esc(x.t) + '</div>'; }).join('') : ''; }
+function drawWho(k) {
+  document.querySelectorAll('#whoBtns button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.k === k ? 'true' : 'false'); });
+  var box = document.getElementById('scripts'); box.innerHTML = '';
+  W[k].s.forEach(function (sc, i) {
+    var d = document.createElement('div'); d.className = 'panel';
+    d.innerHTML = '<h3>' + sc.t + '</h3>' + sc.f.map(function (f, j) { return '<div><label for="w' + i + j + '">' + f + '</label><input type="text" id="w' + i + j + '" data-f="' + esc(f) + '" value="' + esc(store.get('f-' + f, '')) + '"></div>'; }).join('') + '<pre></pre><div class="row"><button type="button" class="primary">Copy it</button><button type="button" class="ghost">I sent it</button></div>';
+    var pre = d.querySelector('pre');
+    function fill() { var t = sc.b; d.querySelectorAll('input').forEach(function (inp) { var v = inp.value.trim(); store.set('f-' + inp.dataset.f, v); t = t.split('{' + inp.dataset.f + '}').join(v || '[' + inp.dataset.f.toLowerCase() + ']'); }); pre.textContent = t; }
+    d.querySelectorAll('input').forEach(function (inp) { inp.addEventListener('input', fill); }); fill();
+    var bs = d.querySelectorAll('.row button');
+    bs[0].addEventListener('click', function () { copy(pre.textContent); });
+    bs[1].addEventListener('click', function () { told.push({ who: W[k].name, t: sc.t, at: new Date().toISOString() }); store.set('told', told); drawTold(); bs[1].textContent = 'Logged'; });
+    box.appendChild(d);
+  });
+}
+Object.keys(W).forEach(function (k) { var b = document.createElement('button'); b.type = 'button'; b.dataset.k = k; b.textContent = W[k].name; b.addEventListener('click', function () { drawWho(k); }); document.getElementById('whoBtns').appendChild(b); });
+drawWho('coauthor'); drawTold();
+})();
+</script>
+</body>
+</html>

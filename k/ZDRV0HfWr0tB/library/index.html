@@ -1,0 +1,218 @@
+<!doctype html><html><head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>The Household Library</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Libre+Franklin:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: one reading column, phone-first, dark-first. Part one is the Household Sheet, part two the twenty five prompts; both live on one page so the sheet is never somewhere else. */
+:root {
+  --bg: #231A2B; --bg2: #2E2338; --fg: #F3EDE4; --fg2: #CFC3C9; --mute: #8F8396;
+  --sage: #A9BBA9; --blush: #DDB6AF; --taupe: #C2B1A2; --line: rgba(243,237,228,.14);
+  --display: 'DM Serif Display', Georgia, serif; --body: 'Libre Franklin', system-ui, sans-serif; --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg: #F6F0E8; --bg2: #FFFFFF; --fg: #231A2B; --fg2: #4A3F52; --mute: #857A8C; --sage: #5F7A62; --blush: #A8605A; --taupe: #7E6B5A; --line: rgba(35,26,43,.14); color-scheme: light } }
+:root[data-theme="light"] { --bg: #F6F0E8; --bg2: #FFFFFF; --fg: #231A2B; --fg2: #4A3F52; --mute: #857A8C; --sage: #5F7A62; --blush: #A8605A; --taupe: #7E6B5A; --line: rgba(35,26,43,.14); color-scheme: light }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 640px; margin: 0 auto; padding-block: 20px 60px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 22px; }
+header { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
+.brand { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mute); }
+h1 { font-family: var(--display); font-weight: 400; font-size: 32px; margin: 0; line-height: 1.1; }
+h2 { font-family: var(--display); font-weight: 400; font-size: 24px; margin: 0; line-height: 1.15; }
+.hour { font-family: var(--mono); font-size: 13px; color: var(--mute); }
+p { margin: 0; }
+.lede { color: var(--fg2); }
+button { font: inherit; cursor: pointer; border: 0; border-radius: 12px; }
+button:focus-visible, input:focus-visible, textarea:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid var(--blush); outline-offset: 3px; }
+.tabs { display: flex; gap: 8px; position: sticky; top: env(safe-area-inset-top, 0px); background: var(--bg); padding: 8px 0; z-index: 5; }
+.tabs button { flex: 1; background: transparent; color: var(--fg2); border: 1px solid var(--line); padding: 12px; font-size: 15px; }
+.tabs button[aria-selected="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.panel { background: var(--bg2); border-radius: 18px; padding: 20px 18px; display: flex; flex-direction: column; gap: 14px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 14px; font-weight: 500; }
+.field .hint { font-size: 13px; color: var(--mute); }
+input[type="text"], textarea { width: 100%; box-sizing: border-box; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 10px; padding: 11px 12px; font: inherit; font-size: 16px; }
+textarea { min-height: 72px; resize: vertical; }
+.days { display: flex; gap: 6px; flex-wrap: wrap; }
+.days label { display: flex; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; font-size: 14px; cursor: pointer; }
+.days input { accent-color: var(--blush); margin: 0; }
+.help { display: flex; flex-direction: column; gap: 6px; }
+.help label { display: flex; align-items: center; gap: 8px; font-size: 15px; cursor: pointer; }
+.help input { accent-color: var(--blush); margin: 0; }
+.row { display: flex; gap: 10px; flex-wrap: wrap; }
+.row > * { flex: 1 1 140px; }
+.primary { background: var(--fg); color: var(--bg); font-weight: 600; font-size: 16px; padding: 14px; }
+.ghost { background: transparent; color: var(--fg2); border: 1px solid var(--line); padding: 12px 14px; font-size: 15px; }
+pre.block { white-space: pre-wrap; font: 14px/1.5 var(--mono); background: var(--bg); border-radius: 12px; padding: 14px; margin: 0; color: var(--fg2); max-height: 260px; overflow: auto; }
+.state { font-size: 13px; color: var(--mute); }
+.group { display: flex; flex-direction: column; gap: 10px; }
+.group .gh { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--line); padding-top: 14px; }
+.group .cat { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+.c-dinner .cat { color: var(--sage); } .c-evening .cat { color: var(--blush); } .c-morning .cat { color: var(--taupe); } .c-words .cat { color: var(--fg2); } .c-good .cat { color: var(--sage); }
+details { background: var(--bg2); border-radius: 14px; padding: 0; }
+summary { list-style: none; cursor: pointer; padding: 14px 16px; display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+summary::-webkit-details-marker { display: none; }
+summary .t { font-family: var(--display); font-size: 19px; line-height: 1.2; }
+summary .h { font-family: var(--mono); font-size: 12px; color: var(--mute); flex-shrink: 0; }
+.pbody { padding: 0 16px 16px; display: flex; flex-direction: column; gap: 10px; }
+.pbody .when { font-size: 14px; color: var(--fg2); }
+.pbody .prompt { font-size: 15px; line-height: 1.55; background: var(--bg); border-radius: 10px; padding: 12px 14px; }
+.pbody .note { font-size: 13px; color: var(--mute); }
+.toast { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--fg); color: var(--bg); padding: 10px 16px; border-radius: 999px; font-size: 14px; z-index: 9; }
+.foot { border-top: 1px solid var(--line); padding-top: 14px; font-size: 13px; color: var(--mute); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div><div class="brand">Midnight Mom's Collective</div><h1>The Household Library</h1></div>
+    <div class="hour">Any hour</div>
+  </header>
+  <p class="lede">Thirty four prompts for the house, each one copied with your household already in it. Fill the sheet once. Then every prompt knows who lives here, which days are the hard ones, and what dinner always works. Nothing leaves this phone.</p>
+
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" id="tab-sheet" aria-selected="true" aria-controls="sheet">The sheet</button>
+    <button type="button" role="tab" id="tab-prompts" aria-selected="false" aria-controls="prompts">The prompts</button>
+  </div>
+
+  <section id="sheet" class="panel" role="tabpanel" aria-labelledby="tab-sheet">
+    <h2>The Household Sheet</h2>
+    <p class="lede" style="font-size: 15px">The same seven fields as the sheet on the fridge. Any field left empty is left out of the block. Fill it on a good day, with someone else in the room.</p>
+    <div class="field"><label for="who">Who lives here</label><div class="hint">Name, age, and the one thing the prompts should know about each.</div><textarea id="who" placeholder="Me, 41. J, 6, reads anything, hates being managed. M, 44, works late Tuesdays."></textarea></div>
+    <div class="field"><label>The hard days</label><div class="days" id="days">
+      <label><input type="checkbox" value="Monday">Mon</label><label><input type="checkbox" value="Tuesday">Tue</label><label><input type="checkbox" value="Wednesday">Wed</label><label><input type="checkbox" value="Thursday">Thu</label><label><input type="checkbox" value="Friday">Fri</label><label><input type="checkbox" value="Saturday">Sat</label><label><input type="checkbox" value="Sunday">Sun</label>
+    </div></div>
+    <div class="field"><label for="why">Why those days are hard</label><textarea id="why" placeholder="Wednesday: pickup at 5:30, M works late, no gap between school and the evening."></textarea></div>
+    <div class="field"><label for="dinners">Three dinners that always work</label><div class="hint">Freezer counts. Cereal counts.</div><input type="text" id="dinners" placeholder="Frozen pizza. Eggs and toast. The chicken thing."></div>
+    <div class="field"><label for="never">Never suggest</label><div class="hint">Meals, errands, fixes that look fine on paper and fail in this house.</div><input type="text" id="never" placeholder="Slow cooker. Anything with more than one pot. Meal kits."></div>
+    <div class="field"><label for="reset">A reset is these four things</label><input type="text" id="reset" placeholder="Kitchen counter clear. Lunches made. Laundry in the dryer. Tomorrow's one thing written down."></div>
+    <div class="field"><label>When I ask for help I need</label><div class="help" id="help">
+      <label><input type="radio" name="help" value="the decision made for me">The decision made for me</label>
+      <label><input type="radio" name="help" value="two options, no more">Two options, no more</label>
+      <label><input type="radio" name="help" value="steps in order, with no gaps">Steps in order, with no gaps</label>
+    </div></div>
+    <div class="field"><label for="owns">Who owns what, by default</label><input type="text" id="owns" placeholder="Dinner: me. Bedtime: M. School email: me, 4 pm only. Mornings: M."></div>
+    <div class="row"><button type="button" class="primary" id="gen">Make the context block</button><button type="button" class="ghost" id="copyBlock">Copy the block</button></div>
+    <pre class="block" id="block">Fill in what you have, then make the block.</pre>
+    <p class="state" id="state"></p>
+  </section>
+
+  <section id="prompts" role="tabpanel" aria-labelledby="tab-prompts" hidden>
+    <div style="display: flex; flex-direction: column; gap: 18px">
+      <p class="lede" style="font-size: 15px">Open a prompt, read the first line, copy it. The copy carries your household block at the top, so paste it into any AI tool as it is. The hour on the right is the hour the prompt was written for.</p>
+      <div id="groups"></div>
+    </div>
+  </section>
+
+  <div class="foot"><span>An Offload kit. the-offload.com</span><span>Nothing here is sent anywhere.</span></div>
+</div>
+
+<script>
+var $ = function (id) { return document.getElementById(id); };
+function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+function set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+
+var fields = ['who', 'why', 'dinners', 'never', 'reset', 'owns'];
+function load() {
+  fields.forEach(function (f) { var v = get('hl-' + f); if (v) $(f).value = v; });
+  var d = (get('hl-days') || '').split(',');
+  document.querySelectorAll('#days input').forEach(function (c) { c.checked = d.indexOf(c.value) >= 0; });
+  var h = get('hl-help'); if (h) { var r = document.querySelector('#help input[value="' + h + '"]'); if (r) r.checked = true; }
+  var b = get('hl-block'); if (b) { $('block').textContent = b; $('state').textContent = 'Saved on this phone.'; }
+}
+function save() {
+  fields.forEach(function (f) { set('hl-' + f, $(f).value); });
+  set('hl-days', Array.prototype.map.call(document.querySelectorAll('#days input:checked'), function (c) { return c.value; }).join(','));
+  var h = document.querySelector('#help input:checked'); set('hl-help', h ? h.value : '');
+}
+function block() {
+  var L = ['HOUSEHOLD, from the Household Sheet'];
+  var who = $('who').value.trim(); if (who) L.push('Who lives here: ' + who);
+  var days = Array.prototype.map.call(document.querySelectorAll('#days input:checked'), function (c) { return c.value; }).join(', ');
+  if (days) L.push('Hard days: ' + days);
+  var why = $('why').value.trim(); if (why) L.push('Why: ' + why);
+  var din = $('dinners').value.trim(); if (din) L.push('Dinners that always work: ' + din);
+  var nev = $('never').value.trim(); if (nev) L.push('Never suggest: ' + nev);
+  var res = $('reset').value.trim(); if (res) L.push('A reset is: ' + res);
+  var h = document.querySelector('#help input:checked'); if (h) L.push('When I ask for help I need: ' + h.value);
+  var own = $('owns').value.trim(); if (own) L.push('Who owns what: ' + own);
+  L.push('Rules: on a hard day, give me ' + (h ? h.value : 'one decision, not a list') + '. Never evaluate a hard-day dinner. Nothing is decided after 9 pm. Keep answers short.');
+  return L.join('\n');
+}
+$('gen').addEventListener('click', function () { save(); var b = block(); $('block').textContent = b; set('hl-block', b); $('state').textContent = 'Made and saved on this phone. Every prompt now copies with it.'; });
+$('copyBlock').addEventListener('click', function () { copy($('block').textContent, 'Block copied'); });
+
+function copy(t, msg) {
+  var done = function () { var d = document.createElement('div'); d.className = 'toast'; d.textContent = msg; document.body.appendChild(d); setTimeout(function () { d.remove(); }, 1600); };
+  var fb = function () { var ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (e) {} ta.remove(); done(); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done).catch(fb); else fb();
+}
+
+var tabs = [['tab-sheet', 'sheet'], ['tab-prompts', 'prompts']];
+tabs.forEach(function (p) { $(p[0]).addEventListener('click', function () { tabs.forEach(function (q) { $(q[0]).setAttribute('aria-selected', q[0] === p[0] ? 'true' : 'false'); $(q[1]).hidden = q[1] !== p[1]; }); window.scrollTo(0, 0); }); });
+
+var CAT = { dinner: 'Dinner', evening: 'The Evening', morning: 'The Morning After', words: 'Words', good: 'The Good Day', room: 'The Room' };
+var P = [
+ { c: 'dinner', h: '5:40 pm', t: 'One dinner, decided', w: 'There is no plan and you are standing in the kitchen.', p: 'It is 5:40 and there is no plan. Using the dinners that always work and the never-suggest list in my household block, pick one dinner for tonight. Not a list, one dinner. Tell me the steps in order with the minutes beside each, assuming I have what is usually in a house like mine, and stop when the oven is on. You can be blunt, I am not grading this. What I need back is three to five lines I can follow without reading twice.' },
+ { c: 'dinner', h: '5:40 pm', t: 'What is in the house', w: 'You know roughly what is in the fridge and nothing is a meal.', p: 'Here is what is in the house: [list what you can see]. Using my household block, including who will not eat what, make one dinner from it in under twenty minutes and one pan. If nothing works, say so in one line and tell me the fastest thing to buy on the way. Tell me the steps with times. I do not need options, I need the dinner.' },
+ { c: 'dinner', h: 'Sunday', t: 'The three-dinner rotation', w: 'A good day, with a few minutes to make the week easier.', p: 'Using the dinners that always work and the hard days in my household block, build a seven-night rotation where the hard days get the easiest dinners and no dinner repeats more than twice. For each night give the dinner, the prep time, and the one thing to take out of the freezer the night before. Then write a shopping list grouped by aisle. Keep the whole thing short enough to tape to the fridge.' },
+ { c: 'dinner', h: 'Sunday', t: 'Batch once, eat three times', w: 'You have one hour and one burst of energy.', p: 'I have one hour on a good day and want to cook once for three hard-day dinners this week. Using my household block, pick one base recipe that reheats well and that my household will eat, scaled for three nights, with one variation for each night so it is not the same meal. Give me the shopping list, then the steps in the order a tired person should do them, then how to store and reheat each portion.' },
+ { c: 'dinner', h: '5:40 pm', t: 'The lunch that packs itself', w: 'Tomorrow’s lunches, tonight, with no thought.', p: 'Using who lives here and the never-suggest list in my household block, write five school or work lunches that need no cooking and no more than four items each, that can be packed in five minutes the night before. Mark which ones survive a day without a cold pack. Then give me one line I can say to a child who complains about the lunch. Short, no explanations.' },
+
+ { c: 'evening', h: '7:15 pm', t: 'The ninety-second reset', w: 'Everyone is yelling, including you.', p: 'Everyone in the house is dysregulated at once, including me. Using the ages in my household block, write a ninety-second script I can say out loud to reset the room: no lecture, no apology, no consequences, one physical thing everyone does together. Then give me the one sentence to say if a child refuses. Keep it under eighty words. I will read it from my phone.' },
+ { c: 'evening', h: '7:40 pm', t: 'The bedtime card', w: 'Bedtime has been going on for an hour, again.', p: 'Make me a bedtime card for the child in my household block who is hardest to put to bed. Six steps at most, each five words or fewer, in order, with the minutes beside each, ending in lights off. Then a two-step version for a hard night: the two steps that matter if everything else is dropped. Format it so I can print it and tape it by the bathroom door.' },
+ { c: 'evening', h: '8:30 pm', t: 'The question that will not stop', w: 'A child has asked the same anxious question eleven times.', p: 'My child, from my household block, keeps asking the same worried question at bedtime: [the question]. Write me one calm, true, short answer to say every time, the same words each time, so they can learn the answer is stable. Then a sentence for the eleventh time that is kind and ends the conversation. No psychology, no explanation to me, the words only.' },
+ { c: 'evening', h: '9:00 pm', t: 'Tomorrow in three lines', w: 'You cannot hold tomorrow in your head and it is after nine.', p: 'It is after nine and nothing gets decided tonight, so write tomorrow down for me instead. Here is what I know about it: [paste anything, in any order]. Using my household block, give me three lines: the one thing with a clock on it, the one thing to take out of the freezer, and the one thing that is allowed to not happen. Nothing else. Then tell me to go to bed in one short sentence.' },
+ { c: 'evening', h: '11:10 pm', t: 'The hour with nobody in it', w: 'It is late, you are still up, and you know why.', p: 'It is past eleven and I am awake because this is the only hour with nobody in it. Give me three things to do with the next twenty minutes that count as rest, need no screen after the first minute, and will not wake anyone, chosen for someone with ADHD who will otherwise scroll. Then one sentence to say to myself when I put the phone down. Do not tell me about sleep hygiene.' },
+
+ { c: 'morning', h: '6:50 am', t: 'The day after a bad night', w: 'You slept four hours and the day is the day.', p: 'I slept about [hours] hours. Here is my day: [paste]. Using my household block, especially who owns what, tell me what to drop, what to move, and what to hand to someone else, then the one thing to do first. Under eighty words. Assume I have less working memory than usual today, so no choices, only instructions.' },
+ { c: 'morning', h: '7:10 am', t: 'The morning in order', w: 'Mornings fall apart at the same step every time.', p: 'Our mornings fall apart at [the step]. Using the ages and the who-owns-what line in my household block, write the morning as a numbered list of steps with a clock time beside each, one owner per step, built around the step that fails, so that it either moves or gets a buffer. Then one sentence to say to the household on Sunday night when I put the list on the fridge.' },
+ { c: 'morning', h: '9:00 am', t: 'The reset, four things', w: 'The house is wrecked and you do not know where to start.', p: 'The house is wrecked and I want to do a reset, which in my household block is four named things. Walk me through those four, one at a time, with a time box of ten minutes each, and wait for me to say done before giving the next one. If I say I cannot, give me the one surface to clear and stop. Do not add anything to the four.' },
+ { c: 'morning', h: '10:00 am', t: 'The refill list', w: 'Something ran out again and nobody noticed until it was gone.', p: 'Using who lives here in my household block, list the twenty things a house like mine runs out of without noticing, grouped into weekly, monthly, and twice a year, and mark the five that cause the most trouble when they are gone. Then give me one sentence for the fridge that tells the household where the list is and what to do when something is low.' },
+ { c: 'morning', h: 'Any hour', t: 'The appointment I keep not booking', w: 'The call has been on the list for three weeks.', p: 'I have been avoiding booking [the appointment] for weeks. Write me exactly what to say when they answer, in four sentences, including the dates and times that work given the hard days in my household block. Then write the two-line text to send if I cannot call. Then tell me the one thing to do the moment I hang up so it is actually in the calendar.' },
+
+ { c: 'words', h: '4:00 pm', t: 'The school email', w: 'The school emailed and you cannot open it.', p: 'Here is an email from my child’s school: [paste]. In two sentences tell me what it is asking me to do and by when. Then draft a three-sentence reply that is warm, thanks them, and commits to nothing tonight beyond a date I will come back by. Use my child’s name from my household block. Nothing else.' },
+ { c: 'words', h: '5:00 pm', t: 'The handoff to a partner', w: 'You need to hand over the evening without a negotiation.', p: 'Write me a text to my partner, named in my household block, that hands over tonight’s [bedtime or dinner or both] without asking a question or inviting a discussion. Three sentences, warm, specific about what they are taking and when it starts, and ending with what I am doing instead. Then a one-line version for the morning after to say thank you without it turning into a conversation about fairness.' },
+ { c: 'words', h: '6:30 pm', t: 'The snap, repaired', w: 'You snapped at someone and want to fix it without a speech.', p: 'I snapped at [who] about [what]. Using my household block, write what I can say in under forty words that names what happened, does not explain my day, and moves us on. One version for a child and one for an adult. No apology spiral, no promises about next time.' },
+ { c: 'words', h: 'Any hour', t: 'The cancellation', w: 'You have to move something and the dread is the whole problem.', p: 'I need to cancel or move [what] with [who]. Write a two-sentence message that moves it, offers a new day chosen from the days that are not hard in my household block, and apologizes once, briefly. Then a one-line version for a text. Do not explain why. Do not over-thank.' },
+ { c: 'words', h: 'Any hour', t: 'The ask for help, plainly', w: 'Someone offered and you do not know what to say yes to.', p: 'Someone has offered to help this week. Using my household block, especially the hard days and who owns what, write three specific things I could say yes to, each as one sentence I can send as it is, in order of how much they would actually help. Then one sentence for declining the kind of help that makes more work.' },
+
+ { c: 'good', h: 'Sunday', t: 'The week on one page', w: 'A good hour, and the whole week ahead of it.', p: 'Here is what is on the calendar this week: [paste]. Using my household block, lay the week out on one page: each day with its one thing that has a clock, its dinner from the rotation, who owns the evening, and whether it is a hard day. Mark the one day to protect. Keep it printable at letter size with no more than ten words per cell.' },
+ { c: 'good', h: 'Sunday', t: 'Who owns what, negotiated', w: 'The division of the evening needs to be written down, not argued.', p: 'Using who lives here and the hard days in my household block, draft a default division of evening and morning tasks between the adults in the house, in two columns, that we can argue with. Weight it so the hard days are lighter for me. Under 120 words. Then write the one sentence to open the conversation so it starts as logistics and not as a grievance.' },
+ { c: 'good', h: 'August', t: 'The school year, in advance', w: 'The year is about to start and it will ambush you in October.', p: 'The school year starts [date]. Using the ages in my household block, list the twenty things a school year will ask of a household like mine that nobody warns you about, with the month each one tends to land, and the one thing to do in August for each so October is quieter. Group by month. Keep each line under fifteen words.' },
+ { c: 'good', h: 'November', t: 'The holidays without the collapse', w: 'The season is coming and the plan is to survive it.', p: 'Using my household block, plan the next six weeks of the holiday season for a house like mine: the three things that matter most to us, the three things we are dropping this year and the one sentence to say to relatives about each, and a hard-day dinner for every day between the 20th and the 1st. Short, printable, unsentimental.' },
+ { c: 'good', h: 'Any hour', t: 'The letter to the next hard day', w: 'A good day, and the knowledge that a bad one is coming.', p: 'I am having a good day and want to leave something for the next hard one. Using my household block, write a short note from me to me, under one hundred words, that names what a reset is in this house, which dinner to make, who to hand bedtime to, and one true thing about why today was fine. Plain, not inspirational. I will tape it inside a cupboard.' },
+ { c: 'room', h: 'Any hour', t: 'One photo of the space', w: 'A room that is hard to use, and you cannot see why.', p: 'Here is a photo of the [room] in my house. I have ADHD. I am not asking for decor. I am asking what in this room makes it hard to use, and what would make it easier. Rules: nothing to buy in the first answer. Only changes made by moving what is already here. Everything I need daily should be visible and reachable without opening anything, and everything I need rarely should be out of sight. No more than five changes, in the order I should do them, each under ten minutes, each one sentence. For each, say what decision it removes or what step it removes. If something in the photo is doing a job well, say so first. Then, separately and only if I ask, what one purchase under thirty dollars would help most.' },
+ { c: 'room', h: 'Any hour', t: 'The fridge, turned upside down', w: 'The fridge is full and there is nothing to eat.', p: 'Here is a photo of the inside of my fridge, door open. Reorganize it on the visible-first principle: what spoils this week goes where I will see it, straight into the top door bins and onto the eye-level shelf, loose or in their own bags, no containers needed. Condiments and jars stand up in the lower door bins and at the back of the bottom shelf, never lying in a drawer. If the door is already full of condiments, clear only the top door bins. Drawers stay empty or hold what stacks. Leftovers front and center, dated. Tell me shelf by shelf what moves where, in the order to do it, and which three things to eat first. Then a one-line rule I can write on the door for keeping it this way. Nothing to buy.' },
+ { c: 'room', h: 'Any hour', t: 'The counter, by what it is for', w: 'One surface in the kitchen is where the day falls apart.', p: 'Here is a photo of my kitchen counter. Using who lives here in my household block, sort what is on it into three piles: used daily, used weekly, and everything else. The daily things stay on the counter, grouped by the task they belong to. The weekly things go in the nearest cupboard at eye level. Everything else leaves the room. Tell me the piles as three short lists, then the order to move them in, then where the one landing spot for keys, mail, and the things that arrive in the house should be, with a reason.' },
+ { c: 'good', h: 'Sunday', t: 'The dopamine menu for the house', w: 'A good day, and the knowledge that you will doomscroll the next bad one.', p: 'Help me write a dopamine menu for my house, the kind Jessica McCabe describes: the planning separated from the choosing, so on a low day I pick from a list instead of deciding. Using my household block, write five appetizers, things in this house that take under ten minutes and reliably feel good; three entrees, an hour or more, that I have done before and liked; four sides, things to add to a chore to make it bearable; and two desserts, the things I overdo, written honestly. Nothing I have never done. Nothing that needs a purchase. Format it as a menu I can tape inside a cupboard door.' },
+ { c: 'room', h: 'Any hour', t: 'One room, three senses', w: 'A room that is fine and that you avoid.', p: 'Here is a photo of a room I avoid without knowing why. Using my household block, look at it for three things: the light, overhead or lamp, and whether there is a softer option; the sound, what is humming or echoing or hard; and the surfaces, whether there is one place to put a body down that is not covered. For each, one change using what is already in the house, under fifteen minutes. Say which of the three to do first and why. No shopping, no styling, no words like cozy.' },
+ { c: 'room', h: 'Any hour', t: 'What to stop keeping', w: 'The drawer, the shelf, the corner that is a decision every time you pass it.', p: 'Here is a photo of [the drawer or shelf or corner]. Tell me what in it could leave the house today with no loss, what should move to where it is used, and what is fine where it is. Three lists, short. Be blunt about the first list. Then the one sentence I can say to myself when I hesitate over something in it. I am not asking for a method. I am asking for this one place.' },
+ { c: 'room', h: 'Any hour', t: 'What I have four of', w: 'You bought the same thing again, and found the other three.', p: 'Here is a photo of [the cupboard, the shelf under the sink, the laundry shelf]. I have ADHD and I keep buying what I already own because I cannot see it. No judgment, I know. Tell me what in this photo I have more than one of, and for each, where the extras should go so they get used up: the one in use at the front at eye level, the spares behind it or one shelf down, never in another room. Then the list of things in this photo I should stop buying until a date you estimate from what I have. Then the one line I can add to my standing shopping list so this does not happen again. Nothing to buy. Nothing to throw away unless it has gone off.' },
+ { c: 'room', h: 'Sunday', t: 'The closet, by what I wear', w: 'The closet cannot be opened without something falling, and getting dressed is a decision you avoid.', p: 'Here is a photo of my closet with the door open. I am not asking for a tidy closet. I am asking for one I can get dressed from in under two minutes without deciding. No judgment about the state of it. Sort what you can see into three: worn in the last month, fits and is for another season, everything else. The first group goes at eye level and front, grouped by the days I wear them if my household notes above say what the days are. The second group goes high or in a bag with the season written on it. The third goes in a bag by the door, and I do not open the bag again. Tell me the order to do it in, in sessions of fifteen minutes, and where to stop each session so the closet still closes.' },
+ { c: 'room', h: 'Any hour', t: 'One thing you like looking at', w: 'The useful things are as easy as they will get. Now one thing for pleasure, placed on purpose.', p: 'Here is a photo of the room I am in during the worst hour of my day, usually [time]. I have ADHD. Everything useful in this room is as easy as it is going to get for now. I want one thing in it that is there only because I like looking at it. Tell me where in this photo my eye lands first when I walk in, and whether that spot is holding something useful, something to be moved, or nothing. If nothing, that is where the one thing goes. It must already be in the house. Name three things I might own that would do, in the order you would try them, and say what each would be replacing in my line of sight. One object. Nothing else added this week.' },
+];
+
+var groups = {};
+P.forEach(function (x) { (groups[x.c] = groups[x.c] || []).push(x); });
+var g = $('groups'); g.style.display = 'flex'; g.style.flexDirection = 'column'; g.style.gap = '22px';
+Object.keys(CAT).forEach(function (c) {
+  var wrap = document.createElement('div'); wrap.className = 'group c-' + c;
+  wrap.innerHTML = '<div class="gh"><span class="cat">' + CAT[c] + '</span><span class="hour">' + groups[c].length + ' prompts</span></div>';
+  groups[c].forEach(function (x, i) {
+    var d = document.createElement('details');
+    var id = c + i;
+    d.innerHTML = '<summary><span class="t">' + x.t + '</span><span class="h">' + x.h + '</span></summary><div class="pbody"><div class="when">' + x.w + '</div><div class="prompt" id="p-' + id + '">' + x.p + '</div><div class="row"><button type="button" class="primary" data-copy="' + id + '">Copy with my household</button><button type="button" class="ghost" data-copyplain="' + id + '">Copy the prompt only</button></div><div class="note">Replace anything in square brackets before you send it. The Room prompts want a photo pasted with them, so they need a tool you can paste a picture into. Take one, in the light the room usually has. A change to a room is worth making if it removes a step or a decision from something done daily, or if it lowers the light, the noise, or the clutter in a room used when tired. Anything else is decor, which is allowed, and goes last.</div></div>';
+    wrap.appendChild(d);
+  });
+  g.appendChild(wrap);
+});
+g.addEventListener('click', function (e) {
+  var b = e.target.closest('button'); if (!b) return;
+  if (b.dataset.copy) { var blk = get('hl-block'); var t = $('p-' + b.dataset.copy).textContent; copy((blk ? blk + '\n\n' : '') + t, blk ? 'Copied with your household' : 'Copied. Make the sheet first to include your household'); }
+  if (b.dataset.copyplain) { copy($('p-' + b.dataset.copyplain).textContent, 'Prompt copied'); }
+});
+load();
+</script>
+
+</body></html>
