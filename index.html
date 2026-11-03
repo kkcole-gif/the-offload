@@ -98,7 +98,25 @@ section { padding: 72px 0 0; }
 .kit.field p { color: #E9E1D8; } .kit.field .spec { color: rgba(255,255,255,.62); }
 .kit.field a:not(.btn) { color: #FFFFFF; text-decoration-color: rgba(255,255,255,.5); }
 .kit.field .btn { background: #FFFFFF; color: var(--ink); }
-.kit.teal { background: var(--teal); } .kit.plum { background: var(--plum); } .kit.forest { background: var(--forest); } .kit.plum2 { background: #2E2338; } .kit.rose { background: #94524C; } .kit.animal { grid-template-columns: 280px minmax(0, 1fr); margin-top: 16px; } .kit.animal { align-items: center; } .kit.animal .pic.big { width: 280px; margin: 0; display: flex; justify-content: center; align-items: center; } .kit.animal .pic.big img { max-height: 240px; max-width: 100%; width: auto; height: auto; } .kit.animal img.tile { border-radius: 22px; max-height: 220px; } @media (max-width: 720px) { .kit.animal { grid-template-columns: 1fr; } .kit.animal .pic.big { width: 100%; } .kit.animal .pic.big img { max-height: 200px; } } .kit.rose p { color: #F6EFEA; }
+.kit.teal { background: var(--teal); } .kit.plum { background: var(--plum); } .kit.forest { background: var(--forest); } .kit.plum2 { background: #2E2338; } .kit.rose { background: #94524C; } .kit.rose p { color: #F6EFEA; }
+.agrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 18px; align-items: start; }
+.atile { border-radius: 24px; padding: 18px 18px 14px; color: #F6EFEA; }
+.atile.teal { background: var(--teal); } .atile.plum { background: var(--plum); } .atile.forest { background: var(--forest); } .atile.rose { background: #94524C; }
+.atile .ph { height: 190px; display: flex; align-items: center; justify-content: center; }
+.atile .ph img { max-height: 180px; max-width: 100%; width: auto; height: auto; filter: drop-shadow(0 10px 14px rgba(0,0,0,.28)); }
+.atile summary { list-style: none; cursor: pointer; display: flex; flex-direction: column; gap: 2px; padding: 12px 34px 4px 0; position: relative; }
+.atile summary::-webkit-details-marker { display: none; }
+.atile summary::after { content: '+'; position: absolute; right: 0; top: 10px; width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,.16); color: #FFFFFF; font-size: 18px; line-height: 26px; text-align: center; }
+.atile details[open] summary::after { content: '\2013'; }
+.atile summary:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 4px; border-radius: 8px; }
+.atile .nm { font-family: var(--display); font-size: 22px; color: #FFFFFF; }
+.atile .kt { font-size: 13px; color: rgba(255,255,255,.72); }
+.atile details p { margin: 10px 0 4px; font-size: 15px; line-height: 1.55; color: #F6EFEA; }
+@media (max-width: 960px) { .agrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .atile:has(details[open]) { grid-column: 1 / -1; } }
+@media (max-width: 480px) { .agrid { gap: 10px; } .atile { padding: 14px 14px 10px; } .atile .ph { height: 140px; } .atile .ph img { max-height: 130px; } .atile .nm { font-size: 18px; } }
+:root[data-images="off"] .atile .ph { display: none; }
+
 .kit .pic.big { width: 240px; margin-top: -70px; margin-bottom: -10px; overflow: visible; }
 .kit .pic.big img { filter: drop-shadow(0 18px 24px rgba(0,0,0,.25)); }
 .pic { width: 200px; max-width: 100%; overflow: hidden; }
@@ -242,22 +260,36 @@ footer { margin-top: 24px; }
 
 <section id="animals" data-name="The animals">
   <h2>The animals</h2>
-  <p><b>Every kit has one, and they are the animals that work at night and are not thanked for it.</b> Each one stands for a rule the kit keeps.</p>
-  <div class="kit field teal animal">
-    <div class="pic big"><img src="assets/agent-standing.png" alt="The Agent, a raccoon detective in a deerstalker with a magnifying lens and a red case file"></div>
-    <div><h3>The Agent gets into everything and files it.</h3><p>A raccoon works at night, goes through whatever has been left out, and keeps what it finds. In the Book Detective Agency every case goes into a binder nobody corrects, and rank counts only the files in it, so a rank is never taken away.</p></div>
-  </div>
-  <div class="kit field plum animal">
-    <div class="pic big"><img src="assets/possum-resting.png" alt="The possum lying on her back with one baby asleep on her stomach"></div>
-    <div><h3>When the possum plays dead, that is a rule, not a failure.</h3><p>She is nocturnal, she carries every child at once, and when it is too much she lies down and gets up afterward. In the Hard Day Kit the one-dot card and the Fairness Clause are her on her back, and the kit says so on the page, so the household knows what it is looking at.</p></div>
-  </div>
-  <div class="kit field forest animal">
-    <div class="pic big"><img src="assets/fox-resting.png" alt="The fox asleep on a stack of library books, an index card under one paw"></div>
-    <div><h3>The fox reads everything at once, then sleeps on it.</h3><p>She is alert and a little too fast, three readings open and the seminar at two. When the week is over she sleeps on the stack. The Seminar Kit is built for both halves of that week, the sprint and the rest after it.</p></div>
-  </div>
-  <div class="kit field rose animal">
-    <div class="pic big"><img class="tile" src="assets/squirrel-resting.png" alt="The flying squirrel asleep in a plum knit pocket, a folded letter under one paw"></div>
-    <div><h3>The Archivist caches what she finds and glides back for it.</h3><p>A southern flying squirrel, native to North Carolina and out only at night. She tucks away every good source, a quote here, a page number there, and returns when the draft needs one. In the Archive Kit the two counts, sessions and sources cached, never go down, and one sentence counts on a hard day. She also carries the mail.</p></div>
+  <p><b>Every kit has one, and they are the animals that work at night and are not thanked for it.</b> Open a tile to see which rule each one keeps.</p>
+  <div class="agrid">
+    <div class="atile teal">
+      <div class="ph"><img src="assets/agent-standing.png" alt="The Agent, a raccoon detective in a deerstalker with a magnifying lens and a red case file"></div>
+      <details>
+        <summary><span class="nm">The Agent</span><span class="kt">The Book Detective Agency</span></summary>
+        <p>Because a raccoon will open anything left out overnight, the Agent goes through every book a child reads and files whatever turns up. The binder takes every case, drawn, dictated, or written in four words, and since rank counts only the files in it, nobody in the Agency is ever demoted.</p>
+      </details>
+    </div>
+    <div class="atile plum">
+      <div class="ph"><img src="assets/possum-resting.png" alt="The possum lying on her back with one baby asleep on her stomach"></div>
+      <details>
+        <summary><span class="nm">The Possum</span><span class="kt">The Hard Day Kit</span></summary>
+        <p>When the evening is too much, the possum lies down on her back with every child still on her, waits it out, and gets up afterward. The Hard Day Kit writes this into the house rules, which is why the one-dot card and the Fairness Clause exist, and why the kit names them on the page where the whole household sees them.</p>
+      </details>
+    </div>
+    <div class="atile forest">
+      <div class="ph"><img src="assets/fox-resting.png" alt="The fox asleep on a stack of library books, an index card under one paw"></div>
+      <details>
+        <summary><span class="nm">The Fox</span><span class="kt">The Seminar Kit</span></summary>
+        <p>She has three readings open, a paper half started, and a seminar at two, and she is somehow early to all of it. Once the week ends she sleeps on the stack she read, an index card under one paw. The Seminar Kit plans for the sprint and for the sleep after it.</p>
+      </details>
+    </div>
+    <div class="atile rose">
+      <div class="ph"><img src="assets/squirrel-gliding.png" alt="The Archivist, a flying squirrel gliding with a folded letter in one hind paw"></div>
+      <details>
+        <summary><span class="nm">The Archivist</span><span class="kt">The Archive Kit</span></summary>
+        <p>Because a southern flying squirrel caches food all over the woods and glides back to each spot in the dark, she keeps sources the same way, a quote in one place and a page number in another, each one findable when the draft asks for it. In the Archive Kit her two counts, sessions and sources cached, only go up, and one sentence counts on a hard day. Between drafts she carries the studio&#8217;s mail.</p>
+      </details>
+    </div>
   </div>
 </section>
 
